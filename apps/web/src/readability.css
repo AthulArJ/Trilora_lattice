@@ -1,0 +1,120 @@
+/* Shared text hierarchy. Keep status colors, charts and decorative opacity local. */
+:root {
+  font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  --readable-text: #20372f;
+  --readable-secondary: #4d6259;
+}
+
+.app-shell[data-theme="light"],
+.operations-hub-standalone[data-theme="light"] {
+  --readable-text: #20372f;
+  --readable-secondary: #4d6259;
+  --ink: var(--readable-text);
+  --muted: var(--readable-secondary);
+}
+
+.app-shell[data-theme="dark"],
+.operations-hub-standalone[data-theme="dark"] {
+  --readable-text: #f5f7f6;
+  --readable-secondary: #bccbc4;
+}
+
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub) {
+  --aurora-muted: #4d6259 !important;
+  --aurora-subtle: #52675e !important;
+}
+
+.app-shell[data-theme],
+.operations-hub-standalone[data-theme],
+.login-shell {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+:is(.app-shell[data-theme], .operations-hub-standalone[data-theme], .login-shell) :is(p, input, select, textarea) {
+  font-size: 14px !important;
+  line-height: 1.5;
+}
+
+:is(.app-shell[data-theme], .operations-hub-standalone[data-theme], .login-shell) :is(button, label) {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+:is(.app-shell[data-theme], .operations-hub-standalone[data-theme]) :is(.page-heading p, .panel-heading p,
+  .metric-head, .metric-sub, .workspace-copy span, .connection-top, .connection-card small,
+  .profile-copy span, .nav-caption, .eyebrow, .muted, .crumbs > span:not(.crumb-slash),
+  .demo-journey-intro p, .demo-journey-step small, .guided-demo-progress small,
+  .pilot-mode-banner > div > span, .ops-status-rail small, .health-primary small,
+  .health-facts span, .health-foot, .readiness-note, .zone-unavailable p,
+  .zone-capabilities span, .activity-copy small, .activity-time,
+  .person-name small, .last-update, .status-copy, .maps-empty span, .maps-loading,
+  .device-details > div > span, .device-card-foot small, .map-card-meta,
+  .directory-card-head p, .directory-form-title small, .handover-panel .panel-heading p,
+  .insights-source, .audit-note, .user-access-notice) {
+  color: var(--readable-secondary) !important;
+}
+
+.app-shell[data-theme] :is(.nav-item, .workspace-copy b, .profile-copy b) {
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+.app-shell[data-theme] :is(.demo-journey-step b, .ops-status-rail b, .connection-card > b) {
+  font-size: 14px !important;
+  font-weight: 700;
+}
+
+.app-shell[data-theme] .pilot-mode-banner > div > span {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.app-shell[data-theme] .metric-card {
+  height: auto;
+  min-height: 132px;
+}
+
+.app-shell[data-theme] :is(.nav-caption, .eyebrow, .demo-journey-kicker) {
+  font-size: 12px !important;
+  letter-spacing: .075em;
+}
+
+.app-shell[data-theme] :is(.button, .text-button, .theme-toggle-button, .quick-find-trigger,
+  .demo-scenario-actions button, .guided-demo-progress button) {
+  font-size: 13px !important;
+}
+
+.app-shell[data-theme] :is(.demo-journey-step, .ops-status-rail > div) {
+  min-width: 0;
+  height: auto;
+}
+
+.app-shell[data-theme] :is(.demo-journey-step small, .guided-demo-progress small,
+  .ops-status-rail small, .metric-sub) {
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.login-shell :is(.login-intro p, .login-invite-note small, .login-secure-label,
+  .login-foot, .login-caption) {
+  color: #4d6259;
+}
+
+.login-shell .login-form input::placeholder,
+.app-shell[data-theme] :is(input, textarea)::placeholder,
+.operations-hub-standalone[data-theme] :is(input, textarea)::placeholder {
+  color: var(--readable-secondary);
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .app-shell[data-theme] .heading-actions {
+    flex-wrap: wrap;
+  }
+
+  .app-shell[data-theme] .page-heading {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+}

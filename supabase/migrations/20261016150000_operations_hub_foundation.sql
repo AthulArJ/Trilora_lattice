@@ -1,4 +1,4 @@
--- Structured workforce, shift coverage, and operational issue tracking for the CIAL Operations Hub.
+-- Structured workforce, shift coverage, and operational issue tracking for the Operations Hub.
 -- Historical workers remain visible as unclassified until an administrator categorizes them.
 alter table public.workers
   add column if not exists workforce_category text not null default 'unclassified',

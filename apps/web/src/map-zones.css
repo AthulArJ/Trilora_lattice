@@ -19,7 +19,7 @@
 .zone-draw-enabled { cursor: crosshair; }
 .zone-draw-canvas > img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: fill; pointer-events: none; }
 .zone-drawn-rect { position: absolute; display: flex; align-items: flex-start; padding: 5px; overflow: hidden; border: 2px solid #368f7c; border-radius: 6px; background: rgba(64, 157, 135, .2); pointer-events: none; }
-.zone-drawn-rect span { max-width: 100%; overflow: hidden; padding: 3px 6px; border-radius: 5px; color: #173b37; background: rgba(255,255,255,.9); font-size: clamp(9px, 1.1vw, 12px); font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.zone-drawn-rect span { max-width: 100%; overflow: hidden; padding: 3px 6px; border-radius: 5px; color: #173b37; background: rgba(255,255,255,.9); font-size: clamp(12px, 1.1vw, 12px); font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
 .zone-type-restricted { border-color: #c24e42; background: rgba(206, 82, 67, .2); }
 .zone-type-safety { border-color: #d19b3d; background: rgba(224, 171, 73, .22); }
 .zone-type-staff_only { border-color: #657bb1; background: rgba(97, 125, 184, .2); }

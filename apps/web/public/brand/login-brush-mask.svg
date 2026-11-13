@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 1000" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="feather" x1="0" y1="0" x2="80" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset=".2" stop-color="white" stop-opacity=".02"/>
+      <stop offset=".42" stop-color="white" stop-opacity=".14"/>
+      <stop offset=".6" stop-color="white" stop-opacity=".48"/>
+      <stop offset=".8" stop-color="white" stop-opacity=".9"/>
+      <stop offset=".94" stop-color="white"/>
+      <stop offset="1" stop-color="white"/>
+    </linearGradient>
+    <filter id="grain" x="-40%" y="-10%" width="180%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".38 .012" numOctaves="2" seed="12" stitchTiles="stitch" result="texture"/>
+      <feDisplacementMap in="SourceGraphic" in2="texture" scale="12" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation=".35"/>
+    </filter>
+  </defs>
+  <rect x="-24" y="-80" width="128" height="1160" fill="url(#feather)" filter="url(#grain)"/>
+</svg>

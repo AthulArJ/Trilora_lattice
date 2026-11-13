@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" fill="none" role="img" aria-labelledby="title desc">
-  <title id="title">Illustrative airport terminal pilot map</title>
-  <desc id="desc">A generic, not-to-scale terminal layout with check-in, security, arrivals, departures, gates, staff rooms, and illustrative positioning anchor locations.</desc>
+  <title id="title">Illustrative operations workspace map</title>
+  <desc id="desc">A generic, not-to-scale facility layout with operations, maintenance, logistics, staff areas, and illustrative positioning anchor locations.</desc>
   <defs>
     <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0v24" stroke="#24363b" stroke-width="1"/></pattern>
     <pattern id="restricted" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v9" stroke="#294044" stroke-width="2"/></pattern>
@@ -9,8 +9,8 @@
   </defs>
   <rect width="1200" height="760" fill="#101d22"/><rect width="1200" height="760" fill="url(#grid)"/>
   <g font-family="Arial,sans-serif">
-    <text x="62" y="48" fill="#8cc4b7" font-size="15" font-weight="700" letter-spacing="2">LATTICE  /  AIRPORT PILOT</text>
-    <text x="62" y="76" fill="#e5efec" font-size="23" font-weight="700">Terminal operations · sample level 1</text>
+    <text x="62" y="48" fill="#8cc4b7" font-size="13" font-weight="700" letter-spacing="1.5">LATTICE  /  OPERATIONS WORKSPACE</text>
+    <text x="62" y="76" fill="#e5efec" font-size="23" font-weight="700">Workspace operations · sample level 1</text>
     <text x="62" y="99" fill="#9aafac" font-size="12">Illustrative layout · not surveyed · not for navigation or live positioning</text>
     <g filter="url(#soft)" stroke="#496264" stroke-width="3" fill="#17282d">
       <rect x="58" y="128" width="1084" height="553" rx="8"/>
@@ -44,16 +44,16 @@
     </g>
     <!-- Labels -->
     <g fill="#a7c0bc" font-size="12" font-weight="700" letter-spacing="1.1">
-      <text x="103" y="174">CHECK-IN HALL</text><text x="405" y="174">SECURITY SCREENING</text><text x="656" y="174">STAFF ACCESS</text><text x="866" y="174">DEPARTURES / GATES</text>
-      <text x="103" y="369">PUBLIC CORRIDOR</text><text x="104" y="459">ARRIVALS</text><text x="350" y="459">STAFF OPERATIONS</text><text x="619" y="459">BAGGAGE SERVICES</text><text x="889" y="459">FACILITIES</text>
+      <text x="103" y="174">NORTH ZONE</text><text x="405" y="174">OPERATIONS ZONE</text><text x="656" y="174">STAFF ACCESS</text><text x="866" y="174">MAINTENANCE ZONE</text>
+      <text x="103" y="369">PUBLIC CORRIDOR</text><text x="104" y="459">SOUTH ZONE</text><text x="350" y="459">FIELD OPERATIONS</text><text x="619" y="459">LOGISTICS ZONE</text><text x="889" y="459">FACILITIES</text>
     </g>
     <g fill="#839d99" font-size="10" font-weight="600">
-      <text x="110" y="282">CHECK-IN DESKS</text><text x="415" y="271">SCREENING LANES</text><text x="665" y="326">STAFF ROOM</text><text x="876" y="326">GATE WAITING</text>
-      <text x="112" y="631">BAGGAGE CLAIM</text><text x="356" y="633">SUPERVISOR / BREAK ROOM</text><text x="626" y="633">SERVICE DESK</text><text x="898" y="633">STORAGE / UTILITIES</text>
+      <text x="110" y="282">WORKSTATIONS</text><text x="415" y="271">INSPECTION AREA</text><text x="665" y="326">STAFF ROOM</text><text x="876" y="326">EQUIPMENT AREA</text>
+      <text x="112" y="631">MATERIALS STORAGE</text><text x="356" y="633">SUPERVISOR / BREAK ROOM</text><text x="626" y="633">SERVICE DESK</text><text x="898" y="633">STORAGE / UTILITIES</text>
     </g>
     <!-- Entrance and exit cues -->
-    <path d="M540 681v19m44-19v19" stroke="#3b8277" stroke-width="4" stroke-linecap="round"/><text x="562" y="721" text-anchor="middle" fill="#80bcaf" font-size="11" font-weight="700" letter-spacing="1">LANDSIDE ENTRY</text>
-    <path d="M1118 365h19m-19 42h19" stroke="#3b8277" stroke-width="4" stroke-linecap="round"/><text x="1112" y="357" text-anchor="end" fill="#80bcaf" font-size="10" font-weight="700">TO GATES</text>
+    <path d="M540 681v19m44-19v19" stroke="#3b8277" stroke-width="4" stroke-linecap="round"/><text x="562" y="721" text-anchor="middle" fill="#80bcaf" font-size="11" font-weight="700" letter-spacing="1">MAIN ENTRY</text>
+    <path d="M1118 365h19m-19 42h19" stroke="#3b8277" stroke-width="4" stroke-linecap="round"/><text x="1112" y="357" text-anchor="end" fill="#80bcaf" font-size="10" font-weight="700">TO MAINTENANCE</text>
     <!-- Example anchors: visual placeholders only -->
     <g fill="#17282d" stroke="#328477" stroke-width="3">
       <circle cx="307" cy="386" r="10"/><circle cx="520" cy="386" r="10"/><circle cx="740" cy="386" r="10"/><circle cx="955" cy="386" r="10"/>

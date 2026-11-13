@@ -15,7 +15,9 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
-    max-width: 1680px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
     margin: 0 auto;
     padding: 0 24px 30px;
     color: var(--text);
@@ -35,7 +37,7 @@
     align-items: center;
     gap: 10px;
     color: #eaf4ef;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .14em
 }
@@ -51,7 +53,7 @@
     display: block;
     margin-top: 4px;
     color: #819994;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: .17em
 }
@@ -65,12 +67,12 @@
 
 .briefing-location b {
     color: #e7f0ec;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: .1em
 }
 
 .briefing-location small {
-    font-size: 7px
+    font-size: 12px
 }
 
 .briefing-header-actions {
@@ -90,7 +92,7 @@
     border-radius: 99px;
     background: #182628;
     color: #d2dcd8;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: .08em
 }
@@ -135,7 +137,7 @@
     border-radius: 50%;
     background: #193331;
     color: #aee8d4;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 800
 }
 
@@ -191,7 +193,7 @@
     align-items: center;
     gap: 10px;
     color: #9fc5b8;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: .16em
 }
@@ -222,7 +224,7 @@
     gap: 17px;
     margin-top: 22px;
     color: #b1c4bd;
-    font-size: 9px
+    font-size: 12px
 }
 
 .briefing-live-meta>span {
@@ -285,7 +287,7 @@
 
 .briefing-overview-link small {
     color: #88b9a8;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: .13em
 }
@@ -299,7 +301,7 @@
 .briefing-overview-link em {
     margin-top: 3px;
     color: #9fb5ad;
-    font-size: 9px;
+    font-size: 12px;
     font-style: normal
 }
 
@@ -322,7 +324,7 @@
     background: #122326;
     color: #b9cdc5;
     font: inherit;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 700;
     cursor: pointer;
     transition: background .15s, border-color .15s, color .15s
@@ -395,7 +397,7 @@
     align-items: center;
     gap: 8px;
     color: #92aaa4;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .13em
 }
@@ -430,14 +432,14 @@
     display: block;
     margin-top: 5px;
     color: #dce8e3;
-    font-size: 11px
+    font-size: 12px
 }
 
 .briefing-kpi>small {
     display: block;
     margin-top: 5px;
     color: #819994;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.4
 }
 
@@ -467,7 +469,7 @@
 
 .briefing-section-heading>div>span {
     color: #68bba2;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .18em
 }
@@ -482,7 +484,7 @@
 .briefing-section-heading>p {
     margin: 0 2px 3px;
     color: #819995;
-    font-size: 9px
+    font-size: 12px
 }
 
 .briefing-grid {
@@ -541,7 +543,7 @@
 
 .card-kicker {
     color: #77bdab;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .15em
 }
@@ -557,7 +559,7 @@
 .briefing-card-head p {
     margin: 0;
     color: #849a96;
-    font-size: 9px;
+    font-size: 12px;
     line-height: 1.5
 }
 
@@ -565,7 +567,7 @@
     flex: none;
     min-height: 30px;
     padding-inline: 9px;
-    font-size: 8px;
+    font-size: 12px;
     white-space: nowrap
 }
 
@@ -624,7 +626,7 @@
 .workforce-donut small {
     margin-top: 5px;
     color: #8ba49d;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: .13em
 }
@@ -640,7 +642,7 @@
     align-items: center;
     gap: 8px;
     color: #aec0ba;
-    font-size: 8px
+    font-size: 12px
 }
 
 .category-label {
@@ -676,13 +678,13 @@
 .workforce-category>b {
     text-align: right;
     color: #e5efea;
-    font-size: 9px
+    font-size: 12px
 }
 
 .workforce-category>small {
     text-align: right;
     color: #819792;
-    font-size: 8px
+    font-size: 12px
 }
 
 .briefing-inline-note {
@@ -695,7 +697,7 @@
     border-radius: 8px;
     background: #272418;
     color: #e0c77f;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.4
 }
 
@@ -748,7 +750,7 @@
 .briefing-mini-stats small {
     margin-top: 5px;
     color: #8ba09a;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.35
 }
 
@@ -802,14 +804,14 @@
 
 .briefing-sos-callout b {
     color: #ffad98;
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: .08em
 }
 
 .briefing-sos-callout small {
     margin-top: 4px;
     color: #d3aaa0;
-    font-size: 8px
+    font-size: 12px
 }
 
 .briefing-sos-callout button {
@@ -822,7 +824,7 @@
     background: #a64f41;
     color: #fff;
     font: inherit;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 800;
     cursor: pointer
 }
@@ -870,18 +872,18 @@
 
 .briefing-incident-row b {
     color: #e2ece7;
-    font-size: 9px
+    font-size: 12px
 }
 
 .briefing-incident-row small {
     margin-top: 4px;
     color: #819894;
-    font-size: 8px
+    font-size: 12px
 }
 
 .briefing-incident-row em {
     color: #e78f78;
-    font-size: 7px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 850;
     white-space: nowrap
@@ -912,13 +914,13 @@
 
 .briefing-empty b {
     color: #dce8e3;
-    font-size: 9px
+    font-size: 12px
 }
 
 .briefing-empty small {
     margin-top: 4px;
     color: #879e98;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.45
 }
 
@@ -933,7 +935,7 @@
     background: #172b2d;
     color: #a8d9c6;
     font: inherit;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 800;
     cursor: pointer
 }
@@ -945,7 +947,7 @@
 .briefing-data-tag {
     flex: none;
     padding: 6px 8px;
-    font-size: 7px
+    font-size: 12px
 }
 
 .trend-chart {
@@ -962,7 +964,7 @@
     flex-direction: column;
     justify-content: space-between;
     color: #748c87;
-    font-size: 8px
+    font-size: 12px
 }
 
 .trend-chart svg {
@@ -1001,7 +1003,7 @@
     display: flex;
     justify-content: space-between;
     color: #7c938d;
-    font-size: 8px
+    font-size: 12px
 }
 
 .trend-foot {
@@ -1011,7 +1013,7 @@
     padding-top: 10px;
     border-top: 1px solid #293a3c;
     color: #869b96;
-    font-size: 8px
+    font-size: 12px
 }
 
 .trend-foot b {
@@ -1071,13 +1073,13 @@
 
 .briefing-ticket-row b {
     color: #e2ece7;
-    font-size: 9px
+    font-size: 12px
 }
 
 .briefing-ticket-row small {
     margin-top: 4px;
     color: #839994;
-    font-size: 8px
+    font-size: 12px
 }
 
 .briefing-ticket-row select {
@@ -1088,7 +1090,7 @@
     background: #132326;
     color: #c2d2cd;
     font: inherit;
-    font-size: 8px
+    font-size: 12px
 }
 
 .ticket-stats>div:first-child b {
@@ -1124,7 +1126,7 @@
     border-radius: 9px;
     background: color-mix(in srgb, var(--person-color), transparent 83%);
     color: var(--person-color);
-    font-size: 8px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 850
 }
@@ -1144,13 +1146,13 @@
 
 .briefing-roster b {
     color: #e1ebe6;
-    font-size: 9px
+    font-size: 12px
 }
 
 .briefing-roster small {
     margin-top: 3px;
     color: #829893;
-    font-size: 8px
+    font-size: 12px
 }
 
 .briefing-roster em {
@@ -1158,7 +1160,7 @@
     border-radius: 99px;
     background: #29271e;
     color: #d2b86e;
-    font-size: 7px;
+    font-size: 12px;
     font-style: normal;
     text-transform: uppercase
 }
@@ -1189,7 +1191,7 @@
 
 .anchor-health>span {
     color: #8ba19b;
-    font-size: 9px
+    font-size: 12px
 }
 
 .anchor-health>div {
@@ -1219,7 +1221,7 @@
     align-items: center;
     gap: 5px;
     color: #8ba09a;
-    font-size: 8px
+    font-size: 12px
 }
 
 .anchor-state-list>span i {
@@ -1263,7 +1265,7 @@
     min-width: 0;
     overflow: hidden;
     color: #dce8e3;
-    font-size: 9px;
+    font-size: 12px;
     text-overflow: ellipsis;
     white-space: nowrap
 }
@@ -1273,7 +1275,7 @@
     border-radius: 99px;
     background: #252c24;
     color: #c8b573;
-    font-size: 7px;
+    font-size: 12px;
     font-style: normal;
     text-transform: uppercase
 }
@@ -1290,7 +1292,7 @@
 
 .briefing-anchor-list small {
     color: #819894;
-    font-size: 8px;
+    font-size: 12px;
     white-space: nowrap
 }
 
@@ -1313,7 +1315,7 @@
 
 .zone-kind {
     color: #79c4a9;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .08em;
     text-transform: uppercase
@@ -1326,14 +1328,14 @@
 .zone-summary-row>b {
     grid-column: 1;
     color: #e5efea;
-    font-size: 10px
+    font-size: 12px
 }
 
 .zone-summary-row>span:nth-child(3) {
     grid-column: 2;
     grid-row: 1/3;
     color: #d0e0d9;
-    font-size: 11px;
+    font-size: 12px;
     text-align: right
 }
 
@@ -1341,7 +1343,7 @@
     display: block;
     margin-top: 3px;
     color: #829792;
-    font-size: 7px
+    font-size: 12px
 }
 
 .zone-summary-row>span.over-capacity {
@@ -1351,7 +1353,7 @@
 .zone-summary-row>em {
     grid-column: 1/-1;
     color: #fa856e;
-    font-size: 7px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 850
 }
@@ -1380,7 +1382,7 @@
     gap: 14px;
     padding: 2px 2px 0;
     color: #758d88;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.5
 }
 
@@ -1397,7 +1399,7 @@
 
 .briefing-footnote>span:last-child {
     color: #718782;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: .08em;
     text-align: right
@@ -1444,7 +1446,7 @@
 .hub-modal-head p {
     margin: 0;
     color: #829994;
-    font-size: 10px
+    font-size: 12px
 }
 
 .hub-modal-head>button {
@@ -1464,7 +1466,7 @@
     display: grid;
     gap: 6px;
     color: #b8cbc4;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 750
 }
 
@@ -1480,7 +1482,7 @@
     background: #0c191d;
     color: #e4efea;
     font: inherit;
-    font-size: 10px
+    font-size: 12px
 }
 
 .hub-modal input:focus,
@@ -1517,7 +1519,7 @@
     background: #172a2d;
     color: #c5d4cf;
     font: inherit;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 750;
     cursor: pointer
 }
@@ -1542,7 +1544,7 @@
     border-radius: 8px;
     background: #2d281c;
     color: #d4ba77;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.45
 }
 
@@ -1564,7 +1566,7 @@
 .hub-worker-picker legend {
     padding: 0 5px;
     color: #b8cbc4;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 750
 }
 
@@ -1597,13 +1599,13 @@
 
 .hub-worker-picker b {
     color: #dce8e3;
-    font-size: 9px
+    font-size: 12px
 }
 
 .hub-worker-picker small {
     margin-top: 3px;
     color: #829994;
-    font-size: 8px
+    font-size: 12px
 }
 
 @media(max-width:1100px) {
@@ -1635,7 +1637,7 @@
     }
 
     .briefing-brand {
-        font-size: 8px
+        font-size: 12px
     }
 
     .briefing-brand img {
@@ -1644,7 +1646,7 @@
     }
 
     .briefing-brand small {
-        font-size: 6px
+        font-size: 12px
     }
 
     .briefing-location {
@@ -1655,7 +1657,7 @@
         max-width: 170px;
         overflow: hidden;
         padding: 6px 8px;
-        font-size: 7px;
+        font-size: 12px;
         text-overflow: ellipsis;
         white-space: nowrap
     }
@@ -1683,7 +1685,7 @@
     }
 
     .briefing-date {
-        font-size: 7px;
+        font-size: 12px;
         letter-spacing: .1em
     }
 
@@ -1693,7 +1695,7 @@
 
     .briefing-hero-content>p {
         max-width: 290px;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 1.5
     }
 
@@ -1701,7 +1703,7 @@
         display: grid;
         gap: 8px;
         margin-top: 15px;
-        font-size: 8px
+        font-size: 12px
     }
 
     .briefing-overview-link {
@@ -1720,7 +1722,7 @@
     .briefing-actions button {
         min-height: 39px;
         padding-inline: 7px;
-        font-size: 8px
+        font-size: 12px
     }
 
     .briefing-actions .action-refresh {
@@ -1737,7 +1739,7 @@
     }
 
     .briefing-kpi>span {
-        font-size: 7px;
+        font-size: 12px;
         letter-spacing: .09em
     }
 
@@ -1746,11 +1748,11 @@
     }
 
     .briefing-kpi>b {
-        font-size: 9px
+        font-size: 12px
     }
 
     .briefing-kpi>small {
-        font-size: 7px
+        font-size: 12px
     }
 
     .briefing-section-heading {
@@ -1764,7 +1766,7 @@
     }
 
     .briefing-section-heading>p {
-        font-size: 8px
+        font-size: 12px
     }
 
     .briefing-grid {
@@ -1789,13 +1791,13 @@
     }
 
     .briefing-card-head p {
-        font-size: 8px
+        font-size: 12px
     }
 
     .briefing-card-head>button {
         min-height: 28px;
         padding-inline: 7px;
-        font-size: 7px
+        font-size: 12px
     }
 
     .workforce-visual {
@@ -1819,7 +1821,7 @@
     .workforce-category {
         grid-template-columns: minmax(75px, 1fr) minmax(25px, .8fr) 19px 27px;
         gap: 5px;
-        font-size: 7px
+        font-size: 12px
     }
 
     .category-label {
@@ -1832,7 +1834,7 @@
     }
 
     .workforce-category>small {
-        font-size: 7px
+        font-size: 12px
     }
 
     .briefing-mini-stats {
@@ -1849,7 +1851,7 @@
     }
 
     .briefing-mini-stats small {
-        font-size: 7px
+        font-size: 12px
     }
 
     .trend-chart {
@@ -1862,7 +1864,7 @@
 
     .trend-foot {
         gap: 12px;
-        font-size: 7px
+        font-size: 12px
     }
 
     .briefing-ticket-row {
@@ -1870,11 +1872,11 @@
     }
 
     .briefing-ticket-row b {
-        font-size: 8px
+        font-size: 12px
     }
 
     .briefing-ticket-row small {
-        font-size: 7px
+        font-size: 12px
     }
 
     .briefing-ticket-row select {
@@ -1925,7 +1927,7 @@
     }
 
     .briefing-card-head>button {
-        font-size: 6px
+        font-size: 12px
     }
 }
 
@@ -1970,7 +1972,7 @@
     background: #132628;
     color: #b8d5ca;
     font: inherit;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 750;
     cursor: pointer;
     transition: background .16s, border-color .16s
@@ -1990,7 +1992,7 @@
     align-items: center;
     gap: 9px;
     color: #eff6f2;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .15em
 }
@@ -2005,7 +2007,7 @@
     display: block;
     margin-top: 4px;
     color: #76bda6;
-    font-size: 7px;
+    font-size: 12px;
     letter-spacing: .16em
 }
 
@@ -2059,7 +2061,7 @@
     align-items: center;
     gap: 8px;
     color: #84d8b8;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .17em
 }
@@ -2088,7 +2090,7 @@
     max-width: 620px;
     margin: 0;
     color: #b4c9c0;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.6
 }
 
@@ -2098,7 +2100,7 @@
     gap: 7px;
     margin-top: 15px;
     color: #9bb5ab;
-    font-size: 8px
+    font-size: 12px
 }
 
 .wi-data-boundary svg {
@@ -2118,7 +2120,7 @@
 
 .wi-hero-total small {
     color: #98cdb8;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .15em
 }
@@ -2134,7 +2136,7 @@
 
 .wi-hero-total span {
     color: #a6bdb4;
-    font-size: 8px
+    font-size: 12px
 }
 
 .wi-kpis {
@@ -2203,7 +2205,7 @@
 
 .wi-kpis article>small {
     color: #8ea9a1;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .12em
 }
@@ -2218,7 +2220,7 @@
 
 .wi-kpis article>b i {
     color: #829a93;
-    font-size: 11px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 600
 }
@@ -2226,7 +2228,7 @@
 .wi-kpis article>em {
     margin-top: 4px;
     color: #8ba19a;
-    font-size: 8px;
+    font-size: 12px;
     font-style: normal
 }
 
@@ -2272,7 +2274,7 @@
 
 .wi-panel-head>div>span {
     color: #76c6aa;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .15em
 }
@@ -2287,7 +2289,7 @@
 .wi-panel-head p {
     margin: 0;
     color: #849b95;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.5
 }
 
@@ -2299,7 +2301,7 @@
     border-radius: 99px;
     background: #172a2b;
     color: #a4c7b8;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .1em
 }
@@ -2342,7 +2344,7 @@
 .wi-donut small {
     margin-top: 5px;
     color: #89a69d;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .16em
 }
@@ -2385,7 +2387,7 @@
     gap: 6px;
     min-width: 0;
     overflow: hidden;
-    font-size: 8px;
+    font-size: 12px;
     text-overflow: ellipsis;
     white-space: nowrap
 }
@@ -2415,13 +2417,13 @@
 .wi-bar-row>b {
     text-align: right;
     color: #edf4f0;
-    font-size: 9px
+    font-size: 12px
 }
 
 .wi-bar-row>small {
     text-align: right;
     color: #819a92;
-    font-size: 7px
+    font-size: 12px
 }
 
 .wi-chart-foot {
@@ -2433,7 +2435,7 @@
     padding-top: 10px;
     border-top: 1px solid #293c3e;
     color: #849b94;
-    font-size: 7px
+    font-size: 12px
 }
 
 .wi-chart-foot>span {
@@ -2516,13 +2518,13 @@
 
 .wi-readiness-list b {
     color: #e2ece7;
-    font-size: 8px
+    font-size: 12px
 }
 
 .wi-readiness-list small {
     margin-top: 3px;
     color: #819993;
-    font-size: 7px
+    font-size: 12px
 }
 
 .wi-readiness-list strong {
@@ -2532,7 +2534,7 @@
 
 .wi-readiness-list strong i {
     color: #849b94;
-    font-size: 9px;
+    font-size: 12px;
     font-style: normal
 }
 
@@ -2545,7 +2547,7 @@
     border-radius: 8px;
     background: #172827;
     color: #99b9ad;
-    font-size: 7px
+    font-size: 12px
 }
 
 .wi-device-note svg {
@@ -2564,7 +2566,7 @@
     background: #172c2b;
     color: #b8d9ca;
     font: inherit;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 750;
     white-space: nowrap;
     cursor: pointer
@@ -2597,7 +2599,7 @@
 .wi-shift-stats small {
     margin-top: 4px;
     color: #89a29a;
-    font-size: 6px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .1em
 }
@@ -2622,7 +2624,7 @@
     align-items: center;
     gap: 6px;
     color: #b6c8c1;
-    font-size: 8px
+    font-size: 12px
 }
 
 .wi-shift-groups>div>span i {
@@ -2633,13 +2635,13 @@
 
 .wi-shift-groups b {
     color: #e7efeb;
-    font-size: 9px;
+    font-size: 12px;
     text-align: right
 }
 
 .wi-shift-groups small {
     color: #87a198;
-    font-size: 7px;
+    font-size: 12px;
     text-align: right
 }
 
@@ -2660,13 +2662,13 @@
 
 .wi-empty b {
     color: #e1ece6;
-    font-size: 10px
+    font-size: 12px
 }
 
 .wi-empty>span {
     max-width: 330px;
     color: #8aa19a;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.5
 }
 
@@ -2681,7 +2683,7 @@
     background: #1c4236;
     color: #c7f0dc;
     font: inherit;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 800;
     cursor: pointer
 }
@@ -2722,7 +2724,7 @@
     background: transparent;
     color: #e6efea;
     font: inherit;
-    font-size: 8px
+    font-size: 12px
 }
 
 .wi-search input::placeholder {
@@ -2737,7 +2739,7 @@
     background: #122326;
     color: #c4d5ce;
     font: inherit;
-    font-size: 8px;
+    font-size: 12px;
     outline: 0
 }
 
@@ -2757,7 +2759,7 @@
     padding: 9px 8px;
     border-bottom: 1px solid #354748;
     color: #79928b;
-    font-size: 6px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .12em
 }
@@ -2792,7 +2794,7 @@
     border-radius: 9px;
     background: #19342e;
     color: #a1e4c4;
-    font-size: 7px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 850
 }
@@ -2815,14 +2817,14 @@
 .wi-person-name b,
 .wi-org-role b {
     color: #e0ebe5;
-    font-size: 8px
+    font-size: 12px
 }
 
 .wi-person-name small,
 .wi-org-role small {
     margin-top: 3px;
     color: #819993;
-    font-size: 7px
+    font-size: 12px
 }
 
 .wi-badge {
@@ -2834,7 +2836,7 @@
     border-radius: 6px;
     background: #172d2a;
     color: #a7d7c1;
-    font-size: 7px;
+    font-size: 12px;
     text-overflow: ellipsis;
     white-space: nowrap
 }
@@ -2850,7 +2852,7 @@
     align-items: center;
     gap: 6px;
     color: #aec5bb;
-    font-size: 7px
+    font-size: 12px
 }
 
 .wi-status>i {
@@ -2875,7 +2877,7 @@
 
 .wi-last-seen {
     color: #819892;
-    font-size: 7px;
+    font-size: 12px;
     text-align: right;
     white-space: nowrap
 }
@@ -2891,12 +2893,12 @@
 
 .wi-register-empty b {
     color: #dce8e2;
-    font-size: 10px
+    font-size: 12px
 }
 
 .wi-register-empty span {
     color: #819993;
-    font-size: 8px
+    font-size: 12px
 }
 
 .wi-footer {
@@ -2905,7 +2907,7 @@
     gap: 12px;
     margin-top: 12px;
     color: #819891;
-    font-size: 7px;
+    font-size: 12px;
     line-height: 1.5
 }
 
@@ -3017,11 +3019,11 @@
     }
 
     .wi-back {
-        font-size: 8px
+        font-size: 12px
     }
 
     .wi-topbar>.briefing-source {
-        font-size: 7px
+        font-size: 12px
     }
 
     .wi-hero {
@@ -3037,7 +3039,7 @@
     }
 
     .wi-hero p {
-        font-size: 9px
+        font-size: 12px
     }
 
     .wi-data-boundary {
@@ -3077,7 +3079,7 @@
     }
 
     .wi-kpis article>small {
-        font-size: 6px
+        font-size: 12px
     }
 
     .wi-kpis article>b {
@@ -3126,11 +3128,11 @@
 
     .wi-bar-label {
         gap: 4px;
-        font-size: 7px
+        font-size: 12px
     }
 
     .wi-bar-row>small {
-        font-size: 6px
+        font-size: 12px
     }
 
     .wi-bars {
@@ -3139,7 +3141,7 @@
 
     .wi-shift-panel>.wi-panel-head>button,
     .wi-register-head>button {
-        font-size: 7px
+        font-size: 12px
     }
 
     .wi-filters {
@@ -3200,7 +3202,7 @@
     }
 
     .wi-chart-foot {
-        font-size: 6px
+        font-size: 12px
     }
 }
 
@@ -3232,7 +3234,7 @@
 }
 
 .wi-composition-panel .wi-panel-head p {
-    font-size: 10px
+    font-size: 12px
 }
 
 .wi-team-board {
@@ -3304,7 +3306,7 @@
 
 .wi-team-top>i {
     color: #7d9690;
-    font-size: 8px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 850;
     letter-spacing: .12em
@@ -3328,7 +3330,7 @@
 .wi-team-name {
     margin-top: 12px;
     color: #bdcec8;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 750;
     line-height: 1.25
 }
@@ -3349,7 +3351,7 @@
 .wi-team-meta {
     margin-top: 5px;
     color: #829b94;
-    font-size: 6px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .1em
 }
@@ -3360,7 +3362,7 @@
     gap: 5px;
     margin-top: 10px;
     color: #91a79f;
-    font-size: 7px
+    font-size: 12px
 }
 
 .wi-team-people svg {
@@ -3457,7 +3459,7 @@
     }
 
     .wi-team-name {
-        font-size: 9px
+        font-size: 12px
     }
 
     .wi-team-tile strong {
@@ -3547,7 +3549,7 @@
     }
 }
 
-/* Split CIAL operations briefing: editorial copy beside a framed airport photograph */
+/* Operations briefing: editorial copy beside a framed facility photograph */
 .briefing-hero {
     display: grid;
     grid-template-columns: minmax(0, 1.22fr) minmax(310px, .78fr);
@@ -3577,12 +3579,12 @@
     align-items: center;
     gap: 9px;
     color: #aabbb2;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 750;
     letter-spacing: .105em
 }
 
-.briefing-date .briefing-cial-mark {
+.briefing-date .briefing-workspace-mark {
     display: grid;
     width: auto;
     height: auto;
@@ -3592,7 +3594,7 @@
     border-radius: 4px;
     background: #31594540;
     color: #b7d7bd;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .12em
 }
@@ -3617,7 +3619,7 @@
     max-width: 440px;
     margin: 0;
     color: #b6c2bb;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.65
 }
 
@@ -3636,7 +3638,7 @@
     border-radius: 6px;
     background: #c1d4a917;
     color: #f3f3e9;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 760;
     letter-spacing: .015em;
     box-shadow: none;
@@ -3676,7 +3678,7 @@
     padding-top: 11px;
     border-top: 1px solid #d6e1d51b;
     color: #c5d0c9;
-    font-size: 7px
+    font-size: 12px
 }
 
 .briefing-live-meta>span {
@@ -3721,7 +3723,7 @@
 
 .briefing-live-meta>span>small {
     color: #82978c;
-    font-size: 5px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .1em
 }
@@ -3729,7 +3731,7 @@
 .briefing-live-meta>span>b {
     overflow: hidden;
     color: #d1d9d3;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 650;
     text-overflow: ellipsis;
     white-space: nowrap
@@ -3772,13 +3774,13 @@
 
 .briefing-photo-caption>span {
     color: #d7c78f;
-    font-size: 6px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .15em
 }
 
 .briefing-photo-caption>b {
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: .09em
 }
@@ -3795,7 +3797,7 @@
     border-radius: 4px;
     background: #101b1b63;
     color: #f0eee4;
-    font-size: 6px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: .1em;
     backdrop-filter: blur(8px)
@@ -3854,7 +3856,7 @@
     .briefing-date {
         flex-wrap: wrap;
         gap: 6px;
-        font-size: 6px
+        font-size: 12px
     }
 
     .briefing-date .briefing-date-divider {
@@ -3867,13 +3869,13 @@
     }
 
     .briefing-hero-content>p {
-        font-size: 10px
+        font-size: 12px
     }
 
     .briefing-overview-link {
         margin-top: 15px;
         padding: 10px 12px;
-        font-size: 8px
+        font-size: 12px
     }
 
     .briefing-live-meta {
@@ -3921,7 +3923,7 @@
     }
 }
 
-/* Softly blended airport welcome scene */
+/* Softly blended facility welcome scene */
 .briefing-hero {
     position: relative;
     display: block;
@@ -3988,7 +3990,7 @@
 
 .briefing-photo-greeting>small {
     color: #f0d89b;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .17em
 }
@@ -4009,7 +4011,7 @@
 .briefing-photo-greeting>em {
     margin-top: 8px;
     color: #f2eee0;
-    font-size: 10px;
+    font-size: 12px;
     font-style: normal;
     letter-spacing: .02em
 }
@@ -4027,7 +4029,7 @@
     border-radius: 4px;
     background: #0d191a66;
     color: #f1eee4;
-    font-size: 6px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: .1em;
     backdrop-filter: blur(6px)
@@ -4115,7 +4117,7 @@
     }
 
     .briefing-photo-greeting>em {
-        font-size: 8px
+        font-size: 12px
     }
 
     .briefing-photo-index {
@@ -4131,7 +4133,7 @@
 
     .briefing-date {
         gap: 6px;
-        font-size: 5.5px
+        font-size: 12px
     }
 
     .briefing-hero h1 {
@@ -4140,7 +4142,7 @@
     }
 
     .briefing-hero-content>p {
-        font-size: 9px
+        font-size: 12px
     }
 
     .briefing-overview-link {
@@ -4156,7 +4158,7 @@
     }
 
     .briefing-live-meta>span>b {
-        font-size: 6px
+        font-size: 12px
     }
 }
 
@@ -4176,14 +4178,14 @@
     border-radius: 0;
     background: transparent;
     color: #d3bf89;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 850;
     letter-spacing: .15em
 }
 
 @media(max-width:700px) {
     .briefing-date .briefing-date-label {
-        font-size: 6px
+        font-size: 12px
     }
 }
 
@@ -4278,7 +4280,7 @@
 
     .briefing-hero-content>p {
         max-width: 100%;
-        font-size: 10px
+        font-size: 12px
     }
 
     .briefing-live-meta {
@@ -4287,7 +4289,7 @@
     }
 }
 
-/* Vertex operations console: restrained surfaces, one accent, clear status color. */
+/* LATTICE operations console: restrained surfaces, one accent, clear status color. */
 .operations-hub-standalone {
     --ops-bg: #0b1113;
     --ops-surface: #111a1d;
@@ -4317,7 +4319,7 @@
     --muted: var(--ops-muted);
     --teal: var(--ops-accent);
     gap: 16px;
-    max-width: 1720px;
+    max-width: none;
     padding: 0 32px 36px;
     color: var(--ops-text);
     font-size: 13px;
@@ -4329,7 +4331,7 @@
     top: 0;
     z-index: 20;
     min-height: 64px;
-    margin: 0 -32px;
+    margin: 0;
     padding: 0 32px;
     border-bottom: 1px solid var(--ops-border);
     background: #0b1113df;
@@ -4359,7 +4361,7 @@
     border-color: var(--ops-border);
     background: var(--ops-raised);
     color: var(--ops-muted);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0
 }
 
@@ -4544,7 +4546,7 @@
 
 .briefing-live-meta>span>small {
     color: var(--ops-subtle);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 0
 }
@@ -4970,7 +4972,7 @@
 .trend-y-axis,
 .trend-x-axis {
     color: var(--ops-subtle);
-    font-size: 11px
+    font-size: 12px
 }
 
 .workforce-overview {
@@ -5069,7 +5071,7 @@
 .workforce-category>small {
     min-width: 30px;
     color: var(--ops-subtle);
-    font-size: 11px;
+    font-size: 12px;
     text-align: right
 }
 
@@ -5299,7 +5301,7 @@
     border: 1px solid var(--ops-border-strong);
     border-radius: 50%;
     color: var(--ops-muted);
-    font-size: 11px;
+    font-size: 12px;
     font-style: normal
 }
 
@@ -5340,7 +5342,7 @@
 
 .briefing-footnote {
     color: var(--ops-muted);
-    font-size: 11px
+    font-size: 12px
 }
 
 .briefing-footnote svg {
@@ -5403,8 +5405,8 @@
     }
 
     .briefing-header {
-        margin-right: -20px;
-        margin-left: -20px;
+        margin-right: 0;
+        margin-left: 0;
         padding-right: 20px;
         padding-left: 20px
     }
@@ -5450,16 +5452,16 @@
     .briefing-header {
         top: 0;
         min-height: 56px;
-        margin: 0 -12px;
+        margin: 0;
         padding: 0 12px
     }
 
     .briefing-brand {
-        font-size: 10px
+        font-size: 12px
     }
 
     .briefing-brand small {
-        font-size: 8px
+        font-size: 12px
     }
 
     .briefing-header-actions {
@@ -5469,7 +5471,7 @@
     .briefing-source {
         max-width: 130px;
         padding: 5px 7px;
-        font-size: 10px
+        font-size: 12px
     }
 
     .briefing-user {
@@ -5494,11 +5496,11 @@
 
     .briefing-date {
         gap: 8px;
-        font-size: 11px
+        font-size: 12px
     }
 
     .briefing-date .briefing-date-label {
-        font-size: 11px
+        font-size: 12px
     }
 
     .briefing-hero h1 {
@@ -5529,12 +5531,12 @@
     }
 
     .briefing-live-meta>span>small {
-        font-size: 10px
+        font-size: 12px
     }
 
     .briefing-live-meta>span>b {
         max-width: 130px;
-        font-size: 11px
+        font-size: 12px
     }
 
     .briefing-actions {
@@ -5547,7 +5549,7 @@
         min-height: 36px;
         justify-content: center;
         padding: 6px;
-        font-size: 11px
+        font-size: 12px
     }
 
     .briefing-actions .action-refresh {
@@ -5569,7 +5571,7 @@
     }
 
     .briefing-kpi>small {
-        font-size: 11px
+        font-size: 12px
     }
 
     .briefing-section-heading {
@@ -5601,13 +5603,13 @@
     }
 
     .briefing-card-head p {
-        font-size: 11px
+        font-size: 12px
     }
 
     .briefing-card-head>button {
         min-height: 30px;
         padding: 5px 7px;
-        font-size: 11px
+        font-size: 12px
     }
 
     .briefing-mini-stats {
@@ -5623,7 +5625,7 @@
     }
 
     .briefing-mini-stats small {
-        font-size: 10px
+        font-size: 12px
     }
 
     .workforce-legend {
@@ -5633,7 +5635,7 @@
 
     .workforce-category {
         gap: 5px;
-        font-size: 11px
+        font-size: 12px
     }
 
     .category-label {
@@ -5647,7 +5649,7 @@
 
     .workforce-category>small {
         min-width: 25px;
-        font-size: 10px
+        font-size: 12px
     }
 
     .trend-chart svg {
@@ -5657,7 +5659,7 @@
     .trend-foot,
     .trend-x-axis,
     .trend-y-axis {
-        font-size: 10px
+        font-size: 12px
     }
 
     .briefing-ticket-row {
@@ -5665,11 +5667,11 @@
     }
 
     .briefing-ticket-row b {
-        font-size: 11px
+        font-size: 12px
     }
 
     .briefing-ticket-row small {
-        font-size: 10px
+        font-size: 12px
     }
 
     .briefing-ticket-row select {
@@ -5684,7 +5686,7 @@
     .setup-steps>button {
         min-height: 40px;
         padding: 6px;
-        font-size: 11px
+        font-size: 12px
     }
 
     .setup-demo-note {
@@ -5887,7 +5889,7 @@
     display: flex;
     align-items: center;
     gap: 9px;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: .1em
 }
 
@@ -5898,7 +5900,7 @@
 
 .workforce-intel-screen .wi-top-brand small {
     margin-top: 2px;
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: .04em;
     color: var(--wi-muted)
 }
@@ -6112,7 +6114,7 @@
     display: block;
     margin-top: 4px;
     color: #8fa09f;
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-progress {
@@ -6171,7 +6173,7 @@
     border-radius: 6px;
     background: transparent;
     color: var(--wi-muted);
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-toggle button.active {
@@ -6264,7 +6266,7 @@
     border-radius: 7px;
     background: #172226;
     color: #dbe6e3;
-    font-size: 11px;
+    font-size: 12px;
     box-shadow: 0 5px 18px #0005
 }
 
@@ -6337,7 +6339,7 @@
 .wi-legend-row>small {
     text-align: right;
     color: var(--wi-muted);
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-show-categories {
@@ -6346,7 +6348,7 @@
     border: 0;
     background: transparent;
     color: #8ddbc4;
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-treemap {
@@ -6384,12 +6386,12 @@
 }
 
 .wi-treemap button>b {
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-treemap button>span {
     color: #b5c2c0;
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-bars {
@@ -6414,7 +6416,7 @@
     display: flex;
     align-items: center;
     gap: 7px;
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-bars button>span i {
@@ -6438,7 +6440,7 @@
 
 .wi-bars button>b {
     text-align: right;
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-empty-composition {
@@ -6466,7 +6468,7 @@
 }
 
 .wi-empty-donut span {
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-empty-composition h3 {
@@ -6534,7 +6536,7 @@
     min-height: 32px;
     background: transparent;
     color: var(--wi-muted);
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-table-scroll {
@@ -6559,7 +6561,7 @@
     border-bottom: 1px solid var(--wi-line);
     background: #141e20;
     color: #9baead;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 550;
     text-align: left;
     white-space: nowrap
@@ -6591,7 +6593,7 @@
     border: 1px solid var(--wi-line);
     border-radius: 5px;
     color: #a8bfba;
-    font-size: 11px
+    font-size: 12px
 }
 
 .battery-low {
@@ -6605,7 +6607,7 @@
     border-radius: 99px;
     background: #ffffff0c;
     color: #b3c0be;
-    font-size: 10px
+    font-size: 12px
 }
 
 .wi-status-chip.online {
@@ -6644,7 +6646,7 @@
     justify-content: space-between;
     padding: 10px 2px 1px;
     color: var(--wi-muted);
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-pagination>div {
@@ -6659,7 +6661,7 @@
     border-radius: 6px;
     background: #172226;
     color: #c0ccca;
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-pagination button:disabled {
@@ -6711,7 +6713,7 @@
     display: block;
     margin-top: 8px;
     color: var(--wi-muted);
-    font-size: 10px
+    font-size: 12px
 }
 
 .wi-shift-readiness {
@@ -6726,7 +6728,7 @@
     align-items: center;
     gap: 12px;
     color: #bdc9c7;
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-shift-readiness>div>div {
@@ -6749,7 +6751,7 @@
 
 .wi-shift-readiness b small {
     color: var(--wi-muted);
-    font-size: 10px
+    font-size: 12px
 }
 
 .wi-shift-empty {
@@ -6772,7 +6774,7 @@
     border-radius: 7px;
     background: #172226;
     color: #cfe5dd;
-    font-size: 11px
+    font-size: 12px
 }
 
 .workforce-intel-screen .wi-footer {
@@ -6781,7 +6783,7 @@
     margin-top: 14px;
     padding: 11px 0;
     color: var(--wi-muted);
-    font-size: 11px
+    font-size: 12px
 }
 
 .workforce-intel-screen .wi-footer span {
@@ -6797,7 +6799,7 @@
     border: 0;
     background: transparent;
     color: #a9c5bc;
-    font-size: 11px
+    font-size: 12px
 }
 
 @keyframes wi-pulse {
@@ -6938,7 +6940,7 @@
     }
 
     .wi-legend-label {
-        font-size: 10px
+        font-size: 12px
     }
 
     .wi-empty-composition {
@@ -6972,7 +6974,7 @@
     }
 
     .wi-pagination {
-        font-size: 10px
+        font-size: 12px
     }
 
     .wi-shift-readiness>div {
@@ -7179,7 +7181,7 @@
 }
 
 .briefing-brand small {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: .055em
 }
 
@@ -7250,7 +7252,7 @@
 
 .briefing-live-meta>span>small {
     color: var(--ops-subtle);
-    font-size: 11px
+    font-size: 12px
 }
 
 .briefing-live-meta>span>b {
@@ -7438,7 +7440,7 @@
 
 .workforce-total span {
     margin-top: 3px;
-    font-size: 11px
+    font-size: 12px
 }
 
 .workforce-overview-details {
@@ -7475,7 +7477,7 @@
 }
 
 .workforce-category>small {
-    font-size: 11px
+    font-size: 12px
 }
 
 .category-label>i {
@@ -7572,7 +7574,7 @@
 }
 
 .briefing-footnote>span:last-child {
-    font-size: 11px
+    font-size: 12px
 }
 
 .workforce-intel-screen {
@@ -7749,7 +7751,7 @@
     justify-content: space-between;
     padding: 1px 8px 28px 0;
     color: var(--wi-muted);
-    font-size: 10px;
+    font-size: 12px;
     text-align: right
 }
 
@@ -7789,7 +7791,7 @@
     border-radius: 4px;
     background: #172226;
     color: #e6c478;
-    font-size: 10px
+    font-size: 12px
 }
 
 .wi-columns {
@@ -7815,12 +7817,12 @@
     border: 0;
     background: none;
     color: var(--wi-muted);
-    font-size: 10px
+    font-size: 12px
 }
 
 .wi-columns>button>b {
     color: var(--wi-text);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     opacity: .8
 }
@@ -7900,7 +7902,7 @@
     align-items: center;
     gap: 7px;
     color: var(--wi-text);
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-roster-table tbody tr[tabindex] {
@@ -7923,7 +7925,7 @@
     border-radius: 7px;
     background: #65cdb00c;
     color: #bce7d8;
-    font-size: 11px
+    font-size: 12px
 }
 
 .wi-filter-chip button {
@@ -8037,7 +8039,7 @@
     border-radius: 6px;
     background: var(--wi-raised);
     color: var(--wi-accent);
-    font-size: 11px
+    font-size: 12px
 }
 
 @keyframes wi-column-rise {
@@ -8169,7 +8171,7 @@
     }
 
     .briefing-kpi>small {
-        font-size: 11px
+        font-size: 12px
     }
 
     .briefing-grid>.briefing-card {
@@ -8197,7 +8199,7 @@
     }
 
     .workforce-category {
-        font-size: 11px
+        font-size: 12px
     }
 
     .briefing-section-heading h2 {
@@ -8288,7 +8290,7 @@
     }
 
     .wi-columns>button>span {
-        font-size: 9px
+        font-size: 12px
     }
 
     .wi-bottom-grid {
@@ -8320,11 +8322,11 @@
 
 @media(max-width:420px) {
     .briefing-brand>span {
-        font-size: 10px
+        font-size: 12px
     }
 
     .briefing-brand small {
-        font-size: 8px
+        font-size: 12px
     }
 
     .briefing-header-actions {
@@ -8356,7 +8358,7 @@
     }
 
     .briefing-kpi>small {
-        font-size: 10px
+        font-size: 12px
     }
 
     .workforce-overview {
@@ -8373,7 +8375,7 @@
     }
 
     .briefing-actions button {
-        font-size: 11px
+        font-size: 12px
     }
 
     .wi-top-crumb {
@@ -8389,15 +8391,15 @@
     }
 
     .wi-insight>span {
-        font-size: 11px
+        font-size: 12px
     }
 
     .wi-insight small {
-        font-size: 10px
+        font-size: 12px
     }
 
     .wi-register-tools .wi-ghost {
-        font-size: 10px
+        font-size: 12px
     }
 
     .wi-panel {
@@ -8405,7 +8407,7 @@
     }
 
     .wi-legend-label {
-        font-size: 10px
+        font-size: 12px
     }
 
     .wi-legend-row {

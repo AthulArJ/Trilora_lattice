@@ -152,13 +152,13 @@
 .workforce-intel-screen .wi-treemap-full>button>b {
   max-width: 100%;
   overflow: hidden;
-  font-size: clamp(10px, .85vw, 14px);
+  font-size: clamp(12px, .85vw, 14px);
   line-height: 1.25;
   text-overflow: ellipsis
 }
 
 .workforce-intel-screen .wi-treemap-full>button>span {
-  font-size: clamp(9px, .72vw, 12px);
+  font-size: clamp(12px, .72vw, 12px);
   white-space: nowrap
 }
 
@@ -168,7 +168,7 @@
 }
 
 .workforce-intel-screen .wi-treemap-full>button.compact>b {
-  font-size: 11px
+  font-size: 12px
 }
 
 .workforce-intel-screen .wi-treemap-full>button.tiny>i,
@@ -177,7 +177,7 @@
 }
 
 .workforce-intel-screen .wi-treemap-full>button.tiny>b {
-  font-size: 9px
+  font-size: 12px
 }
 
 @media(max-width:760px) {
@@ -220,7 +220,7 @@
 }
 
 .brand small {
-  font-size: 7px;
+  font-size: 12px;
   color: #82908d;
   letter-spacing: 1.1px;
   font-weight: 700;
@@ -261,7 +261,7 @@
   border-radius: 4px;
   background: #ffffffdc;
   color: #7f8d8a;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 500;
   white-space: nowrap
 }
@@ -336,19 +336,19 @@
   --ui-warning: #e7b864;
   --ui-danger: #f07c72;
   --ui-info: #7db8d7;
-  --category-airport-staff: #4fd1c5;
+  --category-operations-staff: #4fd1c5;
   --category-contractors: #5b9bf0;
-  --category-airline-crew: #a78bfa;
+  --category-field-team: #a78bfa;
   --category-security: #f5b544;
-  --category-ground-handling: #f27c6b;
+  --category-logistics: #f27c6b;
   --category-facilities: #67d4e8;
-  --category-airport-officials: #8bd36a;
+  --category-supervisors: #8bd36a;
   --category-emergency-response: #ec6fa8;
   --category-other: #7a8599;
   --category-unclassified: #4b5563
 }
 
-/* Runway Signal: deep-black, electric-blue and ember-orange, scoped to the
+/* Operations Signal: deep-black, electric-blue and ember-orange, scoped to the
    Operations Hub landing page. The app shell and detailed dashboard are untouched. */
 .operations-hub-standalone:has(> .operations-hub) {
   background: radial-gradient(ellipse 50% 32% at 92% 0%, rgba(48, 153, 255, .12), transparent 76%), radial-gradient(ellipse 34% 28% at 4% 8%, rgba(255, 92, 36, .075), transparent 74%), #080a0f !important;
@@ -377,13 +377,13 @@
   --glass: rgba(17, 21, 29, .92);
   --glass-strong: rgba(12, 15, 22, .94);
   --ice: #d9f2ff;
-  --category-airport-staff: #4fd1c5;
+  --category-operations-staff: #4fd1c5;
   --category-contractors: #5b9bf0;
-  --category-airline-crew: #a78bfa;
+  --category-field-team: #a78bfa;
   --category-security: #f5b544;
-  --category-ground-handling: #f27c6b;
+  --category-logistics: #f27c6b;
   --category-facilities: #67d4e8;
-  --category-airport-officials: #8bd36a;
+  --category-supervisors: #8bd36a;
   --category-emergency-response: #ec6fa8;
   --category-other: #7a8599;
   --category-unclassified: #4b5563;
@@ -537,7 +537,7 @@
   }
 }
 
-/* CIAL Operations Hub only: premium light theme. Keep the detailed dashboard,
+/* Operations Hub only: premium light theme. Keep the detailed dashboard,
    Workforce page, shell navigation, content and component geometry unchanged. */
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub {
   background: linear-gradient(135deg, #eef6fb 0%, #e4f1fa 100%) !important;
@@ -1923,7 +1923,7 @@
   background: rgba(230, 243, 252, .94);
   box-shadow: 0 10px 24px rgba(42, 83, 120, .16), inset 0 1px rgba(255, 255, 255, .86);
   color: #302c40;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.35;
   text-align: center;
   transform: translateX(-50%);
@@ -2289,7 +2289,7 @@
   border-radius: 9px;
   background: transparent;
   color: inherit;
-  font: 600 11px/1.2 "DM Sans", sans-serif;
+  font: 600 12px/1.2 "DM Sans", sans-serif;
   white-space: nowrap;
   transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease
 }
@@ -2744,7 +2744,7 @@
   }
 
   .wi-live-state {
-    font-size: 10px
+    font-size: 12px
   }
 }
 
@@ -3009,7 +3009,7 @@
   }
 
   .operations-hub-standalone:has(> .operations-hub)>.operations-hub .briefing-header-actions .theme-toggle-button>span:last-child {
-    font-size: 9px
+    font-size: 12px
   }
 }
 
@@ -4307,14 +4307,14 @@
 
 .operations-hub-standalone[data-theme="light"] .briefing-kpi>b {
   color: var(--aurora-ink) !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
   font-weight: 750 !important;
   margin-top: 6px !important;
 }
 
 .operations-hub-standalone[data-theme="light"] .briefing-kpi>small {
   color: var(--aurora-muted) !important;
-  font-size: 8.5px !important;
+  font-size: 12px !important;
   font-weight: 550 !important;
   line-height: 1.4 !important;
 }
@@ -5019,7 +5019,7 @@
 }
 
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-kpi>span {
-  font-size: 10px !important;
+  font-size: 12px !important;
   font-weight: 700 !important;
   letter-spacing: .055em !important;
 }

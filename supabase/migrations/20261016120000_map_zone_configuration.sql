@@ -1,4 +1,4 @@
--- Persistent airport zone configuration. This does not enable telemetry processing.
+-- Persistent workspace zone configuration. This does not enable telemetry processing.
 create table if not exists public.map_zones (
   id uuid primary key default gen_random_uuid(),
   map_id uuid not null references public.area_maps(id) on delete cascade,

@@ -1,0 +1,37 @@
+.product-attribution {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  color: var(--readable-secondary, #52655e);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.product-attribution strong {
+  color: #493852;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+[data-theme="dark"] .product-attribution {
+  color: #bccbc4;
+}
+
+[data-theme="dark"] .product-attribution strong {
+  color: #e2cea1;
+}
+
+.product-signature {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+.footer:has(> .product-attribution),
+.wi-footer:has(> .product-attribution) {
+  flex-wrap: wrap;
+  gap: 12px;
+}

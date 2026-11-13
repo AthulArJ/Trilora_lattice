@@ -1,6 +1,14 @@
 import { useState, type FormEvent, type ReactNode } from 'react';
-import { Eye, EyeOff, LockKeyhole, MapPin, Navigation, Radio, ShieldCheck } from 'lucide-react';
+import { Activity, ArrowRight, Box, Eye, EyeOff, Layers3, LockKeyhole, Mail, MapPin, ShieldCheck, X } from 'lucide-react';
 import { useAuth } from './AuthProvider';
+import BrandLogo from '../components/BrandLogo';
+
+const capabilities = [
+  { icon: MapPin, label: 'People' },
+  { icon: Box, label: 'Assets' },
+  { icon: Layers3, label: 'Zones' },
+  { icon: Activity, label: 'Operations' },
+];
 
 export function AuthGate({ children }: { children: ReactNode }) {
   const { configured, loading, session, signIn, setPassword: updatePassword } = useAuth();
@@ -15,6 +23,7 @@ export function AuthGate({ children }: { children: ReactNode }) {
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showSignupInfo, setShowSignupInfo] = useState(false);
 
   if (!configured || (session && !loading && !inviteFlow)) return <>{children}</>;
   if (loading) return <div className="auth-loading"><div className="auth-spinner"/><span>Checking your session…</span></div>;
@@ -40,19 +49,48 @@ export function AuthGate({ children }: { children: ReactNode }) {
     } finally { setBusy(false); }
   }
 
-  return <main className="login-shell"><div className="login-frame"><div className="login-layout">
-    <section className="login-story" aria-label="LATTICE airport operations">
-      <div className="login-brand"><img src="/brand/lattice-glossy-source.png" alt=""/><div><b>LATTICE</b><small>POWERED BY TRILORA</small></div></div>
-      <div className="login-story-copy"><span className="login-pilot-label"><i/> AIRPORT PILOT · TEST ENVIRONMENT</span><h1>One clear view of airport operations.</h1><p>Workforce visibility, tag health and incident response in one protected workspace.</p></div>
-      <div className="login-map-visual" aria-hidden="true"><div className="login-map-grid"/><div className="login-map-building building-one"><span/><span/><span/></div><div className="login-map-building building-two"><span/><span/></div><div className="login-map-corridor"/><div className="login-map-path"/><div className="login-map-anchor anchor-one"><Radio size={13}/></div><div className="login-map-anchor anchor-two"><Radio size={13}/></div><div className="login-map-worker"><MapPin size={14}/><span>Workforce visibility</span></div><span className="login-map-caption">ILLUSTRATIVE TEST AREA · NOT LIVE POSITION DATA</span></div>
-      <div className="login-story-foot"><ShieldCheck size={15}/><span>Invitation-only access <i/> Managed by your administrator</span></div>
+  return <main className="login-shell login-isometric">
+    <section className="login-overview" aria-labelledby="login-story-title">
+      <header className="login-brand"><BrandLogo/></header>
+      <div className="login-story">
+        <span className="login-eyebrow">CONNECTED OPERATIONS</span>
+        <h1 id="login-story-title">One connected view of <em>your operations</em></h1>
+        <p>People, assets, zones and events in one workspace.</p>
+      </div>
+      <figure className="login-campus"><img src="/brand/login-architectural-campus.png" alt="Architectural 3D isometric industrial campus with glass offices, manufacturing and warehouse interiors, a utility plant and landscaped courtyards"/></figure>
+      <ul className="login-capabilities" aria-label="Connected workspace capabilities">
+        {capabilities.map(({ icon: Icon, label }) => <li key={label}><Icon size={18} strokeWidth={1.7}/><span>{label}</span></li>)}
+      </ul>
+      <p className="login-overview-note">Clarity across your workspace. Confidence in every decision.</p>
     </section>
-    <section className="login-card" aria-labelledby="login-title">
-      <div className="login-card-top"><span className="login-lock"><LockKeyhole size={17}/></span><span className="login-secure-label">SECURE WORKSPACE</span></div>
-      <div className="login-intro"><h2 id="login-title">{inviteFlow ? 'Set your password' : 'Welcome back'}</h2><p>{inviteFlow ? `Create a password to activate ${session?.user.email ?? 'your invited account'}.` : 'Sign in with your invited account to continue.'}</p></div>
-      <form onSubmit={submit} className="login-form">{!inviteFlow && <label>Email address<input type="email" autoComplete="username" autoCapitalize="none" spellCheck={false} required placeholder="you@company.com" value={email} onChange={e => setEmail(e.target.value)}/></label>}<label>{inviteFlow ? 'New password' : 'Password'}<div className="password-field"><input type={showPassword ? 'text' : 'password'} autoComplete={inviteFlow ? 'new-password' : 'current-password'} minLength={inviteFlow ? 8 : undefined} required placeholder={inviteFlow ? 'Create a password (8+ characters)' : 'Enter your password'} value={password} onChange={e => setPassword(e.target.value)}/><button type="button" aria-label={showPassword ? 'Hide password' : 'Show password'} onClick={() => setShowPassword(v => !v)}>{showPassword ? <EyeOff size={16}/> : <Eye size={16}/>}</button></div></label>{inviteFlow && <label>Confirm password<input type="password" autoComplete="new-password" minLength={8} required placeholder="Re-enter your password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}/></label>}{error && <div className="login-error" role="alert">{error}</div>}<button className="login-submit" disabled={busy}>{busy ? inviteFlow ? 'Setting password…' : 'Signing in…' : inviteFlow ? 'Set password & continue' : 'Sign in'}<Navigation size={15}/></button></form>
-      <div className="login-invite-note"><ShieldCheck size={15}/><span><b>Access is invitation-only</b><small>Contact your administrator if you need an account.</small></span></div>
-      <div className="login-foot"><span>LATTICE · Powered by Trilora</span><span>Protected pilot</span></div>
+    <section className="login-access login-access-plum" data-theme="dark" aria-labelledby="login-title">
+      <div className="login-access-brand"><BrandLogo/></div>
+      <div className="login-access-art"><div className="login-art-visual" aria-hidden="true"><div className="login-art-aura"/><div className="login-sculpture"><div className="login-slab login-slab-back"/><div className="login-slab login-slab-middle"/><div className="login-slab login-slab-front"/><div className="login-sculpture-cap"/></div></div></div>
+      <div className="login-card">
+        <div className="login-card-heading"><span className="login-card-kicker">WORKSPACE ACCESS</span></div>
+        <h2 id="login-title">{inviteFlow ? 'Set up your workspace access' : 'Welcome to Lattice'}</h2>
+        <p className="login-introduction">{inviteFlow ? <>Create a password to activate <strong>{session?.user.email ?? 'your invited account'}</strong>.</> : 'Your operations, in focus.'}</p>
+        <form onSubmit={submit} className="login-form" aria-busy={busy}>
+          {!inviteFlow && <label htmlFor="login-email"><span>Email address</span><div className="login-input-field"><Mail size={18} aria-hidden="true"/><input id="login-email" type="email" autoComplete="username" autoCapitalize="none" spellCheck={false} required placeholder="you@company.com" value={email} onChange={event => setEmail(event.target.value)}/></div></label>}
+          <label htmlFor="login-password"><span>{inviteFlow ? 'New password' : 'Password'}</span><div className="login-input-field password-field"><LockKeyhole size={18} aria-hidden="true"/><input id="login-password" type={showPassword ? 'text' : 'password'} autoComplete={inviteFlow ? 'new-password' : 'current-password'} minLength={inviteFlow ? 8 : undefined} required placeholder={inviteFlow ? 'Create a password (8+ characters)' : 'Enter your password'} value={password} onChange={event => setPassword(event.target.value)}/><button type="button" aria-label={showPassword ? 'Hide password' : 'Show password'} aria-controls="login-password" aria-pressed={showPassword} onClick={() => setShowPassword(value => !value)}>{showPassword ? <EyeOff size={19}/> : <Eye size={19}/>}</button></div></label>
+          {inviteFlow && <label htmlFor="login-confirm-password"><span>Confirm password</span><div className="login-input-field"><LockKeyhole size={18} aria-hidden="true"/><input id="login-confirm-password" type="password" autoComplete="new-password" minLength={8} required placeholder="Re-enter your password" value={confirmPassword} onChange={event => setConfirmPassword(event.target.value)}/></div></label>}
+          {error && <div className="login-error" role="alert">{error}</div>}
+          <button className="login-submit" type="submit" disabled={busy}><span>{busy ? inviteFlow ? 'Setting password…' : 'Signing in…' : inviteFlow ? 'Set password & continue' : 'Sign in'}</span><span className="login-submit-arrow" aria-hidden="true"><ArrowRight size={19}/></span></button>
+        </form>
+        <div className="login-security"><ShieldCheck size={17} aria-hidden="true"/><span>Secure, invitation only workspace access</span></div>
+        {!inviteFlow && <div className="login-signup-area"><p>Need access to Lattice?</p><button className="login-signup-trigger" type="button" onClick={() => setShowSignupInfo(true)}><span>Sign up</span><ArrowRight size={14} aria-hidden="true"/></button></div>}
+      </div>
+      <footer className="login-access-footer"><span>Powered by</span><img src="/brand/trilora-login-lockup.png" alt="TRILORA — Integrated Intelligence"/></footer>
+      {showSignupInfo && <div className="signup-dialog-backdrop" onMouseDown={event => { if (event.target === event.currentTarget) setShowSignupInfo(false); }}>
+        <section className="signup-dialog" role="dialog" aria-modal="true" aria-labelledby="signup-dialog-title" aria-describedby="signup-dialog-description">
+          <button className="signup-dialog-close" type="button" aria-label="Close sign-up information" onClick={() => setShowSignupInfo(false)}><X size={18}/></button>
+          <span className="signup-dialog-kicker">LATTICE WORKSPACE</span>
+          <h3 id="signup-dialog-title">Request workspace access</h3>
+          <p id="signup-dialog-description">Lattice is an invitation only workspace. Need an account? Get in touch with our team and we’ll help you get started.</p>
+          <div className="signup-contact-row"><span>Developer / system admin</span><strong>Athul.Trilora@protonmail.com</strong></div>
+          <a className="signup-contact-row signup-support-link" href="mailto:support@trilora.net"><span>Support</span><strong><Mail size={15}/> support@trilora.net</strong><ArrowRight size={16}/></a>
+        </section>
+      </div>}
     </section>
-  </div></div><div className="login-caption">BLE AoA workforce visibility · Airport pilot</div></main>;
+  </main>;
 }

@@ -1,6 +1,6 @@
-# Airport RTLS Operations
+# LATTICE — Operations Intelligence
 
-LATTICE airport workforce and safety console, being prepared for Blueiot BLE AoA anchors and SOS smart badges. The current UI supports inventory and Supabase-backed operations data; live Blueiot positioning/SOS ingestion is not connected yet.
+LATTICE operations intelligence platform for workforce visibility and safety, being prepared for Blueiot BLE AoA anchors and SOS smart badges. The current UI supports inventory and Supabase-backed operations data; live Blueiot positioning/SOS ingestion is not connected yet.
 
 ## Apps
 
@@ -44,7 +44,7 @@ Canonical position event example (send to the API host, not the web app):
     "z": 1.1,
     "confidence": 0.93,
     "anchors_used": 4,
-    "map_reference": "terminal-level-1"
+    "map_reference": "main-operations-zone"
   }
 }
 ```

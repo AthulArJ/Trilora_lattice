@@ -56,11 +56,11 @@ async function requireAdmin(request: FastifyRequest, reply: FastifyReply) {
 }
 
 const sampleWorkers = [
-  { id: 'w-101', name: 'Amara Patel', role: 'Airside Operations', workforceCategory: 'airport_staff', tagId: 'TAG-2041', status: 'online', battery: 86, lastSeen: new Date().toISOString(), x: 31, y: 47 },
+  { id: 'w-101', name: 'Amara Patel', role: 'Operations Team', workforceCategory: 'airport_staff', tagId: 'TAG-2041', status: 'online', battery: 86, lastSeen: new Date().toISOString(), x: 31, y: 47 },
   { id: 'w-102', name: 'Ravi Menon', role: 'Facilities', workforceCategory: 'facilities', tagId: 'TAG-2048', status: 'online', battery: 62, lastSeen: new Date(Date.now() - 12_000).toISOString(), x: 68, y: 35 },
   { id: 'w-103', name: 'Leah Thomas', role: 'Security', workforceCategory: 'security', tagId: 'TAG-2052', status: 'stale', battery: 19, lastSeen: new Date(Date.now() - 95_000).toISOString(), x: 52, y: 69 },
 ];
-const sampleIncidents: Array<{ id: string; incidentCode: string; workerId: string; worker: string; tagId: string; status: string; createdAt: string; area: string; acknowledgedAt: string | null; acknowledgedBy: string | null; resolvedAt: string | null; resolvedBy: string | null; resolutionNote: string | null; simulated: boolean }> = [{ id: 'INC-0001', incidentCode: 'INC-0001', workerId: 'w-101', worker: 'Amara Patel', tagId: 'TAG-2041', status: 'active', createdAt: new Date(Date.now() - 4 * 60_000).toISOString(), area: 'Terminal · Checkpoint A', acknowledgedAt: null, acknowledgedBy: null, resolvedAt: null, resolvedBy: null, resolutionNote: null, simulated: true }];
+const sampleIncidents: Array<{ id: string; incidentCode: string; workerId: string; worker: string; tagId: string; status: string; createdAt: string; area: string; acknowledgedAt: string | null; acknowledgedBy: string | null; resolvedAt: string | null; resolvedBy: string | null; resolutionNote: string | null; simulated: boolean }> = [{ id: 'INC-0001', incidentCode: 'INC-0001', workerId: 'w-101', worker: 'Amara Patel', tagId: 'TAG-2041', status: 'active', createdAt: new Date(Date.now() - 4 * 60_000).toISOString(), area: 'North Zone · Area A', acknowledgedAt: null, acknowledgedBy: null, resolvedAt: null, resolvedBy: null, resolutionNote: null, simulated: true }];
 
 function fail(reply: FastifyReply, error: { message: string; code?: string }) {
   app.log.error({ err: error }, 'Database request failed');
@@ -182,7 +182,7 @@ async function loadIncidents() {
   return (data ?? []).map((row: any) => ({ id: row.id, incidentCode: row.incident_code, workerId: row.worker_id, worker: row.workers?.display_name ?? 'Unknown worker', tagId: row.tags?.label ?? 'Unassigned tag', status: row.status, createdAt: row.triggered_at, acknowledgedAt: row.acknowledged_at, acknowledgedBy: row.acknowledged_actor?.display_name || row.acknowledged_actor?.email || null, resolvedAt: row.resolved_at, resolvedBy: row.resolved_actor?.display_name || row.resolved_actor?.email || null, resolutionNote: row.resolution_note, area: row.area_maps?.name ?? 'Airport area', simulated: row.source_event?.simulator === true }));
 }
 
-app.get('/health', async () => ({ ok: true, service: 'airport-rtls-api', mode: authEnabled ? 'supabase' : 'sample' }));
+app.get('/health', async () => ({ ok: true, service: 'lattice-operations-api', mode: authEnabled ? 'supabase' : 'sample' }));
 app.get('/health/telemetry', async (_request, reply) => {
   const ingestConfigured = Boolean(process.env.RTLS_INGEST_TOKEN && process.env.RTLS_INGEST_TOKEN.length >= 32 && db);
   if (!db) return { ok: true, ingestConfigured, storageConfigured: false, lastReceivedAt: null, note: 'Supabase persistence is not configured' };
@@ -600,7 +600,7 @@ app.post<{ Body: { label?: string; provider_device_id?: string; model?: string; 
   const label = request.body?.label?.trim();
   const model = request.body?.model?.trim() || 'BA3000-t';
   if (!label) return reply.code(400).send({ error: 'label is required' });
-  if (!['BA3000-t','BA3000-p'].includes(model)) return reply.code(400).send({ error: 'Choose a supported Blueiot anchor model' });
+  if (!['BA3000-t','BA3000-p'].includes(model)) return reply.code(400).send({ error: 'Choose a supported anchor model' });
   const { data, error } = await db.from('anchors').insert({ provider: 'blueiot', label, model, provider_device_id: request.body.provider_device_id?.trim() || null, hardware_address: request.body.hardware_address?.trim() || null }).select().single();
   if (error) return fail(reply, error);
   await writeAudit((request as FastifyRequest & AuthContext).userId, 'anchor_registered', 'anchor', data.id, { label, model });

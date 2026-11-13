@@ -39,6 +39,29 @@
   display: none;
 }
 
+/* Keep photo-backed copy legible regardless of the surrounding theme. */
+.vv-hero__bg::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(4, 18, 31, .76), rgba(4, 18, 31, .42) 48%, rgba(4, 18, 31, .08) 78%);
+  pointer-events: none;
+}
+
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero :is(h1, .briefing-status-sentence, .briefing-date, .briefing-date time) {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .4) !important;
+}
+
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero .briefing-date-label {
+  color: #fff !important;
+  background: rgba(255, 255, 255, .12) !important;
+  border-color: rgba(255, 255, 255, .3) !important;
+  text-shadow: none !important;
+}
+
 .operations-hub-standalone .operations-hub .vv-hero__scene {
   position: absolute;
   z-index: 1;
