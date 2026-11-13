@@ -68,8 +68,8 @@ function App() {
   const [badges, setBadges] = useState<BadgeSummary[]>([]);
   const [dataSource, setDataSource] = useState('sample');
   const [theme, setTheme] = useState<AppTheme>(() => {
-    try { return window.localStorage.getItem(THEME_STORAGE_KEY) === 'light' ? 'light' : 'dark'; }
-    catch { return 'dark'; }
+    try { return window.localStorage.getItem(THEME_STORAGE_KEY) === 'dark' ? 'dark' : 'light'; }
+    catch { return 'light'; }
   });
   const [active, setActive] = useState('Operations Hub');
   const [selected, setSelected] = useState<Worker | null>(null);
