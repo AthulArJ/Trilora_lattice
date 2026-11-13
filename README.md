@@ -57,7 +57,36 @@ The built-in sample is an illustrative SVG under `apps/web/public/maps/`, not su
 
 ## Deployment direction
 
-Deploy the web app and API as separate Railway services. Use Supabase Auth + Postgres for hosted identity and data. A private positioning engine will need a secure outbound gateway or network link to the cloud API. Keep vendor-specific positioning and future vehicle telemetry behind separate backend adapters.
+### Cloudflare web deployment
+
+This repository is an npm workspace. Vite writes the frontend to **`apps/web/dist`**, not a root-level `dist` folder. The `dist/...` paths in Vite's build log are relative to `apps/web`. Build output is generated locally or in CI and is intentionally ignored by Git.
+
+For Cloudflare Workers connected to GitHub (the workflow that runs `wrangler deploy`), use:
+
+| Setting | Value |
+| --- | --- |
+| Root directory | Repository root (leave blank or use `/`) |
+| Build command | `npm run build:web` |
+| Deploy command | `npx wrangler deploy --config wrangler.jsonc` |
+
+The root `wrangler.jsonc` explicitly selects `apps/web/dist` as the static assets directory, so Wrangler does not try to auto-detect an application from the workspace root. It also enables the single-page application fallback. The configured Worker name is `trilora-lattice`; if your existing Cloudflare Worker has a different name, update `name` in `wrangler.jsonc` to match it before deploying.
+
+For a manual build, run these commands from the repository root:
+
+```sh
+npm ci
+npm run build:web
+```
+
+The upload folder is `apps/web/dist` (it contains `index.html`, `assets`, and the public assets). For Cloudflare Pages drag-and-drop, upload that folder. For Pages connected to GitHub, use the repository root, build command `npm run build:web`, and build output directory `apps/web/dist`; Pages does not use the Workers deploy command above.
+
+For a local CLI deployment to Workers after authenticating with Cloudflare, run `npm run deploy:web`. This rebuilds the frontend before uploading it. `npm run build` remains available to build both the API and web app.
+
+Set `VITE_API_URL` to the deployed API's HTTPS origin, plus `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`, in the hosting build environment **before** building. For a manual build, set them in `apps/web/.env`. Vite embeds these public values into the frontend bundle; changing them requires rebuilding. Without `VITE_API_URL`, the frontend defaults to `http://localhost:4000`, which will not reach your hosted API. Never put service-role keys or ingestion tokens in `VITE_*` variables.
+
+### API deployment
+
+Deploy `apps/api` separately to a Node.js host such as Railway. The static Cloudflare deployment only hosts the frontend; it does not run the Fastify API. Set the API's `WEB_ORIGIN` to the deployed frontend origin and configure the Supabase Auth URLs as described above. Use Supabase Auth + Postgres for hosted identity and data. A private positioning engine will need a secure outbound gateway or network link to the cloud API. Keep vendor-specific positioning and future vehicle telemetry behind separate backend adapters.
 
 ## Integration notes
 
