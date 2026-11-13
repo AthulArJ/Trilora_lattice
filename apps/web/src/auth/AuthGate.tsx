@@ -25,7 +25,8 @@ export function AuthGate({ children }: { children: ReactNode }) {
   const [showPassword, setShowPassword] = useState(false);
   const [showSignupInfo, setShowSignupInfo] = useState(false);
 
-  if (!configured || (session && !loading && !inviteFlow)) return <>{children}</>;
+  if (!configured && import.meta.env.DEV) return <>{children}</>;
+  if (configured && session && !loading && !inviteFlow) return <>{children}</>;
   if (loading) return <div className="auth-loading"><div className="auth-spinner"/><span>Checking your session…</span></div>;
 
   async function submit(event: FormEvent) {
@@ -71,11 +72,12 @@ export function AuthGate({ children }: { children: ReactNode }) {
         <h2 id="login-title">{inviteFlow ? 'Set up your workspace access' : 'Welcome to Lattice'}</h2>
         <p className="login-introduction">{inviteFlow ? <>Create a password to activate <strong>{session?.user.email ?? 'your invited account'}</strong>.</> : 'Your operations, in focus.'}</p>
         <form onSubmit={submit} className="login-form" aria-busy={busy}>
+          {!configured && <div className="login-error" role="alert">Workspace sign-in is unavailable because authentication is not configured. Contact your administrator.</div>}
           {!inviteFlow && <label htmlFor="login-email"><span>Email address</span><div className="login-input-field"><Mail size={18} aria-hidden="true"/><input id="login-email" type="email" autoComplete="username" autoCapitalize="none" spellCheck={false} required placeholder="you@company.com" value={email} onChange={event => setEmail(event.target.value)}/></div></label>}
           <label htmlFor="login-password"><span>{inviteFlow ? 'New password' : 'Password'}</span><div className="login-input-field password-field"><LockKeyhole size={18} aria-hidden="true"/><input id="login-password" type={showPassword ? 'text' : 'password'} autoComplete={inviteFlow ? 'new-password' : 'current-password'} minLength={inviteFlow ? 8 : undefined} required placeholder={inviteFlow ? 'Create a password (8+ characters)' : 'Enter your password'} value={password} onChange={event => setPassword(event.target.value)}/><button type="button" aria-label={showPassword ? 'Hide password' : 'Show password'} aria-controls="login-password" aria-pressed={showPassword} onClick={() => setShowPassword(value => !value)}>{showPassword ? <EyeOff size={19}/> : <Eye size={19}/>}</button></div></label>
           {inviteFlow && <label htmlFor="login-confirm-password"><span>Confirm password</span><div className="login-input-field"><LockKeyhole size={18} aria-hidden="true"/><input id="login-confirm-password" type="password" autoComplete="new-password" minLength={8} required placeholder="Re-enter your password" value={confirmPassword} onChange={event => setConfirmPassword(event.target.value)}/></div></label>}
           {error && <div className="login-error" role="alert">{error}</div>}
-          <button className="login-submit" type="submit" disabled={busy}><span>{busy ? inviteFlow ? 'Setting password…' : 'Signing in…' : inviteFlow ? 'Set password & continue' : 'Sign in'}</span><span className="login-submit-arrow" aria-hidden="true"><ArrowRight size={19}/></span></button>
+          <button className="login-submit" type="submit" disabled={busy || !configured}><span>{!configured ? 'Sign-in unavailable' : busy ? inviteFlow ? 'Setting password…' : 'Signing in…' : inviteFlow ? 'Set password & continue' : 'Sign in'}</span><span className="login-submit-arrow" aria-hidden="true"><ArrowRight size={19}/></span></button>
         </form>
         <div className="login-security"><ShieldCheck size={17} aria-hidden="true"/><span>Secure, invitation only workspace access</span></div>
         {!inviteFlow && <div className="login-signup-area"><p>Need access to Lattice?</p><button className="login-signup-trigger" type="button" onClick={() => setShowSignupInfo(true)}><span>Sign up</span><ArrowRight size={14} aria-hidden="true"/></button></div>}
