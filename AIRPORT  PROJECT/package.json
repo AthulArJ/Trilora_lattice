@@ -1,0 +1,13 @@
+{
+  "name": "airport-rtls-operations",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/web", "apps/api"],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c blue,green \"npm run dev -w @airport/api\" \"npm run dev -w @airport/web\"",
+    "build": "npm run build -w @airport/api && npm run build -w @airport/web",
+    "start:api": "npm run start -w @airport/api",
+    "start:web": "npm run preview -w @airport/web"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}

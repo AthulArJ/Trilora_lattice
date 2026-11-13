@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <radialGradient id="sageGlow" cx="0" cy="0" r="1" gradientTransform="matrix(430 0 0 380 110 470)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#cfe7dc" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#cfe7dc" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="creamGlow" cx="0" cy="0" r="1" gradientTransform="matrix(450 0 0 390 1810 500)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eee1c9" stop-opacity=".54"/>
+      <stop offset="1" stop-color="#eee1c9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="canopyLight" x1="0" y1="350" x2="1920" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#78a994" stop-opacity=".19"/>
+      <stop offset=".38" stop-color="#c8ddd2" stop-opacity=".055"/>
+      <stop offset=".7" stop-color="#eee1c9" stop-opacity=".045"/>
+      <stop offset="1" stop-color="#c1a77a" stop-opacity=".18"/>
+    </linearGradient>
+    <linearGradient id="canopyRim" x1="30" y1="420" x2="1900" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#668e80" stop-opacity=".18"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#ae956b" stop-opacity=".18"/>
+    </linearGradient>
+    <linearGradient id="lowerHaze" x1="960" y1="760" x2="960" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dce7df" stop-opacity="0"/>
+      <stop offset="1" stop-color="#cbd9cf" stop-opacity=".2"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="110" cy="470" rx="430" ry="380" fill="url(#sageGlow)"/>
+  <ellipse cx="1810" cy="500" rx="450" ry="390" fill="url(#creamGlow)"/>
+  <!-- A single continuous, soft architectural sweep; no symbols or point markers -->
+  <path d="M-230 770C-15 604 158 391 420 354c306-44 527 173 759 309 276 163 519 176 971 2" stroke="url(#canopyLight)" stroke-width="270" stroke-linecap="round"/>
+  <path d="M-230 770C-15 604 158 391 420 354c306-44 527 173 759 309 276 163 519 176 971 2" stroke="url(#canopyRim)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M-180 818C53 654 199 452 438 416c296-44 495 169 723 301 283 164 536 184 988 20" stroke="#ffffff" stroke-opacity=".1" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M0 953c308-31 526-18 742 8 175 21 280 21 438 0 232-31 462-37 740-8v127H0V953Z" fill="url(#lowerHaze)"/>
+</svg>

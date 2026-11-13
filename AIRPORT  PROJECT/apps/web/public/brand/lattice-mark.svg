@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 460" fill="none" role="img" aria-labelledby="title">
+  <title id="title">LATTICE mark</title>
+  <defs>
+    <linearGradient id="lattice" x1="80" y1="115" x2="380" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D8F5"/>
+      <stop offset=".48" stop-color="#3157FF"/>
+      <stop offset="1" stop-color="#D423F5"/>
+    </linearGradient>
+  </defs>
+  <path d="M313 103H158a61 61 0 0 0-61 61v139a61 61 0 0 0 61 61h145a61 61 0 0 0 61-61v-87" stroke="url(#lattice)" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="325" cy="104" r="37" fill="url(#lattice)"/>
+</svg>
