@@ -1,0 +1,1 @@
+window.__LATTICE_RUNTIME_CONFIG__ = window.__LATTICE_RUNTIME_CONFIG__ || {};
