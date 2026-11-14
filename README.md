@@ -82,7 +82,7 @@ The upload folder is `apps/web/dist` (it contains `index.html`, `assets`, and th
 
 For a local CLI deployment to Workers after authenticating with Cloudflare, run `npm run deploy:web`. This rebuilds the frontend before uploading it. `npm run build` remains available to build both the API and web app.
 
-Set `VITE_API_URL` to the deployed API's HTTPS origin in the hosting build environment. The Cloudflare Worker also reads `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` as runtime variables and serves them through `/runtime-config.js`; Wrangler preserves dashboard-managed variables on deploy. For local development or a manual static build, set the Supabase values in `apps/web/.env` instead. Only the Supabase project URL and a publishable/anon key are exposed to the browser. Never put service-role keys or ingestion tokens in `VITE_*` variables.
+Set `VITE_API_URL` to the deployed API's HTTPS origin in the hosting build environment. Cloudflare Worker deployments serve Supabase settings through the Worker `/runtime-config.js` route; Cloudflare Pages deployments use `functions/runtime-config.js` to read the same runtime variables. Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` (or `VITE_SUPABASE_PUBLISHABLE_KEY`) in the Cloudflare production environment, then redeploy so the Pages Function or Worker is included. Wrangler preserves dashboard-managed variables on Worker deploy. For local development or a manual static build, set the Supabase values in `apps/web/.env` instead. Only the Supabase project URL and a publishable/anon key are exposed to the browser. Never put service-role keys or ingestion tokens in `VITE_*` variables.
 
 ### API deployment
 
