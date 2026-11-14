@@ -2,12 +2,13 @@ import { useState, type FormEvent, type ReactNode } from 'react';
 import { Activity, ArrowRight, Box, Eye, EyeOff, Layers3, LockKeyhole, Mail, MapPin, ShieldCheck, X } from 'lucide-react';
 import { useAuth } from './AuthProvider';
 import BrandLogo from '../components/BrandLogo';
+import TechnologyFooter from './TechnologyFooter';
 
 const capabilities = [
   { icon: MapPin, label: 'People' },
   { icon: Box, label: 'Assets' },
   { icon: Layers3, label: 'Zones' },
-  { icon: Activity, label: 'Operations' },
+  { icon: Activity, label: 'Events' },
 ];
 
 export function AuthGate({ children }: { children: ReactNode }) {
@@ -56,13 +57,16 @@ export function AuthGate({ children }: { children: ReactNode }) {
       <div className="login-story">
         <span className="login-eyebrow">CONNECTED OPERATIONS</span>
         <h1 id="login-story-title">One connected view of <em>your operations</em></h1>
-        <p>People, assets, zones and events in one workspace.</p>
+        <p>Bring people, assets, zones and events together in one workspace</p>
       </div>
-      <figure className="login-campus"><img src="/brand/login-architectural-campus.png" alt="Architectural 3D isometric industrial campus with glass offices, manufacturing and warehouse interiors, a utility plant and landscaped courtyards"/></figure>
+      <figure className="login-campus"><img src="/brand/login-campus-premium-v3.png" alt="Detailed isometric operations campus with a sculpted glass headquarters, skybridges, robotic manufacturing, logistics docks and landscaped terraces"/></figure>
+      <div className="login-overview-footer">
       <ul className="login-capabilities" aria-label="Connected workspace capabilities">
         {capabilities.map(({ icon: Icon, label }) => <li key={label}><Icon size={18} strokeWidth={1.7}/><span>{label}</span></li>)}
       </ul>
-      <p className="login-overview-note">Clarity across your workspace. Confidence in every decision.</p>
+      <p className="login-overview-note">See the whole picture. Act with confidence.</p>
+      <TechnologyFooter/>
+      </div>
     </section>
     <section className="login-access login-access-plum" data-theme="dark" aria-labelledby="login-title">
       <div className="login-access-brand"><BrandLogo/></div>
@@ -80,7 +84,7 @@ export function AuthGate({ children }: { children: ReactNode }) {
           <button className="login-submit" type="submit" disabled={busy || !configured}><span>{!configured ? 'Sign-in unavailable' : busy ? inviteFlow ? 'Setting password…' : 'Signing in…' : inviteFlow ? 'Set password & continue' : 'Sign in'}</span><span className="login-submit-arrow" aria-hidden="true"><ArrowRight size={19}/></span></button>
         </form>
         <div className="login-security"><ShieldCheck size={17} aria-hidden="true"/><span>Secure, invitation only workspace access</span></div>
-        {!inviteFlow && <div className="login-signup-area"><p>Need access to Lattice?</p><button className="login-signup-trigger" type="button" onClick={() => setShowSignupInfo(true)}><span>Sign up</span><ArrowRight size={14} aria-hidden="true"/></button></div>}
+        {!inviteFlow && <div className="login-signup-area"><p>Need access to Lattice?</p><button className="login-signup-trigger" type="button" aria-haspopup="dialog" aria-label="Request access to Lattice" onClick={() => setShowSignupInfo(true)}><span>Request access</span><ArrowRight size={14} aria-hidden="true"/></button></div>}
       </div>
       <footer className="login-access-footer"><span>Powered by</span><img src="/brand/trilora-login-lockup.png" alt="TRILORA — Integrated Intelligence"/></footer>
       {showSignupInfo && <div className="signup-dialog-backdrop" onMouseDown={event => { if (event.target === event.currentTarget) setShowSignupInfo(false); }}>

@@ -1,0 +1,10 @@
+{
+  "cloudflare": "https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/public/logo.svg",
+  "supabase": "https://supabase.com/brand-assets/supabase-icon-green-transparent.svg",
+  "postgresql": "https://www.postgresql.org/media/img/about/press/elephant.png",
+  "react": "https://raw.githubusercontent.com/reactjs/react.dev/main/public/images/brand/logo_dark.svg",
+  "threejs": "https://raw.githubusercontent.com/mrdoob/three.js/dev/files/icon.svg",
+  "qgis": "https://qgis.org/styleguide/visual/qgis-icon128.svg",
+  "maplibre": "https://maplibre.org/img/maplibre-logos/maplibre-logo-square-for-light-bg.svg",
+  "postgis": "https://postgis.net/brand.svg"
+}

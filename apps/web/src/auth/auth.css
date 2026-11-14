@@ -377,3 +377,152 @@
   .login-access-footer { right: 20px; bottom: 20px; }
   .login-access-footer img { width: 108px; }
 }
+
+/* Original vendor marks, with no duplicate visible name captions. */
+.login-technology-footer { align-self: stretch; margin-top: 28px; padding-top: 16px; border-top: 1px solid #dbe3db; }
+.login-technology-heading { display: block; color: #68786f; font-size: 10px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
+.login-technology-logos { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); align-items: center; gap: 10px; list-style: none; margin: 12px 0 14px; padding: 0; }
+.login-technology-logos li { min-width: 0; }
+.login-technology-logos a { display: flex; align-items: center; justify-content: center; min-height: 40px; border-radius: 6px; transition: background .18s; }
+.login-technology-logos a:hover { background: #dbe3db66; }
+.login-technology-logos a:focus-visible, .login-technology-meta a:focus-visible, .login-technology-meta button:focus-visible { outline: 2px solid #39796b; outline-offset: 4px; }
+.login-technology-logos img { display: block; width: 38px; height: 30px; object-fit: contain; }
+.login-technology-logos li:first-child img { width: 54px; }
+.login-technology-meta { display: flex; align-items: center; justify-content: space-between; gap: 14px; color: #68786f; font-size: 10px; }
+.login-technology-meta nav { display: flex; gap: 12px; align-items: center; }
+.login-technology-meta a, .login-technology-meta button { color: inherit; font: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: none; }
+.login-technology-meta a:hover, .login-technology-meta button:hover { color: #253b33; text-decoration: underline; }
+.login-privacy-dialog { width: min(420px, calc(100vw - 40px)); padding: 0; border: 1px solid #c6aa7066; border-radius: 18px; color: #f1edf5; background: #282031; box-shadow: 0 24px 80px #0005; }
+.login-privacy-dialog::backdrop { background: #110d1bcc; backdrop-filter: blur(8px); }
+.login-privacy-content { padding: 36px 30px; position: relative; }
+.login-privacy-content h3 { margin: 18px 0 12px; font-size: 24px; letter-spacing: -.035em; }
+.login-privacy-content p { color: #c1b7cb; font-size: 14px; line-height: 1.65; }
+.login-privacy-content > a { color: #e7d8b9; font-size: 14px; }
+@media (max-width: 600px) { .login-technology-logos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* All login content participates in flow and remains reachable on short screens. */
+.login-shell.login-isometric { grid-template-columns: minmax(0, 1.4fr) minmax(380px, 1fr); align-items: stretch; }
+.login-shell.login-isometric, .login-shell.login-isometric * { box-sizing: border-box; }
+.login-shell.login-isometric .login-overview { justify-content: flex-start; padding: 24px clamp(28px, 4.8vw, 88px); overflow: visible; }
+.login-shell.login-isometric .login-brand { position: static; flex: none; width: min(350px, 100%); aspect-ratio: 5 / 1; margin: 0 0 clamp(20px, 3vh, 36px); }
+.login-shell.login-isometric .login-brand img { object-fit: contain; }
+.login-shell.login-isometric .login-story { width: 100%; max-width: 640px; }
+.login-shell.login-isometric .login-story h1 { font-size: clamp(29px, 2.6vw, 42px); }
+.login-shell.login-isometric .login-story > p { font-size: 14px !important; margin-top: 12px; }
+.login-shell.login-isometric .login-campus { width: min(100%, 760px); margin: 12px auto; flex: none; }
+.login-shell.login-isometric .login-campus img { width: 100%; height: clamp(180px, calc(100svh - 550px), 460px); max-height: none; object-fit: contain; }
+.login-shell.login-isometric .login-capabilities { padding-top: 14px; gap: 12px; display: flex; flex-wrap: wrap; }
+.login-shell.login-isometric .login-overview-note { margin-top: 10px; margin-bottom: 18px; }
+.login-shell.login-isometric .login-technology-footer { margin-top: auto; padding-top: 12px; }
+.login-shell.login-isometric .login-technology-logos { margin: 7px 0 8px; gap: 6px; }
+.login-shell.login-isometric .login-technology-logos a { min-height: 36px; }
+.login-shell.login-isometric .login-technology-logos img { height: 26px; width: 34px; }
+.login-shell.login-isometric .login-technology-logos li:first-child img { width: 48px; }
+.login-shell.login-isometric .login-access { padding: 24px clamp(24px, 3.8vw, 64px); justify-content: flex-start; }
+.login-shell.login-isometric .login-access-brand { position: static; width: 190px; max-width: 100%; align-self: flex-end; margin-bottom: 28px; flex: none; }
+.login-shell.login-isometric .login-access-art { height: 155px; margin: auto 0 12px; flex: none; }
+.login-shell.login-isometric .login-card { flex: none; margin-bottom: auto; max-width: 380px; }
+.login-shell.login-isometric .login-access-footer { position: static; align-self: flex-end; margin-top: 32px; flex: none; flex-wrap: wrap; justify-content: flex-end; }
+.login-shell.login-isometric .login-signup-area { flex-wrap: wrap; gap: 8px 12px; }
+.signup-dialog-backdrop { position: fixed; overflow-y: auto; }
+.signup-contact-row strong { overflow-wrap: anywhere; min-width: 0; }
+@media (min-width: 901px) and (max-height: 850px) {
+  .login-shell.login-isometric .login-brand { width: 290px; margin-bottom: 20px; }
+  .login-shell.login-isometric .login-overview, .login-shell.login-isometric .login-access { padding-top: 20px; padding-bottom: 20px; }
+  .login-shell.login-isometric .login-story h1 { font-size: clamp(28px, 2.5vw, 36px); }
+  .login-shell.login-isometric .login-eyebrow { margin-bottom: 8px; }
+  .login-shell.login-isometric .login-campus { margin-block: 8px; }
+  .login-shell.login-isometric .login-access-brand { width: 165px; margin-bottom: 18px; }
+  .login-shell.login-isometric .login-access-art { height: 104px; margin-bottom: 8px; }
+  .login-shell.login-isometric .login-art-visual { transform: scale(.72); transform-origin: center top; }
+  .login-shell.login-isometric .login-card h2 { font-size: 28px; }
+  .login-shell.login-isometric .login-introduction { margin-bottom: 18px; }
+  .login-shell.login-isometric .login-form { gap: 15px; }
+  .login-shell.login-isometric .login-security { margin-top: 16px; }
+  .login-shell.login-isometric .login-access-footer { margin-top: 24px; }
+}
+@media (max-width: 1100px) and (min-width: 901px) {
+  .login-shell.login-isometric { grid-template-columns: minmax(0, 1.1fr) minmax(360px, 1fr); }
+  .login-shell.login-isometric .login-overview { padding-inline: 28px; }
+  .login-shell.login-isometric .login-capabilities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .login-shell.login-isometric { grid-template-columns: minmax(0, 1fr); }
+  .login-shell.login-isometric .login-access { order: -1; min-height: 100svh; padding: 24px clamp(24px, 8vw, 80px); }
+  .login-shell.login-isometric .login-access::after { content: none; }
+  .login-shell.login-isometric .login-access-art { height: 135px; margin-top: 24px; }
+  .login-shell.login-isometric .login-art-visual { transform: scale(.85); transform-origin: center top; }
+  .login-shell.login-isometric .login-card { margin-bottom: 28px; }
+  .login-shell.login-isometric .login-access-footer { margin-top: auto; }
+  .login-shell.login-isometric .login-overview { padding: 32px clamp(24px, 8vw, 80px); }
+  .login-shell.login-isometric .login-campus { display: block; }
+  .login-shell.login-isometric .login-campus img { height: auto; max-height: 380px; }
+  .login-shell.login-isometric .login-capabilities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .login-shell.login-isometric .login-overview-note, .login-shell.login-isometric .login-eyebrow { display: block; }
+  .login-shell.login-isometric .login-technology-footer { margin-top: 24px; }
+}
+@media (max-width: 420px) {
+  .login-shell.login-isometric .login-security { font-size: 11px; }
+  .login-shell.login-isometric .login-signup-area > p { font-size: 11px; }
+  .login-shell.login-isometric .login-signup-trigger { font-size: 12px; padding-inline: 10px; }
+  .login-shell.login-isometric .login-access-brand { width: 155px; }
+}
+@media (min-width: 1101px) and (min-height: 700px) and (max-height: 850px) {
+  .login-shell.login-isometric .login-campus img { height: clamp(220px, calc(100svh - 480px), 370px); }
+}
+
+/* A compact login column and a single, grouped overview footer. */
+@media (min-width: 901px) {
+  .login-shell.login-isometric { grid-template-columns: minmax(0, 1fr) clamp(400px, 34vw, 560px); }
+  .login-shell.login-isometric .login-access { padding-inline: clamp(24px, 3vw, 48px); }
+  .login-shell.login-isometric .login-campus { width: min(100%, 900px); margin-block: auto; padding-block: 16px; }
+  .login-shell.login-isometric .login-campus img { height: clamp(180px, calc(100svh - 500px), 520px); }
+}
+.login-overview-footer { width: 100%; margin-top: auto; }
+.login-shell.login-isometric .login-overview-footer .login-capabilities { justify-content: flex-start; gap: 12px 36px; padding-top: 14px; margin: 0; }
+.login-shell.login-isometric .login-overview-footer .login-overview-note { margin: 8px 0 0; }
+.login-shell.login-isometric .login-overview-footer .login-technology-footer { margin-top: 16px; padding-top: 12px; }
+.login-shell.login-isometric .login-technology-logos { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 6px 16px; }
+.login-technology-logos li { flex: none; }
+.login-shell.login-isometric .login-technology-logos a { width: 40px; min-height: 36px; }
+.login-shell.login-isometric .login-technology-logos li:first-child a { width: 54px; }
+@media (max-width: 1100px) and (min-width: 901px) {
+  .login-shell.login-isometric .login-overview-footer .login-capabilities { display: flex; gap: 12px 24px; }
+  .login-shell.login-isometric .login-campus img { height: clamp(180px, calc(100svh - 520px), 400px); }
+}
+@media (max-width: 900px) {
+  .login-overview-footer { margin-top: 16px; }
+  .login-shell.login-isometric .login-overview-footer .login-capabilities { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .login-shell.login-isometric .login-technology-logos { gap: 6px 14px; }
+}
+
+.login-shell.login-isometric .login-technology-heading { text-align: center; }
+.login-shell.login-isometric .login-technology-logos { justify-content: center; }
+
+/* Architectural spatial canvas: paint-only layers contained to the ivory panel. */
+.login-shell.login-isometric .login-overview {
+  background:
+    radial-gradient(ellipse at 50% 51%, #ecd9ac30 0%, #f5f3eb00 52%),
+    radial-gradient(ellipse at 96% 12%, #d8c6a018, transparent 44%),
+    linear-gradient(125deg, #f7f5ef, #f5f3eb 55%, #f0eee5);
+}
+.login-shell.login-isometric .login-overview::before {
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(#9b89690c 1px, transparent 1px), linear-gradient(90deg, #9b89690c 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(90deg, #0009, transparent 22%, transparent 76%, #0008);
+}
+.login-shell.login-isometric .login-overview::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url('/brand/login-survey-contours.svg') center / 100% 100% no-repeat;
+}
+@media (max-width: 900px) {
+  .login-shell.login-isometric .login-overview::after { opacity: .6; }
+  .login-shell.login-isometric .login-overview::before { background-size: 40px 40px; opacity: .7; }
+}
