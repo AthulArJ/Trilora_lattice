@@ -171,12 +171,11 @@
   width: 32px;
   pointer-events: none;
   background: linear-gradient(90deg,
-    #f4f6f2 0%,
-    #f4f6f2 12%,
-    #eee9dc 27%,
-    #d9cba9 43%,
-    #a48a91 63%,
-    #55405f 82%,
+    #d8c6a000 0%,
+    #d8c6a020 18%,
+    #d8c6a060 35%,
+    #a48a9180 50%,
+    #55405fcc 72%,
     #211a2b 100%);
 }
 .login-access-brand { position: absolute; top: 28px; right: 28px; width: 210px; max-width: calc(100% - 56px); }
@@ -526,3 +525,7 @@
   .login-shell.login-isometric .login-overview::after { opacity: .6; }
   .login-shell.login-isometric .login-overview::before { background-size: 40px 40px; opacity: .7; }
 }
+
+/* Quieter technology marks with a little more space below the heading. */
+.login-shell.login-isometric .login-technology-logos img { width: 28px; height: 22px; transform: translateY(5px); }
+.login-shell.login-isometric .login-technology-logos li:first-child img { width: 40px; }
