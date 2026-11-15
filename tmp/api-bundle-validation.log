@@ -1,0 +1,62 @@
+
+--- 2026-11-15T20:04:24.186Z debug
+🪵  Writing logs to "C:\Users\athul\Documents\Codex\CIAL PROJECT\Trilora_lattice\tmp\api-bundle-validation.log"
+---
+
+--- 2026-11-15T20:04:24.186Z debug
+.env file not found at "C:\Users\athul\Documents\Codex\CIAL PROJECT\Trilora_lattice\.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-11-15T20:04:24.229Z log
+
+ ⛅️ wrangler 4.162.0
+────────────────────
+---
+
+--- 2026-11-15T20:04:24.272Z debug
+Metrics dispatcher: Dispatching disabled - would have sent {"deviceId":"dc93c2ca-ab6a-47ff-9deb-b9f2e7bd46d6","event":"wrangler command started","timestamp":1794773064272,"properties":{"amplitude_session_id":1794773064239,"amplitude_event_id":0,"wranglerVersion":"4.162.0","wranglerMajorVersion":4,"wranglerMinorVersion":162,"wranglerPatchVersion":0,"osPlatform":"Windows","osVersion":"Windows 11 Home Single Language","nodeVersion":24,"isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"agent":"codex","argsUsed":["config","dryRun","outdir"],"argsCombination":"config, dryRun, outdir","sanitizedCommand":"deploy","sanitizedArgs":{"dryRun":true,"path":null},"currentAgentSkillsInstalled":null}}.
+---
+
+--- 2026-11-15T20:04:24.933Z log
+Total Upload: 2446.88 KiB / gzip: 436.68 KiB
+---
+
+--- 2026-11-15T20:04:24.944Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2026-11-15T20:04:24.944Z log
+Binding                                                    Resource                  
+---
+
+--- 2026-11-15T20:04:24.945Z log
+env.NODE_ENV ("production")                                Environment Variable      
+---
+
+--- 2026-11-15T20:04:24.945Z log
+env.CLOUDFLARE_WORKER ("true")                             Environment Variable      
+---
+
+--- 2026-11-15T20:04:24.945Z log
+env.PORT ("4000")                                          Environment Variable      
+---
+
+--- 2026-11-15T20:04:24.945Z log
+env.WEB_ORIGIN ("https://lattice.trilora.net")             Environment Variable      
+---
+
+--- 2026-11-15T20:04:24.945Z log
+
+---
+
+--- 2026-11-15T20:04:24.945Z log
+--dry-run: exiting now.
+---
+
+--- 2026-11-15T20:04:24.951Z debug
+Metrics dispatcher: Dispatching disabled - would have sent {"deviceId":"dc93c2ca-ab6a-47ff-9deb-b9f2e7bd46d6","event":"deploy worker script","timestamp":1794773064951,"properties":{"amplitude_session_id":1794773064946,"amplitude_event_id":0,"wranglerVersion":"4.162.0","wranglerMajorVersion":4,"wranglerMinorVersion":162,"wranglerPatchVersion":0,"osPlatform":"Windows","osVersion":"Windows 11 Home Single Language","nodeVersion":24,"isFirstUsage":false,"configFileType":"none","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"agent":"codex","category":"Workers","os":"win32:x64","usesTypeScript":false,"durationMs":620,"currentAgentSkillsInstalled":null}}.
+---
+
+--- 2026-11-15T20:04:24.954Z debug
+Metrics dispatcher: Dispatching disabled - would have sent {"deviceId":"dc93c2ca-ab6a-47ff-9deb-b9f2e7bd46d6","event":"wrangler command completed","timestamp":1794773064954,"properties":{"amplitude_session_id":1794773064239,"amplitude_event_id":1,"wranglerVersion":"4.162.0","wranglerMajorVersion":4,"wranglerMinorVersion":162,"wranglerPatchVersion":0,"osPlatform":"Windows","osVersion":"Windows 11 Home Single Language","nodeVersion":24,"isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"agent":"codex","argsUsed":["config","dryRun","outdir"],"argsCombination":"config, dryRun, outdir","sanitizedCommand":"deploy","sanitizedArgs":{"dryRun":true,"path":null},"durationMs":762,"currentAgentSkillsInstalled":null}}.
+---

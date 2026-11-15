@@ -1,0 +1,1514 @@
+
+--- 2026-11-15T19:56:29.368Z debug
+🪵  Writing logs to "C:\Users\athul\Documents\Codex\CIAL PROJECT\Trilora_lattice\tmp\api-runtime-validation.log"
+---
+
+--- 2026-11-15T19:56:29.368Z debug
+setting config
+---
+
+--- 2026-11-15T19:56:29.369Z debug
+Updating config... undefined undefined
+---
+
+--- 2026-11-15T19:56:29.560Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-11-15T19:56:29.561Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2026-11-15T19:56:29.561Z log
+Binding                                                                         Resource                  Mode
+---
+
+--- 2026-11-15T19:56:29.561Z log
+env.NODE_ENV ("production")                                                     Environment Variable      local
+---
+
+--- 2026-11-15T19:56:29.561Z log
+env.CLOUDFLARE_WORKER ("true")                                                  Environment Variable      local
+---
+
+--- 2026-11-15T19:56:29.561Z log
+env.PORT ("4000")                                                               Environment Variable      local
+---
+
+--- 2026-11-15T19:56:29.561Z log
+env.WEB_ORIGIN ("https://lattice.trilora.net")                                  Environment Variable      local
+---
+
+--- 2026-11-15T19:56:29.561Z log
+env.SUPABASE_URL ("https://hoqttcnmsxlbvpfritbf.supabase...")                   Environment Variable      local
+---
+
+--- 2026-11-15T19:56:29.561Z log
+env.SUPABASE_SERVICE_ROLE_KEY ("sb_secret_MOKNLDm-7EwacrYKFg05pg_REoU...")      Environment Variable      local
+---
+
+--- 2026-11-15T19:56:29.561Z log
+
+---
+
+--- 2026-11-15T19:56:30.135Z warn
+▲ [WARNING] Scheduled Workers are not automatically triggered during local development.
+
+  To manually trigger a scheduled event, run:
+    curl "http://127.0.0.1:8788/cdn-cgi/local/scheduled"
+  For more details, see https://developers.cloudflare.com/workers/configuration/cron-triggers/#test-cron-triggers-locally
+
+
+---
+
+--- 2026-11-15T19:56:32.249Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2026-11-15T19:56:32.250Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2026-11-15T19:56:32.261Z log
+⎔ Starting local server...
+---
+
+--- 2026-11-15T19:56:32.293Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadStart"}
+---
+
+--- 2026-11-15T19:56:32.799Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadComplete","proxyData":{"userWorkerUrl":{"protocol":"http:","hostname":"127.0.0.1","port":"51286"},"userWorkerInspectorUrl":{"protocol":"ws:","hostname":"127.0.0.1","port":"51287","pathname":"/core:user:trilora-lattice-api"},"userWorkerInnerUrlOverrides":{"protocol":"http:"},"headers":{"MF-Proxy-Shared-Secret":"c5bfddae-d227-4048-bc8e-948019182e89"},"liveReload":false,"proxyLogsToController":false}}
+---
+
+--- 2026-11-15T19:56:32.807Z debug
+[InspectorProxyWorker] reconnectRuntimeWebSocket
+---
+
+--- 2026-11-15T19:56:32.808Z debug
+[InspectorProxyWorker] NEW RUNTIME WEBSOCKET http://127.0.0.1:51287/core:user:trilora-lattice-api
+---
+
+--- 2026-11-15T19:56:32.809Z debug
+[InspectorProxyWorker] SEND TO DEVTOOLS {"method":"Runtime.executionContextsCleared"}
+---
+
+--- 2026-11-15T19:56:32.816Z debug
+[InspectorProxyWorker] RUNTIME WEBSOCKET OPENED
+---
+
+--- 2026-11-15T19:56:32.817Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.enable","id":100000001}
+---
+
+--- 2026-11-15T19:56:32.908Z log
+AVVIO: exec root
+
+---
+
+--- 2026-11-15T19:56:32.909Z log
+AVVIO: enqueue root bound _after
+
+---
+
+--- 2026-11-15T19:56:32.909Z log
+AVVIO: enqueue root @fastify/cors
+
+---
+
+--- 2026-11-15T19:56:32.909Z log
+AVVIO: thenify
+
+---
+
+--- 2026-11-15T19:56:32.909Z log
+AVVIO: loadedSoFar root
+
+---
+
+--- 2026-11-15T19:56:32.909Z log
+AVVIO: enqueue root bound _after
+
+---
+
+--- 2026-11-15T19:56:32.909Z log
+AVVIO: exec bound _after
+
+---
+
+--- 2026-11-15T19:56:32.909Z log
+AVVIO: setting up timeout bound _after 10000
+
+---
+
+--- 2026-11-15T19:56:32.909Z log
+AVVIO: setting up ready timeout  10000
+
+---
+
+--- 2026-11-15T19:56:32.945Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.executionContextCreated',
+  params: {
+    context: {
+      id: 480604929,
+      origin: '',
+      name: 'Worker',
+      uniqueId: '-2084791724384740091.-4917942697614944229'
+    }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.954Z error
+X [ERROR] Uncaught EvalError: Code generation from strings disallowed for this context
+
+      at new Function (<anonymous>)
+      at HandlerStorage._compileCreateParamsObject (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:33868:16)
+      at HandlerStorage.addHandler (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:33832:37)
+      at Node.addRoute (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:34012:29)
+      at Router._on (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:35397:19)
+      at Router.on (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:35256:14)
+      at Router.all (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:35890:12)
+      at Object._setNotFoundHandler (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:36726:16)
+      at file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:36701:31
+      at Object._encapsulateThreeParam (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:1601:11) 
+
+
+---
+
+--- 2026-11-15T19:56:32.956Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772592855,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.957Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772592857,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.958Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772592857,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.959Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772592857,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.960Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772592857,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.961Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772592857,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.962Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772592857,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.963Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772592858,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.963Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772592858,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.964Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.exceptionThrown',
+  params: {
+    timestamp: 1794772592893,
+    exceptionDetails: {
+      exceptionId: 1,
+      text: 'Uncaught EvalError: Code generation from strings disallowed for this context\n' +
+        '    at new Function (<anonymous>)\n' +
+        '    at HandlerStorage._compileCreateParamsObject (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:33868:16)\n' +
+        '    at HandlerStorage.addHandler (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:33832:37)\n' +
+        '    at Node.addRoute (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:34012:29)\n' +
+        '    at Router._on (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:35397:19)\n' +
+        '    at Router.on (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:35256:14)\n' +
+        '    at Router.all (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:35890:12)\n' +
+        '    at Object._setNotFoundHandler (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:36726:16)\n' +
+        '    at file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:36701:31\n' +
+        '    at Object._encapsulateThreeParam (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-vWwwLx/api.js:1601:11)',
+      lineNumber: 0,
+      columnNumber: -2,
+      url: 'undefined',
+      executionContextId: 480604929
+    }
+  }
+}
+---
+
+--- 2026-11-15T19:56:32.965Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000001, result: {} }
+---
+
+--- 2026-11-15T19:56:42.827Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.getIsolateId","id":100000002}
+---
+
+--- 2026-11-15T19:56:42.828Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000002, result: { id: '395935712e81a55a' } }
+---
+
+--- 2026-11-15T19:56:42.873Z log
+AVVIO: timed out bound _after
+
+---
+
+--- 2026-11-15T19:56:42.873Z log
+AVVIO: exec errored bound _after
+
+---
+
+--- 2026-11-15T19:56:42.874Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602872,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:42.876Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602873,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:42.969Z log
+AVVIO: finish bound _after FastifyError [Error]: Plugin did not start in time: 'bound _after'. You may have forgotten to call 'done' function or to resolve a Promise
+    at null.<anonymous> (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/node_modules/avvio/lib/plugin.js:127:31) {
+  code: 'AVV_ERR_PLUGIN_EXEC_TIMEOUT',
+  statusCode: 500,
+  fn: [Function: bound _after]
+}
+
+---
+
+--- 2026-11-15T19:56:42.971Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602880,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:42.972Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602880,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:42.973Z log
+AVVIO: loaded bound _after
+
+---
+
+--- 2026-11-15T19:56:42.973Z log
+AVVIO: skipping loading of plugin as instance errored and it is not an after @fastify/cors
+
+---
+
+--- 2026-11-15T19:56:42.973Z log
+AVVIO: finish @fastify/cors undefined
+
+---
+
+--- 2026-11-15T19:56:42.973Z log
+AVVIO: check @fastify/cors 0 0 null
+
+---
+
+--- 2026-11-15T19:56:42.973Z log
+AVVIO: loaded @fastify/cors
+
+---
+
+--- 2026-11-15T19:56:42.973Z log
+AVVIO: exec bound _after
+
+---
+
+--- 2026-11-15T19:56:42.973Z log
+AVVIO: setting up timeout bound _after 10000
+
+---
+
+--- 2026-11-15T19:56:42.973Z log
+AVVIO: setting up ready timeout  10000
+
+---
+
+--- 2026-11-15T19:56:43.044Z log
+AVVIO: rejecting promise root FastifyError [Error]: Plugin did not start in time: 'bound _after'. You may have forgotten to call 'done' function or to resolve a Promise
+    at null.<anonymous> (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/node_modules/avvio/lib/plugin.js:127:31) {
+  code: 'AVV_ERR_PLUGIN_EXEC_TIMEOUT',
+  statusCode: 500,
+  fn: [Function: bound _after]
+}
+
+---
+
+--- 2026-11-15T19:56:43.044Z log
+AVVIO: exec errored bound _after
+
+---
+
+--- 2026-11-15T19:56:43.109Z log
+AVVIO: finish bound _after FastifyError [Error]: Plugin did not start in time: 'bound _after'. You may have forgotten to call 'done' function or to resolve a Promise
+    at null.<anonymous> (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/node_modules/avvio/lib/plugin.js:127:31) {
+  code: 'AVV_ERR_PLUGIN_EXEC_TIMEOUT',
+  statusCode: 500,
+  fn: [Function: bound _after]
+}
+
+---
+
+--- 2026-11-15T19:56:43.109Z log
+AVVIO: loaded bound _after
+
+---
+
+--- 2026-11-15T19:56:43.111Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602881,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.112Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602882,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.113Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602882,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.114Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602882,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.115Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602882,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.116Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602882,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.614Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602883,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.614Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602883,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.615Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602884,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.616Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602884,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.616Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 480604929,
+    timestamp: 1794772602884,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T19:56:43.670Z debug
+DevEnv teardown beginning...
+---
+
+--- 2026-11-15T19:56:43.670Z debug
+ConfigController teardown beginning...
+---
+
+--- 2026-11-15T19:56:43.670Z debug
+BundlerController teardown beginning...
+---
+
+--- 2026-11-15T19:56:43.671Z debug
+LocalRuntimeController teardown beginning...
+---
+
+--- 2026-11-15T19:56:43.671Z log
+⎔ Shutting down local server...
+---
+
+--- 2026-11-15T19:56:43.672Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2026-11-15T19:56:43.672Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2026-11-15T19:56:43.672Z debug
+ProxyController teardown beginning...
+---
+
+--- 2026-11-15T19:56:43.672Z debug
+ConfigController teardown complete
+---
+
+--- 2026-11-15T19:56:43.713Z debug
+ProxyController teardown complete
+---
+
+--- 2026-11-15T19:56:43.728Z debug
+BundlerController teardown complete
+---
+
+--- 2026-11-15T19:56:43.787Z debug
+LocalRuntimeController teardown complete
+---
+
+--- 2026-11-15T19:56:43.788Z debug
+DevEnv teardown complete
+---
+
+--- 2026-11-15T20:01:21.127Z debug
+🪵  Writing logs to "C:\Users\athul\Documents\Codex\CIAL PROJECT\Trilora_lattice\tmp\api-runtime-validation.log"
+---
+
+--- 2026-11-15T20:01:21.127Z debug
+setting config
+---
+
+--- 2026-11-15T20:01:21.128Z debug
+Updating config... undefined undefined
+---
+
+--- 2026-11-15T20:01:21.170Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-11-15T20:01:21.171Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2026-11-15T20:01:21.171Z log
+Binding                                                                         Resource                  Mode
+---
+
+--- 2026-11-15T20:01:21.171Z log
+env.NODE_ENV ("production")                                                     Environment Variable      local
+---
+
+--- 2026-11-15T20:01:21.171Z log
+env.CLOUDFLARE_WORKER ("true")                                                  Environment Variable      local
+---
+
+--- 2026-11-15T20:01:21.171Z log
+env.PORT ("4000")                                                               Environment Variable      local
+---
+
+--- 2026-11-15T20:01:21.171Z log
+env.WEB_ORIGIN ("https://lattice.trilora.net")                                  Environment Variable      local
+---
+
+--- 2026-11-15T20:01:21.171Z log
+env.SUPABASE_URL ("https://hoqttcnmsxlbvpfritbf.supabase...")                   Environment Variable      local
+---
+
+--- 2026-11-15T20:01:21.171Z log
+env.SUPABASE_SERVICE_ROLE_KEY ("sb_secret_MOKNLDm-7EwacrYKFg05pg_REoU...")      Environment Variable      local
+---
+
+--- 2026-11-15T20:01:21.171Z log
+
+---
+
+--- 2026-11-15T20:01:21.460Z warn
+▲ [WARNING] Scheduled Workers are not automatically triggered during local development.
+
+  To manually trigger a scheduled event, run:
+    curl "http://127.0.0.1:8788/cdn-cgi/local/scheduled"
+  For more details, see https://developers.cloudflare.com/workers/configuration/cron-triggers/#test-cron-triggers-locally
+
+
+---
+
+--- 2026-11-15T20:01:21.729Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2026-11-15T20:01:21.730Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2026-11-15T20:01:21.734Z log
+⎔ Starting local server...
+---
+
+--- 2026-11-15T20:01:21.741Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadStart"}
+---
+
+--- 2026-11-15T20:01:22.138Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadComplete","proxyData":{"userWorkerUrl":{"protocol":"http:","hostname":"127.0.0.1","port":"49212"},"userWorkerInspectorUrl":{"protocol":"ws:","hostname":"127.0.0.1","port":"49213","pathname":"/core:user:trilora-lattice-api"},"userWorkerInnerUrlOverrides":{"protocol":"http:"},"headers":{"MF-Proxy-Shared-Secret":"67c893d5-926d-48ed-9ada-3a50d781966d"},"liveReload":false,"proxyLogsToController":false}}
+---
+
+--- 2026-11-15T20:01:22.141Z debug
+[InspectorProxyWorker] reconnectRuntimeWebSocket
+---
+
+--- 2026-11-15T20:01:22.142Z debug
+[InspectorProxyWorker] NEW RUNTIME WEBSOCKET http://127.0.0.1:49213/core:user:trilora-lattice-api
+---
+
+--- 2026-11-15T20:01:22.143Z debug
+[InspectorProxyWorker] SEND TO DEVTOOLS {"method":"Runtime.executionContextsCleared"}
+---
+
+--- 2026-11-15T20:01:22.145Z debug
+[InspectorProxyWorker] RUNTIME WEBSOCKET OPENED
+---
+
+--- 2026-11-15T20:01:22.161Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.enable","id":100000001}
+---
+
+--- 2026-11-15T20:01:22.191Z log
+AVVIO: exec root
+
+---
+
+--- 2026-11-15T20:01:22.192Z log
+AVVIO: enqueue root bound _after
+
+---
+
+--- 2026-11-15T20:01:22.192Z log
+AVVIO: enqueue root @fastify/cors
+
+---
+
+--- 2026-11-15T20:01:22.192Z log
+AVVIO: thenify
+
+---
+
+--- 2026-11-15T20:01:22.192Z log
+AVVIO: loadedSoFar root
+
+---
+
+--- 2026-11-15T20:01:22.192Z log
+AVVIO: enqueue root bound _after
+
+---
+
+--- 2026-11-15T20:01:22.192Z log
+AVVIO: exec bound _after
+
+---
+
+--- 2026-11-15T20:01:22.192Z log
+AVVIO: setting up timeout bound _after 10000
+
+---
+
+--- 2026-11-15T20:01:22.192Z log
+AVVIO: setting up ready timeout  10000
+
+---
+
+--- 2026-11-15T20:01:22.234Z error
+X [ERROR] Uncaught EvalError: Code generation from strings disallowed for this context
+
+      at new Function (<anonymous>)
+      at HandlerStorage._compileCreateParamsObject (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:33868:16)
+      at HandlerStorage.addHandler (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:33832:37)
+      at Node.addRoute (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:34012:29)
+      at Router._on (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:35397:19)
+      at Router.on (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:35256:14)
+      at Router.all (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:35890:12)
+      at Object._setNotFoundHandler (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:36726:16)
+      at file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:36701:31
+      at Object._encapsulateThreeParam (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:1601:11) 
+
+
+---
+
+--- 2026-11-15T20:01:22.236Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.executionContextCreated',
+  params: {
+    context: {
+      id: 449964641,
+      origin: '',
+      name: 'Worker',
+      uniqueId: '-5189210607393431943.5904241544619031091'
+    }
+  }
+}
+---
+
+--- 2026-11-15T20:01:22.238Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772882177,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:22.239Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772882178,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:22.240Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772882178,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:22.240Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772882178,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:22.241Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772882179,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:22.242Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772882180,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:22.243Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.exceptionThrown',
+  params: {
+    timestamp: 1794772882212,
+    exceptionDetails: {
+      exceptionId: 1,
+      text: 'Uncaught EvalError: Code generation from strings disallowed for this context\n' +
+        '    at new Function (<anonymous>)\n' +
+        '    at HandlerStorage._compileCreateParamsObject (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:33868:16)\n' +
+        '    at HandlerStorage.addHandler (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:33832:37)\n' +
+        '    at Node.addRoute (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:34012:29)\n' +
+        '    at Router._on (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:35397:19)\n' +
+        '    at Router.on (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:35256:14)\n' +
+        '    at Router.all (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:35890:12)\n' +
+        '    at Object._setNotFoundHandler (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:36726:16)\n' +
+        '    at file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:36701:31\n' +
+        '    at Object._encapsulateThreeParam (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/.wrangler/tmp/dev-JCfJVB/api.js:1601:11)',
+      lineNumber: 0,
+      columnNumber: -2,
+      url: 'undefined',
+      executionContextId: 449964641
+    }
+  }
+}
+---
+
+--- 2026-11-15T20:01:22.243Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000001, result: {} }
+---
+
+--- 2026-11-15T20:01:22.244Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772882179,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:22.245Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772882179,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:22.247Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772882179,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.159Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.getIsolateId","id":100000002}
+---
+
+--- 2026-11-15T20:01:32.161Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000002, result: { id: '140105fb924271c2' } }
+---
+
+--- 2026-11-15T20:01:32.188Z log
+AVVIO: timed out bound _after
+
+---
+
+--- 2026-11-15T20:01:32.188Z log
+AVVIO: exec errored bound _after
+
+---
+
+--- 2026-11-15T20:01:32.189Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892188,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.190Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892188,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.282Z log
+AVVIO: finish bound _after FastifyError [Error]: Plugin did not start in time: 'bound _after'. You may have forgotten to call 'done' function or to resolve a Promise
+    at null.<anonymous> (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/node_modules/avvio/lib/plugin.js:127:31) {
+  code: 'AVV_ERR_PLUGIN_EXEC_TIMEOUT',
+  statusCode: 500,
+  fn: [Function: bound _after]
+}
+
+---
+
+--- 2026-11-15T20:01:32.282Z log
+AVVIO: loaded bound _after
+
+---
+
+--- 2026-11-15T20:01:32.284Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892190,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.285Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892190,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.286Z log
+AVVIO: skipping loading of plugin as instance errored and it is not an after @fastify/cors
+
+---
+
+--- 2026-11-15T20:01:32.286Z log
+AVVIO: finish @fastify/cors undefined
+
+---
+
+--- 2026-11-15T20:01:32.286Z log
+AVVIO: check @fastify/cors 0 0 null
+
+---
+
+--- 2026-11-15T20:01:32.286Z log
+AVVIO: loaded @fastify/cors
+
+---
+
+--- 2026-11-15T20:01:32.286Z log
+AVVIO: exec bound _after
+
+---
+
+--- 2026-11-15T20:01:32.286Z log
+AVVIO: setting up timeout bound _after 10000
+
+---
+
+--- 2026-11-15T20:01:32.286Z log
+AVVIO: setting up ready timeout  10000
+
+---
+
+--- 2026-11-15T20:01:32.371Z log
+AVVIO: rejecting promise root FastifyError [Error]: Plugin did not start in time: 'bound _after'. You may have forgotten to call 'done' function or to resolve a Promise
+    at null.<anonymous> (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/node_modules/avvio/lib/plugin.js:127:31) {
+  code: 'AVV_ERR_PLUGIN_EXEC_TIMEOUT',
+  statusCode: 500,
+  fn: [Function: bound _after]
+}
+
+---
+
+--- 2026-11-15T20:01:32.371Z log
+AVVIO: exec errored bound _after
+
+---
+
+--- 2026-11-15T20:01:32.459Z log
+AVVIO: finish bound _after FastifyError [Error]: Plugin did not start in time: 'bound _after'. You may have forgotten to call 'done' function or to resolve a Promise
+    at null.<anonymous> (file:///C:/Users/athul/Documents/Codex/CIAL%20PROJECT/Trilora_lattice/node_modules/avvio/lib/plugin.js:127:31) {
+  code: 'AVV_ERR_PLUGIN_EXEC_TIMEOUT',
+  statusCode: 500,
+  fn: [Function: bound _after]
+}
+
+---
+
+--- 2026-11-15T20:01:32.459Z log
+AVVIO: loaded bound _after
+
+---
+
+--- 2026-11-15T20:01:32.460Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892191,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.461Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892191,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.462Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892191,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.462Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892191,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.607Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892191,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.608Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892192,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.609Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892192,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.610Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892192,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.611Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892192,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.612Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892193,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:32.613Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.consoleAPICalled',
+  params: {
+    type: 'log',
+    args: [ [Object] ],
+    executionContextId: 449964641,
+    timestamp: 1794772892193,
+    stackTrace: { callFrames: [Array] }
+  }
+}
+---
+
+--- 2026-11-15T20:01:33.063Z debug
+DevEnv teardown beginning...
+---
+
+--- 2026-11-15T20:01:33.063Z debug
+ConfigController teardown beginning...
+---
+
+--- 2026-11-15T20:01:33.063Z debug
+BundlerController teardown beginning...
+---
+
+--- 2026-11-15T20:01:33.064Z debug
+LocalRuntimeController teardown beginning...
+---
+
+--- 2026-11-15T20:01:33.064Z log
+⎔ Shutting down local server...
+---
+
+--- 2026-11-15T20:01:33.064Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2026-11-15T20:01:33.064Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2026-11-15T20:01:33.064Z debug
+ProxyController teardown beginning...
+---
+
+--- 2026-11-15T20:01:33.064Z debug
+ConfigController teardown complete
+---
+
+--- 2026-11-15T20:01:33.085Z debug
+BundlerController teardown complete
+---
+
+--- 2026-11-15T20:01:33.089Z debug
+ProxyController teardown complete
+---
+
+--- 2026-11-15T20:01:33.150Z debug
+LocalRuntimeController teardown complete
+---
+
+--- 2026-11-15T20:01:33.150Z debug
+DevEnv teardown complete
+---
+
+--- 2026-11-15T20:02:44.034Z debug
+🪵  Writing logs to "C:\Users\athul\Documents\Codex\CIAL PROJECT\Trilora_lattice\tmp\api-runtime-validation.log"
+---
+
+--- 2026-11-15T20:02:44.034Z debug
+setting config
+---
+
+--- 2026-11-15T20:02:44.035Z debug
+Updating config... undefined undefined
+---
+
+--- 2026-11-15T20:02:44.106Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-11-15T20:02:44.107Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2026-11-15T20:02:44.107Z log
+Binding                                                                         Resource                  Mode
+---
+
+--- 2026-11-15T20:02:44.107Z log
+env.NODE_ENV ("production")                                                     Environment Variable      local
+---
+
+--- 2026-11-15T20:02:44.107Z log
+env.CLOUDFLARE_WORKER ("true")                                                  Environment Variable      local
+---
+
+--- 2026-11-15T20:02:44.107Z log
+env.PORT ("4000")                                                               Environment Variable      local
+---
+
+--- 2026-11-15T20:02:44.107Z log
+env.WEB_ORIGIN ("https://lattice.trilora.net")                                  Environment Variable      local
+---
+
+--- 2026-11-15T20:02:44.107Z log
+env.SUPABASE_URL ("https://hoqttcnmsxlbvpfritbf.supabase...")                   Environment Variable      local
+---
+
+--- 2026-11-15T20:02:44.107Z log
+env.SUPABASE_SERVICE_ROLE_KEY ("sb_secret_MOKNLDm-7EwacrYKFg05pg_REoU...")      Environment Variable      local
+---
+
+--- 2026-11-15T20:02:44.107Z log
+
+---
+
+--- 2026-11-15T20:02:44.382Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2026-11-15T20:02:44.382Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2026-11-15T20:02:44.386Z log
+⎔ Starting local server...
+---
+
+--- 2026-11-15T20:02:44.436Z warn
+▲ [WARNING] Scheduled Workers are not automatically triggered during local development.
+
+  To manually trigger a scheduled event, run:
+    curl "http://127.0.0.1:8788/cdn-cgi/local/scheduled"
+  For more details, see https://developers.cloudflare.com/workers/configuration/cron-triggers/#test-cron-triggers-locally
+
+
+---
+
+--- 2026-11-15T20:02:44.458Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadStart"}
+---
+
+--- 2026-11-15T20:02:44.859Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadComplete","proxyData":{"userWorkerUrl":{"protocol":"http:","hostname":"127.0.0.1","port":"64788"},"userWorkerInspectorUrl":{"protocol":"ws:","hostname":"127.0.0.1","port":"64789","pathname":"/core:user:trilora-lattice-api"},"userWorkerInnerUrlOverrides":{"protocol":"http:"},"headers":{"MF-Proxy-Shared-Secret":"3f5454e3-d2d8-4c17-9a9f-55cfb7a09112"},"liveReload":false,"proxyLogsToController":false}}
+---
+
+--- 2026-11-15T20:02:44.863Z debug
+[InspectorProxyWorker] reconnectRuntimeWebSocket
+---
+
+--- 2026-11-15T20:02:44.864Z debug
+[InspectorProxyWorker] NEW RUNTIME WEBSOCKET http://127.0.0.1:64789/core:user:trilora-lattice-api
+---
+
+--- 2026-11-15T20:02:44.866Z debug
+[InspectorProxyWorker] SEND TO DEVTOOLS {"method":"Runtime.executionContextsCleared"}
+---
+
+--- 2026-11-15T20:02:44.867Z debug
+[InspectorProxyWorker] RUNTIME WEBSOCKET OPENED
+---
+
+--- 2026-11-15T20:02:44.868Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.enable","id":100000001}
+---
+
+--- 2026-11-15T20:02:44.885Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.executionContextCreated',
+  params: {
+    context: {
+      id: 205032993,
+      origin: '',
+      name: 'Worker',
+      uniqueId: '-8112143091451727226.-8234568807027706850'
+    }
+  }
+}
+---
+
+--- 2026-11-15T20:02:44.887Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000001, result: {} }
+---
+
+--- 2026-11-15T20:02:45.719Z debug
+DevEnv teardown beginning...
+---
+
+--- 2026-11-15T20:02:45.719Z debug
+ConfigController teardown beginning...
+---
+
+--- 2026-11-15T20:02:45.720Z debug
+BundlerController teardown beginning...
+---
+
+--- 2026-11-15T20:02:45.720Z debug
+LocalRuntimeController teardown beginning...
+---
+
+--- 2026-11-15T20:02:45.720Z log
+⎔ Shutting down local server...
+---
+
+--- 2026-11-15T20:02:45.720Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2026-11-15T20:02:45.720Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2026-11-15T20:02:45.720Z debug
+ProxyController teardown beginning...
+---
+
+--- 2026-11-15T20:02:45.720Z debug
+ConfigController teardown complete
+---
+
+--- 2026-11-15T20:02:45.747Z debug
+ProxyController teardown complete
+---
+
+--- 2026-11-15T20:02:45.781Z debug
+BundlerController teardown complete
+---
+
+--- 2026-11-15T20:02:45.818Z debug
+LocalRuntimeController teardown complete
+---
+
+--- 2026-11-15T20:02:45.819Z debug
+DevEnv teardown complete
+---
