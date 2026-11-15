@@ -424,12 +424,6 @@
   box-shadow: inset 0 1px rgba(255, 255, 255, .07)
 }
 
-.operations-hub-standalone>.operations-hub .briefing-hero {
-  background: linear-gradient(112deg, rgba(255, 98, 39, .10), transparent 42%, rgba(49, 157, 255, .08) 100%), var(--surface) !important;
-  border-color: rgba(151, 176, 212, .20) !important;
-  box-shadow: inset 0 1px rgba(255, 255, 255, .08), 0 18px 48px rgba(0, 0, 0, .28) !important
-}
-
 .operations-hub-standalone>.operations-hub .briefing-kpi,
 .operations-hub-standalone>.operations-hub .briefing-card,
 .operations-hub-standalone>.operations-hub .briefing-setup-card {
@@ -456,34 +450,21 @@
   background: linear-gradient(105deg, color-mix(in srgb, var(--kpi-neon), transparent 96%), transparent 70%) !important
 }
 
-.operations-hub-standalone>.operations-hub .briefing-live-meta>span {
-  background: rgba(18, 22, 30, .80);
-  border-color: var(--border);
-  backdrop-filter: blur(10px)
-}
-
-.operations-hub-standalone>.operations-hub .briefing-kpi.workforce>span svg,
-.operations-hub-standalone>.operations-hub .briefing-hero-content svg {
+.operations-hub-standalone>.operations-hub .briefing-kpi.workforce>span svg {
   color: #ff8756
 }
 
-.operations-hub-standalone>.operations-hub .briefing-kpi.positioning>span svg,
-.operations-hub-standalone>.operations-hub .briefing-kpi.infrastructure>span svg,
-.operations-hub-standalone>.operations-hub .briefing-live-meta svg {
+.operations-hub-standalone>.operations-hub .briefing-kpi.positioning>span svg, .operations-hub-standalone>.operations-hub .briefing-kpi.infrastructure>span svg {
   color: var(--accent)
 }
 
-.operations-hub-standalone>.operations-hub .briefing-overview-link,
-.operations-hub-standalone>.operations-hub .button-primary,
-.operations-hub-standalone>.operations-hub .action-issue,
-.operations-hub-standalone>.operations-hub .briefing-empty button {
+.operations-hub-standalone>.operations-hub .button-primary, .operations-hub-standalone>.operations-hub .action-issue, .operations-hub-standalone>.operations-hub .briefing-empty button {
   background: var(--primary-btn-bg);
   border-color: var(--primary-btn-bg);
   color: var(--on-primary);
   box-shadow: 0 0 18px rgba(255, 107, 53, .13), inset 0 1px rgba(255, 255, 255, .22)
 }
 
-.operations-hub-standalone>.operations-hub .briefing-overview-link svg,
 .operations-hub-standalone>.operations-hub .action-issue svg {
   color: var(--on-primary)
 }
@@ -504,11 +485,6 @@
 .operations-hub-standalone>.operations-hub .card-kicker,
 .operations-hub-standalone>.operations-hub .hub-panel-kicker {
   color: var(--text-muted)
-}
-
-.operations-hub-standalone>.operations-hub .briefing-live-meta i.is-live {
-  background: var(--success);
-  box-shadow: 0 0 0 3px rgba(85, 214, 163, .17)
 }
 
 .operations-hub-standalone>.operations-hub .briefing-sample-banner {
@@ -611,33 +587,6 @@
   color: var(--text-muted)
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero {
-  background: var(--surface) !important;
-  border-color: var(--border) !important;
-  box-shadow: 0 14px 36px rgba(40, 78, 120, .11) !important
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero h1,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero-content>.briefing-status-sentence,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-date {
-  color: var(--text) !important
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span {
-  background: rgba(205, 235, 253, .88);
-  border-color: var(--border);
-  box-shadow: 0 3px 12px rgba(40, 78, 120, .06);
-  backdrop-filter: blur(10px)
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span>small {
-  color: var(--text-muted)
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span>b {
-  color: var(--text)
-}
-
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-kpi,
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-grid>.briefing-card,
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-setup-card {
@@ -653,9 +602,7 @@
   display: none !important
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-kpi>span svg,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero-content svg,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .setup-icon {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-kpi>span svg, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .setup-icon {
   color: var(--accent) !important
 }
 
@@ -669,17 +616,13 @@
   color: var(--danger) !important
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-overview-link,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .button-primary,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .action-issue,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-empty button {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .button-primary, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .action-issue, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-empty button {
   background: var(--primary-btn-bg) !important;
   border-color: var(--primary-btn-bg) !important;
   color: var(--on-primary) !important;
   box-shadow: 0 5px 14px rgba(56, 155, 242, .24) !important
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-overview-link svg,
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .action-issue svg {
   color: var(--on-primary) !important
 }
@@ -702,11 +645,6 @@
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .card-kicker,
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .hub-panel-kicker {
   color: var(--text-muted) !important
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta i.is-live {
-  background: var(--success);
-  box-shadow: 0 0 0 3px rgba(24, 132, 91, .13)
 }
 
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-sample-banner {
@@ -1521,17 +1459,13 @@
   border-color: rgba(196, 60, 60, .38) !important
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-overview-link,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .button-primary,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .action-issue,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-empty button {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .button-primary, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .action-issue, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-empty button {
   background: var(--hub-accent-gradient) !important;
   border-color: rgba(56, 155, 242, .38) !important;
   color: #082745 !important;
   box-shadow: 0 7px 18px rgba(56, 155, 242, .2), inset 0 1px rgba(255, 255, 255, .62) !important
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-overview-link svg,
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .action-issue svg {
   color: #082745 !important
 }
@@ -1545,19 +1479,9 @@
   -webkit-backdrop-filter: blur(12px)
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span {
-  background: rgba(255, 255, 255, .72);
-  box-shadow: 0 5px 16px rgba(47, 78, 102, .07), inset 0 1px rgba(255, 255, 255, .96);
-  backdrop-filter: blur(14px) saturate(125%);
-  -webkit-backdrop-filter: blur(14px) saturate(125%)
-}
-
 @media(prefers-reduced-transparency:reduce) {
 
-  .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-kpi,
-  .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-grid>.briefing-card,
-  .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-setup-card,
-  .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span {
+  .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-kpi, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-grid>.briefing-card, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-setup-card {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background: #e6f3fc !important
@@ -1732,10 +1656,7 @@
   color: #302c40 !important
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-header,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-actions button:not(.action-issue),
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-card-head>button {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-header, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-actions button:not(.action-issue), .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-card-head>button {
   background: rgba(230, 243, 252, .68) !important;
   border-color: rgba(84, 151, 197, .24) !important;
   box-shadow: 0 8px 24px rgba(43, 105, 154, .1), inset 0 1px rgba(255, 255, 255, .72) !important;
@@ -1751,14 +1672,6 @@
   box-shadow: inset 0 1px rgba(255, 255, 255, .78), 0 12px 30px rgba(43, 105, 154, .11) !important;
   backdrop-filter: blur(20px) saturate(128%);
   -webkit-backdrop-filter: blur(20px) saturate(128%)
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero {
-  background: linear-gradient(112deg, rgba(230, 243, 252, .86), rgba(205, 235, 253, .72) 52%, rgba(189, 222, 242, .54)) !important;
-  border-color: rgba(84, 151, 197, .28) !important;
-  box-shadow: 0 16px 36px rgba(43, 105, 154, .14) !important;
-  backdrop-filter: blur(18px) saturate(122%);
-  -webkit-backdrop-filter: blur(18px) saturate(122%)
 }
 
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-sample-banner,
@@ -2021,29 +1934,13 @@
   color: var(--text-muted)
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-header,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-actions button:not(.action-issue),
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-card-head>button {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-header, .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-actions button:not(.action-issue), .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-card-head>button {
   background: rgba(1, 38, 35, .82) !important;
   border-color: var(--border) !important;
   color: var(--text) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, .24), inset 0 1px rgba(255, 255, 255, .06) !important;
   backdrop-filter: blur(18px) saturate(125%);
   -webkit-backdrop-filter: blur(18px) saturate(125%)
-}
-
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero {
-  background: linear-gradient(115deg, rgba(1, 38, 35, .98), rgba(1, 38, 35, .84) 54%, rgba(1, 38, 35, .62)) !important;
-  border-color: var(--border) !important;
-  box-shadow: 0 16px 38px rgba(0, 0, 0, .36) !important;
-  color: var(--text) !important
-}
-
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero h1,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero-content>.briefing-status-sentence,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-date {
-  color: var(--text) !important
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-kpi,
@@ -2057,23 +1954,17 @@
   -webkit-backdrop-filter: blur(16px) saturate(120%)
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-kpi>span svg,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero-content svg,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .setup-icon {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-kpi>span svg, .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .setup-icon {
   color: var(--accent) !important
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-overview-link,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .button-primary,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .action-issue,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-empty button {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .button-primary, .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .action-issue, .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-empty button {
   background: linear-gradient(112deg, #029e40, #02dc4a) !important;
   border-color: rgba(2, 220, 74, .54) !important;
   color: #0d0d0d !important;
   box-shadow: 0 7px 22px rgba(2, 220, 74, .2), inset 0 1px rgba(255, 255, 255, .28) !important
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-overview-link svg,
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .action-issue svg {
   color: #0d0d0d !important
 }
@@ -3117,13 +3008,6 @@
 }
 
 /* Keep the Operations Hub hero glass depth consistent in both themes. */
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero {
-  box-shadow: inset 0 1px rgba(255, 255, 255, .82), 0 16px 38px rgba(43, 105, 154, .16), 0 0 0 1px rgba(56, 155, 242, .08) !important
-}
-
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero {
-  box-shadow: inset 0 1px rgba(255, 255, 255, .06), 0 18px 42px rgba(0, 0, 0, .34), 0 0 0 1px rgba(56, 155, 242, .08) !important
-}
 
 /* Neon glass palette for the Operations Hub landing page light theme only. */
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub) {
@@ -3171,32 +3055,12 @@
   --ops-info: var(--info);
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-header,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-actions button:not(.action-issue),
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-card-head>button {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-header, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-actions button:not(.action-issue), .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-card-head>button {
   background: linear-gradient(125deg, rgba(255, 255, 255, .78), rgba(239, 249, 255, .54) 56%, rgba(255, 242, 250, .58)) !important;
   border-color: var(--neon-line) !important;
   box-shadow: inset 0 1px rgba(255, 255, 255, .92), 0 10px 26px rgba(75, 104, 182, .09), 0 0 18px rgba(237, 22, 136, .045) !important;
   backdrop-filter: blur(20px) saturate(145%);
   -webkit-backdrop-filter: blur(20px) saturate(145%);
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero {
-  background: transparent !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .vv-hero__bg {
-  border-color: rgba(255, 255, 255, .82);
-  background:
-    radial-gradient(ellipse 50% 120% at 100% 0%, rgba(237, 22, 136, .15), transparent 68%),
-    radial-gradient(ellipse 58% 120% at 0% 100%, rgba(8, 185, 222, .18), transparent 70%),
-    linear-gradient(118deg, rgba(255, 255, 255, .76), rgba(235, 247, 255, .58) 52%, rgba(250, 240, 255, .62));
-  box-shadow: inset 0 1px rgba(255, 255, 255, .96), 0 18px 42px rgba(72, 93, 173, .13), 0 0 24px rgba(237, 22, 136, .08);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
 }
 
 .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-kpi,
@@ -3209,9 +3073,7 @@
   -webkit-backdrop-filter: blur(20px) saturate(142%);
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-overview-link,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .action-issue,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-empty button {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .action-issue, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-empty button {
   background: linear-gradient(112deg, #c70e78 0%, #6946d2 54%, #087bb7 100%) !important;
   border-color: rgba(91, 67, 194, .48) !important;
   color: #fff !important;
@@ -3235,9 +3097,7 @@
   -webkit-backdrop-filter: blur(16px) saturate(135%);
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span>svg,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-kpi>span svg,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .setup-icon {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-kpi>span svg, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .setup-icon {
   color: var(--neon-blue) !important;
 }
 
@@ -3313,30 +3173,11 @@
   color: var(--text-muted) !important
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .vv-hero__bg {
-  border-color: rgba(11, 82, 91, .48);
-  background:
-    radial-gradient(820px 340px at 82% 2%, rgba(11, 82, 91, .34), transparent 64%),
-    radial-gradient(620px 360px at 70% 100%, rgba(49, 34, 68, .24), transparent 65%),
-    linear-gradient(135deg, var(--navy-900) 0%, var(--indigo-900) 58%, var(--ocean-700) 100%);
-  box-shadow: 0 30px 60px -30px rgba(12, 20, 37, .52), inset 0 1px 0 rgba(232, 240, 244, .12);
-}
-
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-header,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-actions button:not(.action-issue),
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-card-head>button {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-header, .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-actions button:not(.action-issue), .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-card-head>button {
   background: var(--glass-strong) !important;
   border-color: var(--border) !important;
   color: var(--text) !important;
   box-shadow: 0 8px 24px rgba(12, 20, 37, .24), inset 0 1px rgba(232, 240, 244, .08) !important;
-}
-
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero {
-  background: linear-gradient(115deg, rgba(33, 47, 69, .88), rgba(39, 38, 64, .72) 54%, rgba(20, 69, 82, .54)) !important;
-  border-color: var(--border) !important;
-  box-shadow: inset 0 1px rgba(232, 240, 244, .08), 0 18px 42px rgba(12, 20, 37, .34) !important;
-  color: var(--text) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-kpi,
@@ -3360,23 +3201,17 @@
   --kpi-neon: var(--purple-800) !important
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-kpi>span svg,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero-content svg,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .setup-icon {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-kpi>span svg, .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .setup-icon {
   color: #c6e7e7 !important
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-overview-link,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .button-primary,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .action-issue,
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-empty button {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .button-primary, .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .action-issue, .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-empty button {
   background: linear-gradient(112deg, var(--ocean-900), var(--ocean-850)) !important;
   border-color: var(--ocean-850) !important;
   color: #fff !important;
   box-shadow: 0 7px 22px rgba(0, 100, 102, .2), inset 0 1px rgba(255, 255, 255, .18) !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-overview-link svg,
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .action-issue svg {
   color: #fff !important
 }
@@ -3490,10 +3325,6 @@
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) .theme-toggle-button:focus-visible {
   outline-color: #fff !important
-}
-
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) .briefing-hero {
-  box-shadow: inset 0 1px rgba(232, 240, 244, .08), 0 18px 42px rgba(12, 20, 37, .34) !important
 }
 
 /* Keep the landing's Workforce subview on the same graphite and teal dark palette.
@@ -4049,94 +3880,14 @@
 /* --------------------------------------------------------------------------
    Hero Card: Large Luminous Frosted Glass Canvas
    -------------------------------------------------------------------------- */
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero,
-.operations-hub-standalone[data-theme="light"] .briefing-hero {
-  background: transparent !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-hero.briefing-hero, .vv-hero__bg.vv-hero__bg),
-.operations-hub-standalone[data-theme="light"] :is(.briefing-hero, .vv-hero__bg) {
-  background:
-    radial-gradient(ellipse 65% 100% at 98% 0%, rgba(121, 199, 255, 0.32), transparent 70%),
-    radial-gradient(ellipse 60% 100% at 2% 100%, rgba(86, 255, 164, 0.28), transparent 70%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.36) 100%) !important;
-  background-image:
-    radial-gradient(ellipse 65% 100% at 98% 0%, rgba(121, 199, 255, 0.32), transparent 70%),
-    radial-gradient(ellipse 60% 100% at 2% 100%, rgba(86, 255, 164, 0.28), transparent 70%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.36) 100%) !important;
-  border: 1px solid var(--glass-border-strong) !important;
-  border-color: var(--glass-border-strong) !important;
-  border-radius: 18px !important;
-  box-shadow: var(--glass-shadow), 0 24px 50px rgba(10, 45, 67, 0.12) !important;
-  backdrop-filter: blur(28px) saturate(200%) brightness(1.05) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.05) !important;
-}
-
-.operations-hub-standalone[data-theme="light"] .briefing-hero h1 {
-  color: var(--aurora-ink) !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.05em;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
-}
-
-.operations-hub-standalone[data-theme="light"] .briefing-status-sentence {
-  color: var(--aurora-muted) !important;
-  font-weight: 550;
-}
-
-.operations-hub-standalone[data-theme="light"] .briefing-date {
-  color: var(--aurora-violet) !important;
-  font-weight: 750;
-}
-
-.operations-hub-standalone[data-theme="light"] .briefing-date-label {
-  background: linear-gradient(135deg, rgba(86, 255, 164, 0.2), rgba(176, 132, 255, 0.2)) !important;
-  color: #065F46 !important;
-  padding: 3px 8px;
-  border-radius: 6px;
-  border: 1px solid rgba(86, 255, 164, 0.4);
-  font-weight: 800;
-}
-
-.operations-hub-standalone[data-theme="light"] .briefing-hero time {
-  color: var(--aurora-ink) !important;
-  font-weight: 650;
-}
 
 /* Metadata pills inside Hero */
-.operations-hub-standalone[data-theme="light"] .briefing-live-meta>span {
-  background: rgba(255, 255, 255, 0.55) !important;
-  border: 1px solid var(--glass-border) !important;
-  border-radius: 99px !important;
-  padding: 6px 12px !important;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.95), 0 4px 14px rgba(10, 45, 67, 0.08) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-}
-
-.operations-hub-standalone[data-theme="light"] .briefing-live-meta>span small {
-  color: var(--aurora-subtle) !important;
-  font-weight: 600;
-}
-
-.operations-hub-standalone[data-theme="light"] .briefing-live-meta>span b {
-  color: var(--aurora-ink) !important;
-  font-weight: 750;
-}
-
-.operations-hub-standalone[data-theme="light"] .briefing-live-meta svg {
-  color: var(--aurora-mint) !important;
-  filter: drop-shadow(0 0 5px rgba(86, 255, 164, 0.5));
-}
 
 /* --------------------------------------------------------------------------
    Primary CTAs: Aurora Skies Multi-Tone Gradient Pills
    "Enter operations console" and "+ Raise an issue"
    -------------------------------------------------------------------------- */
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link.briefing-overview-link, .action-issue.action-issue, .card-action-primary.card-action-primary, .button-primary, .briefing-empty button),
-.operations-hub-standalone[data-theme="light"] :is(.briefing-overview-link, .action-issue, .card-action-primary, .button-primary, .briefing-empty button) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.action-issue.action-issue, .card-action-primary.card-action-primary, .button-primary, .briefing-empty button), .operations-hub-standalone[data-theme="light"] :is(.action-issue, .card-action-primary, .button-primary, .briefing-empty button) {
   /* Signature horizontal gradient from Aurora Skies poster: Deep Pine -> Mint -> Lavender -> Ice Sky */
   background: linear-gradient(135deg, #0A2D43 0%, #157A6E 26%, #56FFA4 54%, #B084FF 82%, #79C7FF 100%) !important;
   background-image: linear-gradient(135deg, #0A2D43 0%, #157A6E 26%, #56FFA4 54%, #B084FF 82%, #79C7FF 100%) !important;
@@ -4150,8 +3901,7 @@
   transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease, filter 0.2s ease !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link:hover, .action-issue:hover, .card-action-primary:hover, .button-primary:hover, .briefing-empty button:hover),
-.operations-hub-standalone[data-theme="light"] :is(.briefing-overview-link:hover, .action-issue:hover, .card-action-primary:hover, .button-primary:hover, .briefing-empty button:hover) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.action-issue:hover, .card-action-primary:hover, .button-primary:hover, .briefing-empty button:hover), .operations-hub-standalone[data-theme="light"] :is(.action-issue:hover, .card-action-primary:hover, .button-primary:hover, .briefing-empty button:hover) {
   transform: translateY(-2px) scale(1.02) !important;
   background: linear-gradient(135deg, #0D3752 0%, #1B9183 26%, #69FFB0 54%, #BE96FF 82%, #8FD3FF 100%) !important;
   background-image: linear-gradient(135deg, #0D3752 0%, #1B9183 26%, #69FFB0 54%, #BE96FF 82%, #8FD3FF 100%) !important;
@@ -4159,14 +3909,7 @@
   filter: brightness(1.06) !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-overview-link span,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-overview-link svg,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .action-issue svg,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .card-action-primary svg,
-.operations-hub-standalone[data-theme="light"] .briefing-overview-link span,
-.operations-hub-standalone[data-theme="light"] .briefing-overview-link svg,
-.operations-hub-standalone[data-theme="light"] .action-issue svg,
-.operations-hub-standalone[data-theme="light"] .card-action-primary svg {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .action-issue svg, .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .card-action-primary svg, .operations-hub-standalone[data-theme="light"] .action-issue svg, .operations-hub-standalone[data-theme="light"] .card-action-primary svg {
   color: #FFFFFF !important;
 }
 
@@ -4770,7 +4513,7 @@
     background-attachment: scroll !important;
   }
 
-  .operations-hub-standalone[data-theme="light"] :is(.briefing-header, .briefing-kpi, .briefing-grid > .briefing-card, .briefing-setup-card, .briefing-hero .vv-hero__bg, .setup-steps > button) {
+  .operations-hub-standalone[data-theme="light"] :is(.briefing-header, .briefing-kpi, .briefing-grid > .briefing-card, .briefing-setup-card, .setup-steps > button) {
     background: #FFFFFF !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -4814,10 +4557,7 @@
   box-shadow: 0 4px 14px rgba(32, 55, 43, .045) !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-hero .vv-hero__bg,
-  .briefing-kpi,
-  .briefing-setup-card,
-  .briefing-grid > .briefing-card) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-kpi, .briefing-setup-card, .briefing-grid > .briefing-card) {
   border-color: #DCE7DF !important;
   box-shadow: 0 8px 22px rgba(32, 55, 43, .07), inset 0 1px rgba(255, 255, 255, .9) !important;
   border-radius: 14px !important;
@@ -4832,60 +4572,20 @@
   -webkit-backdrop-filter: blur(10px) saturate(110%) !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-brand span,
-  .briefing-location b,
-  .briefing-hero h1,
-  .briefing-hero time,
-  .briefing-kpi > strong,
-  .briefing-kpi > b,
-  .setup-summary h2,
-  .briefing-section-heading h2,
-  .briefing-card-head h3) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-brand span, .briefing-location b, .briefing-kpi > strong, .briefing-kpi > b, .setup-summary h2, .briefing-section-heading h2, .briefing-card-head h3) {
   color: #173c2c !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-brand small,
-  .briefing-location small,
-  .briefing-status-sentence,
-  .briefing-date,
-  .briefing-live-meta > span small,
-  .briefing-kpi > span,
-  .briefing-kpi > small,
-  .setup-summary p,
-  .briefing-section-heading > p,
-  .briefing-card-head p) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-brand small, .briefing-location small, .briefing-kpi > span, .briefing-kpi > small, .setup-summary p, .briefing-section-heading > p, .briefing-card-head p) {
   color: #557363 !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-location svg,
-  .briefing-live-meta svg,
-  .briefing-actions button svg,
-  .briefing-kpi > span svg,
-  .setup-icon,
-  .briefing-section-heading > div > span,
-  .card-kicker,
-  .briefing-footnote svg) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-location svg, .briefing-actions button svg, .briefing-kpi > span svg, .setup-icon, .briefing-section-heading > div > span, .card-kicker, .briefing-footnote svg) {
   color: #2e8b57 !important;
   filter: none !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-date-label {
-  color: #1f6847 !important;
-  background: rgba(46, 139, 87, .1) !important;
-  border: 1px solid rgba(46, 139, 87, .18) !important;
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta>span {
-  background: rgba(255, 255, 255, .78) !important;
-  border-color: rgba(53, 119, 81, .16) !important;
-  box-shadow: 0 4px 12px rgba(29, 79, 52, .05) !important;
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link.briefing-overview-link,
-  .action-issue.action-issue,
-  .card-action-primary.card-action-primary,
-  .button-primary.button-primary,
-  .briefing-empty button) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.action-issue.action-issue, .card-action-primary.card-action-primary, .button-primary.button-primary, .briefing-empty button) {
   background-image: linear-gradient(135deg, #1f6847, #2e8b57) !important;
   color: #fff !important;
   background: linear-gradient(135deg, #1f6847, #2e8b57) !important;
@@ -4893,19 +4593,12 @@
   box-shadow: 0 7px 18px rgba(31, 104, 71, .2), inset 0 1px rgba(255, 255, 255, .22) !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link.briefing-overview-link:hover,
-  .action-issue.action-issue:hover,
-  .card-action-primary.card-action-primary:hover,
-  .button-primary.button-primary:hover,
-  .briefing-empty button:hover) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.action-issue.action-issue:hover, .card-action-primary.card-action-primary:hover, .button-primary.button-primary:hover, .briefing-empty button:hover) {
   background: linear-gradient(135deg, #185a3d, #287c4d) !important;
   box-shadow: 0 9px 22px rgba(31, 104, 71, .25) !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link.briefing-overview-link svg,
-  .action-issue.action-issue svg,
-  .card-action-primary.card-action-primary svg,
-  .button-primary.button-primary svg) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.action-issue.action-issue svg, .card-action-primary.card-action-primary svg, .button-primary.button-primary svg) {
   color: #fff !important;
   filter: none !important;
 }
@@ -4954,45 +4647,14 @@
   box-shadow: none !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero.briefing-hero {
-  min-height: 270px !important;
-  border-radius: 16px !important;
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero-content {
-  padding: 24px 30px !important;
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero h1 {
-  margin: 9px 0 5px !important;
-  font-size: clamp(27px, 2.45vw, 36px) !important;
-  line-height: 1.12 !important;
-  letter-spacing: -.045em !important;
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta {
-  gap: 8px !important;
-  margin-top: 12px !important;
-}
-
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link,
-  .action-issue,
-  .briefing-actions button,
-  .briefing-card-head > button,
-  .setup-steps > button,
-  .theme-toggle-button) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.action-issue, .briefing-actions button, .briefing-card-head > button, .setup-steps > button, .theme-toggle-button) {
   min-height: 36px !important;
   border-radius: 8px !important;
   font-weight: 650 !important;
   transition: background-color .16s ease, border-color .16s ease, box-shadow .16s ease, transform .16s ease !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link:focus-visible,
-  .briefing-actions button:focus-visible,
-  .briefing-card-head > button:focus-visible,
-  .setup-steps > button:focus-visible,
-  .theme-toggle-button:focus-visible,
-  .briefing-connection-notice summary:focus-visible) {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-actions button:focus-visible, .briefing-card-head > button:focus-visible, .setup-steps > button:focus-visible, .theme-toggle-button:focus-visible, .briefing-connection-notice summary:focus-visible) {
   outline: 3px solid rgba(57, 134, 92, .35) !important;
   outline-offset: 2px !important;
 }
@@ -5080,8 +4742,7 @@
   border-color: #CFE2D2 !important;
 }
 
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-source.is-live>i,
-.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-live-meta i.is-live {
+.operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-source.is-live>i {
   background: #39865C !important;
   box-shadow: 0 0 0 3px rgba(57, 134, 92, .12) !important;
 }
@@ -5187,13 +4848,6 @@
 }
 
 @media (max-width: 760px) {
-  .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero.briefing-hero {
-    min-height: 0 !important;
-  }
-
-  .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-hero-content {
-    padding: 22px 20px !important;
-  }
 
   .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub .briefing-kpi>strong {
     font-size: 30px !important;
@@ -5202,12 +4856,7 @@
 
 @media (prefers-reduced-transparency: reduce) {
 
-  .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-header,
-    .briefing-kpi,
-    .briefing-grid > .briefing-card,
-    .briefing-setup-card,
-    .briefing-hero .vv-hero__bg,
-    .setup-steps > button) {
+  .operations-hub-standalone[data-theme="light"]:has(> .operations-hub)>.operations-hub :is(.briefing-header, .briefing-kpi, .briefing-grid > .briefing-card, .briefing-setup-card, .setup-steps > button) {
     background: #FFFFFF !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -5273,50 +4922,31 @@
   box-shadow: 0 8px 22px rgba(0, 0, 0, .26), inset 0 1px rgba(163, 178, 183, .035) !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero .vv-hero__bg {
-  border-color: rgba(163, 178, 183, .18) !important;
-  background:
-    linear-gradient(135deg, #202C31, #101619 72%) !important;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, .34), inset 0 1px rgba(163, 178, 183, .045) !important;
-}
-
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-header, .briefing-kpi, .briefing-grid > .briefing-card,
-  .briefing-setup-card, .briefing-hero .vv-hero__bg) {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-header, .briefing-kpi, .briefing-grid > .briefing-card, .briefing-setup-card) {
   border-radius: 14px !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(h1, h2, h3, h4, b, strong, label, th, td,
-  .briefing-brand span, .briefing-location b, .briefing-hero h1,
-  .briefing-hero-content > .briefing-status-sentence, .briefing-date,
-  .briefing-card-head h3, .briefing-kpi > strong, .briefing-kpi > b,
-  .setup-summary h2) {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(h1, h2, h3, h4, b, strong, label, th, td, .briefing-brand span, .briefing-location b, .briefing-card-head h3, .briefing-kpi > strong, .briefing-kpi > b, .setup-summary h2) {
   color: #EDF2F0 !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(p, small, .briefing-brand small, .briefing-location small,
-  .briefing-card-head p, .briefing-section-heading > p,
-  .briefing-kpi > small, .setup-summary p, .briefing-date time) {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(p, small, .briefing-brand small, .briefing-location small, .briefing-card-head p, .briefing-section-heading > p, .briefing-kpi > small, .setup-summary p) {
   color: #A3B2B7 !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-hero-content svg, .briefing-kpi > span svg,
-  .setup-icon, .briefing-location svg, .briefing-section-heading > div > span,
-  .briefing-live-meta svg, .briefing-footnote svg, .briefing-inline-note svg,
-  .card-kicker) {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-kpi > span svg, .setup-icon, .briefing-location svg, .briefing-section-heading > div > span, .briefing-footnote svg, .briefing-inline-note svg, .card-kicker) {
   color: #73B9A5 !important;
   filter: none !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link, .button-primary, .action-issue,
-  .card-action-primary, .briefing-empty button) {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.button-primary, .action-issue, .card-action-primary, .briefing-empty button) {
   color: #101619 !important;
   background: #73B9A5 !important;
   border: 1px solid rgba(163, 178, 183, .42) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, .24), inset 0 1px rgba(255, 255, 255, .16) !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link, .button-primary, .action-issue,
-  .card-action-primary, .briefing-empty button) svg {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.button-primary, .action-issue, .card-action-primary, .briefing-empty button) svg {
   color: #101619 !important;
 }
 
@@ -5325,17 +4955,13 @@
   color: #EDF2F0 !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link:hover, .button-primary:hover:not(:disabled),
-  .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled),
-  .briefing-empty button:hover) {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.button-primary:hover:not(:disabled), .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled), .briefing-empty button:hover) {
   background: #73B9A5 !important;
   color: #EDF2F0 !important;
   border-color: #73B9A5 !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link:hover, .button-primary:hover:not(:disabled),
-  .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled),
-  .briefing-empty button:hover) svg {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.button-primary:hover:not(:disabled), .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled), .briefing-empty button:hover) svg {
   color: #EDF2F0 !important;
 }
 
@@ -5349,9 +4975,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, .14) !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-empty, .briefing-mini-stats > div,
-  .briefing-live-meta > span, .briefing-sample-banner,
-  .briefing-connection-notice, .setup-steps > button, .zone-summary-row) {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-empty, .briefing-mini-stats > div, .briefing-sample-banner, .briefing-connection-notice, .setup-steps > button, .zone-summary-row) {
   color: #A3B2B7 !important;
   background: rgba(24, 33, 37, .88) !important;
   border-color: rgba(163, 178, 183, .10) !important;
@@ -5360,7 +4984,7 @@
   -webkit-backdrop-filter: blur(10px) !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-date-label, .setup-progress, .setup-steps > button i) {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.setup-progress, .setup-steps > button i) {
   color: #EDF2F0 !important;
   background: rgba(115, 185, 165, .10) !important;
   border-color: rgba(115, 185, 165, .28) !important;
@@ -5382,7 +5006,7 @@
   box-shadow: none !important;
 }
 
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-live-meta i.is-live, .briefing-source.is-live > i) {
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-source.is-live > i) {
   background: #73B9A5 !important;
   box-shadow: none !important;
 }
@@ -5408,11 +5032,6 @@
   outline: 2px solid #73B9A5 !important;
   outline-offset: 2px !important;
   box-shadow: 0 0 0 4px rgba(115, 185, 165, .22) !important;
-}
-
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero .vv-hero__scene {
-  filter: none !important;
-  opacity: 1 !important;
 }
 
 /* Compact infrastructure empty state without changing dashboard charts. */
@@ -5929,14 +5548,14 @@
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-connection-notice, .briefing-source.is-demo) { color: #D6AF68 !important; background: #D6AF6810 !important; border-color: #D6AF6833 !important; }
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-connection-notice, .briefing-source.is-demo) :is(b, strong, small, svg) { color: #D6AF68 !important; }
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub .briefing-source.is-demo > i { background: #D6AF68 !important; }
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-live-meta i.is-live, .briefing-source.is-live > i) { background: #75C69A !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-source.is-live > i) { background: #75C69A !important; }
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.is-sos, .is-critical, .is-danger, .incident-open, .status-danger) { color: #EF8D88 !important; border-color: #EF8D8840 !important; background-color: #EF8D8810 !important; }
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.is-sos, .is-critical, .is-danger, .incident-open, .status-danger) :is(b, strong, small, svg) { color: #EF8D88 !important; }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-sos-callout, .briefing-incident-row.is-urgent) { background: #EF8D8812 !important; border-color: #EF8D8840 !important; color: #EF8D88 !important; }
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-sos-callout, .briefing-incident-row.is-urgent) :is(b, strong, small, svg) { color: #EF8D88 !important; }
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-overview-link:hover, .button-primary:hover:not(:disabled), .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled)) { background: #8BCBB8 !important; color: #101619 !important; border-color: #8BCBB8 !important; }
-.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-overview-link:hover, .button-primary:hover:not(:disabled), .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled)) svg { color: #101619 !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.button-primary:hover:not(:disabled), .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled)) { background: #8BCBB8 !important; color: #101619 !important; border-color: #8BCBB8 !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.button-primary:hover:not(:disabled), .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled)) svg { color: #101619 !important; }
 
 /* Workforce uses the same full-width gutters for its topbar and content. */
 .operations-hub-standalone:has(> .workforce-intel-screen) > .workforce-intel-screen { width: 100%; max-width: none; min-width: 0; padding-inline: clamp(16px, 2vw, 32px); box-sizing: border-box; }

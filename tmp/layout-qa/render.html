@@ -8816,6 +8816,28 @@ body{background:var(--vv-canvas);color:var(--vv-ink)}
     width: 70%
 }
 
+.briefing-header-controls { display: flex; align-items: center; gap: 10px; }
+@media (min-width: 1701px) {
+ .operations-hub .briefing-header { position: relative; }
+ .operations-hub .briefing-header-controls { position: absolute; left: 65%; top: 50%; transform: translate(-50%, -50%); }
+}
+@media (min-width: 1101px) and (max-width: 1700px) {
+ .operations-hub .briefing-header { position: relative; }
+ .operations-hub .briefing-header-controls { position: absolute; left: 68%; top: 50%; transform: translate(-50%, -50%); }
+}
+@media (max-width: 600px) {
+ .briefing-header-controls { flex-wrap: wrap; gap: 6px; }
+}
+
+/* Keep the floating controls centered while the hero art rises into the header gap. */
+@media (min-width: 1101px) {
+ .operations-hub .briefing-header { z-index: 24; }
+}
+@media (min-width: 1101px) {
+ .operations-hub-standalone[data-theme="light"] .operations-hub .briefing-header { background: rgba(246, 248, 245, .76); backdrop-filter: blur(10px); }
+ .operations-hub-standalone[data-theme="dark"] .operations-hub .briefing-header { background: rgba(11, 17, 19, .76); backdrop-filter: blur(10px); }
+}
+
 /* Keep the established application palette everywhere outside the Operations Hub landing page. */
 
 /* The Workforce chart repair is independent of the landing-page theme. */
@@ -15191,7 +15213,163 @@ body:has(.operations-hub-standalone[data-theme="dark"]) { background-color: #101
     width: 65%; max-width: 65%; bottom: -54px;
   }
 }
-</style><div class="operations-hub-standalone" data-theme="light"><main class="operations-hub"><section class="vv-hero briefing-hero vv-hero--isometric vv-hero--panorama"><div class="vv-hero__bg" aria-hidden="true">
+/* Taller source silhouette provides real overflow without squeezing the copy. */
+@media (min-width: 1101px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { bottom: -45px; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { margin-top: clamp(100px, 11vw, 215px); }
+}
+@media (min-width: 1701px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 70%; max-width: 70%; }
+}
+@media (min-width: 1101px) and (max-width: 1700px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 75%; max-width: 75%; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { width: 350px; max-width: 350px; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama h1 { white-space: normal !important; max-width: 290px; font-size: 30px; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta { width: 310px; bottom: 20px; }
+}
+@media (min-width: 1101px) and (max-width: 1700px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama .briefing-date { flex-wrap: nowrap; gap: 8px; font-size: 10px; white-space: nowrap; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama .briefing-date span { white-space: nowrap; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama h1 { font-size: 26px !important; line-height: 1.15 !important; margin: 12px 0 8px; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama .briefing-status-sentence { font-size: 12px; line-height: 1.4; margin: 0 0 12px; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama .briefing-live-meta > span { padding: 5px 10px; min-height: 26px; }
+}
+@media (min-width: 1101px) and (max-width: 1700px) {
+ .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama h1 { font-size: 26px !important; line-height: 1.15 !important; margin: 12px 0 8px !important; }
+}
+/* Move the complete scene right and lift the composition as one unit. */
+@media (min-width: 1101px) {
+ .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { margin-top: clamp(72px, 8.5vw, 164px); }
+ .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { right: -18px; }
+}
+@media (min-width: 1101px) and (max-width: 1700px) {
+ .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 68%; max-width: 68%; right: -22px; }
+ .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { width: 390px; max-width: 390px; }
+ .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama h1 { max-width: 380px; font-size: 30px !important; white-space: nowrap !important; }
+ .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta { width: 360px; }
+}
+
+/* Pull the whole briefing panel closer to the header; let the tall campus rise into the gap. */
+@media (min-width: 1101px) {
+ .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { margin-top: clamp(24px, 4.2vw, 80px); z-index: 25; }
+ .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 70%; max-width: 70%; height: auto; bottom: -52px; mask-image: none; -webkit-mask-image: none; }
+}
+@media (min-width: 1101px) and (max-width: 1700px) {
+ .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 86%; max-width: 86%; right: -22px; }
+}
+
+/* Rebuilt hero stage: the illustration is the hero, not art inside the old teal card. */
+.operations-hub-standalone .operations-hub .vv-hero.briefing-hero.vv-hero--panorama {
+  position: relative;
+  isolation: isolate;
+  z-index: 25;
+  display: block;
+  min-height: 340px !important;
+  margin: 0 0 60px;
+  overflow: visible;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama {
+  margin-top: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__field {
+  position: absolute;
+  z-index: 0;
+  top: 84px;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  overflow: hidden;
+  border: 0;
+  border-top: 1px solid rgba(187, 218, 220, .52);
+  border-radius: 0;
+  background:
+    radial-gradient(ellipse at 78% 35%, rgba(77, 112, 106, .46), transparent 49%),
+    linear-gradient(105deg, #09252d 0%, #0d3038 48%, #102f35 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 98% 84%, 95% 82%, 92% 88%, 88% 85%, 84% 91%, 80% 87%, 76% 94%, 72% 90%, 68% 96%, 63% 92%, 58% 98%, 53% 94%, 48% 99%, 43% 94%, 38% 97%, 33% 92%, 28% 96%, 23% 91%, 18% 95%, 13% 90%, 8% 93%, 4% 87%, 0 83%);
+}
+.operations-hub-standalone .operations-hub .vv-hero--panorama .vv-hero__field::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(3, 21, 27, .46), transparent 48%);
+  pointer-events: none;
+}
+.operations-hub-standalone .operations-hub .vv-hero--panorama .vv-hero__atmosphere {
+  z-index: 1;
+  inset: 0;
+  background: radial-gradient(ellipse at 78% 45%, rgba(212, 174, 113, .12), transparent 48%);
+}
+.operations-hub-standalone .operations-hub .vv-hero--panorama .vv-hero__routes {
+  z-index: 2;
+  inset: 84px 0 -8px;
+  width: 100%;
+  height: calc(100% - 76px);
+  opacity: .52;
+  mask-image: linear-gradient(90deg, transparent 20%, #0009 42%, #000 78%);
+}
+.operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+  position: absolute;
+  z-index: 1;
+  top: auto;
+  right: -18px;
+  bottom: -52px;
+  width: 70%;
+  max-width: 70%;
+  height: auto;
+  max-height: none;
+  transform: none;
+  object-fit: contain;
+  object-position: right bottom;
+  mask-image: none;
+  -webkit-mask-image: none;
+  pointer-events: none;
+}
+.operations-hub-standalone .operations-hub .vv-hero--panorama .vv-hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content {
+  box-sizing: border-box;
+  width: min(40%, 640px);
+  max-width: 640px;
+  padding: 112px 40px 92px;
+}
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta {
+  left: 40px;
+  bottom: 20px;
+  width: min(36%, 580px);
+  gap: 10px;
+}
+@media (min-width: 1101px) and (max-width: 1700px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 86%; max-width: 86%; right: -22px; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { width: 40%; max-width: 560px; padding: 108px 30px 88px; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta { left: 30px; bottom: 18px; width: 39%; }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .operations-hub-standalone .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { min-height: 390px !important; margin-bottom: 54px; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__field { top: 78px; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 82%; max-width: 82%; right: -12px; bottom: -38px; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { width: 48%; padding: 104px 24px 128px; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta { left: 24px; right: auto; bottom: 18px; width: 46%; }
+}
+@media (max-width: 760px) {
+  .operations-hub-standalone .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { min-height: 500px !important; margin-bottom: 12px; overflow: hidden; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__field { top: 130px; bottom: 0; clip-path: polygon(0 0,100% 0,100% 88%,90% 92%,80% 89%,70% 96%,60% 92%,50% 98%,40% 93%,30% 97%,20% 91%,10% 95%,0 88%); }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 126%; max-width: none; right: -18%; bottom: -6px; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama .vv-hero__routes { inset: 130px 0 0; height: calc(100% - 130px); }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { width: 100%; max-width: none; padding: 154px 20px 152px; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta { left: 20px; right: 20px; bottom: 20px; width: auto; }
+}
+</style><div class="operations-hub-standalone" data-theme="light"><main class="operations-hub"><header class="briefing-header"><div class="briefing-brand">LATTICE</div><div class="briefing-location">Operations Workspace</div><div class="briefing-header-actions"><div class="briefing-header-controls"><button>Light mode</button><span class="briefing-source">Sample workspace</span></div><span class="briefing-user">S</span><button>Sign out</button></div></header><section class="vv-hero briefing-hero vv-hero--isometric vv-hero--panorama"><div class="vv-hero__field" aria-hidden="true">
         <div class="vv-hero__atmosphere"></div>
         <svg class="vv-hero__routes" viewBox="0 0 1600 300" preserveAspectRatio="none" focusable="false">
           <g class="vv-hero__route-lines">
@@ -15206,4 +15384,4 @@ body:has(.operations-hub-standalone[data-theme="dark"]) { background-color: #101
             <path pathLength="100" d="M400 70 540 30 740 30 900 90" />
           </g>
         </svg>
-      </div><img class="vv-hero__architecture" src="file:///C:/Users/athul/Documents/Codex/CIAL PROJECT/Trilora_lattice/apps/web/public/brand/workspace-integrated-campus-v9.png"><div class="vv-hero__content"><div class="briefing-hero-content"><div class="briefing-date"><span class="briefing-date-label">Workspace operations</span><time>Saturday, 14 November 2026</time></div><h1>Good afternoon, Support</h1><p class="briefing-status-sentence">No active SOS alerts · RTLS awaiting commissioning</p><button class="briefing-overview-link">Enter operations console ↗</button><div class="briefing-live-meta"><span><small>Workspace</small><b>Sample feed</b></span><span><small>Positioning</small><b>Awaiting telemetry</b></span><span><small>Last refresh</small><b>Not refreshed yet</b></span></div></div></div></section></main></div>
+      </div><img class="vv-hero__architecture" src="file:///C:/Users/athul/Documents/Codex/CIAL PROJECT/Trilora_lattice/apps/web/public/brand/workspace-integrated-campus-v11.png"><div class="vv-hero__content"><div class="briefing-hero-content"><div class="briefing-date"><span class="briefing-date-label">Workspace operations</span><time>Saturday, 14 November 2026</time></div><h1>Good afternoon, Support</h1><p class="briefing-status-sentence">No active SOS alerts · RTLS awaiting commissioning</p><button class="briefing-overview-link">Enter operations console ↗</button><div class="briefing-live-meta"><span><small>Workspace</small><b>Sample feed</b></span><span><small>Positioning</small><b>Awaiting telemetry</b></span><span><small>Last refresh</small><b>Not refreshed yet</b></span></div></div></div></section></main></div>

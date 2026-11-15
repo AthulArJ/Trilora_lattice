@@ -149,16 +149,16 @@ export default function OperationsHubPage(p:Props){
     <header className="briefing-header">
       <div className="briefing-brand"><BrandLogo/></div>
       <div className="briefing-location"><MapPin size={15}/><span><b>Operations Workspace</b><small>WORKSPACE OPERATIONS</small></span></div>
-      <div className="briefing-header-actions">{p.themeToggle}<span className={`briefing-source ${source==='LIVE WORKSPACE DATA'?'is-live':visualDemo?'is-demo':''}`}><i/>{sourceDisplay}</span><span className="briefing-user">{email?email.split('@')[0].split(/[._-]/).map(s=>s[0]).join('').slice(0,2).toUpperCase():'VV'}</span>{isConfigured&&<button className="briefing-signout" onClick={onSignOut} aria-label="Sign out"><LogOut size={15}/></button>}</div>
+      <div className="briefing-header-actions"><div className="briefing-header-controls">{p.themeToggle}<span className={`briefing-source ${source==='LIVE WORKSPACE DATA'?'is-live':visualDemo?'is-demo':''}`}><i/>{sourceDisplay}</span></div><span className="briefing-user">{email?email.split('@')[0].split(/[._-]/).map(s=>s[0]).join('').slice(0,2).toUpperCase():'VV'}</span>{isConfigured&&<button className="briefing-signout" onClick={onSignOut} aria-label="Sign out"><LogOut size={15}/></button>}</div>
     </header>
 
     <HeroScene>
-      <div className="briefing-hero-content">
-        <div className="briefing-date"><span className="briefing-date-label">Workspace operations</span><time>{today}</time></div>
-        <h1>{greeting}, {operatorName}</h1>
-        <p className="briefing-status-sentence">{operationalStatus}</p>
-        <button className="briefing-overview-link" onClick={()=>onNavigate('Operations overview')}><span>Enter operations console</span><ArrowUpRight size={17}/></button>
-        <div className="briefing-live-meta" aria-label="Workspace status"><span><i className={source==='LIVE WORKSPACE DATA'?'is-live':''}/><small>Workspace</small><b>{workspaceState}</b></span><span><Radio size={13}/><small>Positioning</small><b>{visualDemo?'Sample event stream':latestPositionTime&&!positionStreamStale?`Updated ${ago(latestPositionTime)}`:'Awaiting telemetry'}</b></span><span><RefreshCw size={12}/><small>Last refresh</small><b>{lastLoaded?ago(lastLoaded):'Not refreshed yet'}</b></span></div>
+      <div className="industrial-hero__copy">
+        <div className="industrial-hero__date"><span>Workspace operations</span><time>{today}</time></div>
+        <h1>{greeting}, <span>{operatorName}</span></h1>
+        <p className="industrial-hero__status">{operationalStatus}</p>
+        <button className="industrial-hero__console" onClick={()=>onNavigate('Operations overview')}><span>Enter operations console</span><ArrowRight size={18}/></button>
+        <div className="industrial-hero__meta" aria-label="Workspace status"><span><i className={source==='LIVE WORKSPACE DATA'?'is-live':''}/><small>Workspace</small><b>{workspaceState}</b></span><span><Radio size={13}/><small>Positioning</small><b>{visualDemo?'Sample event stream':latestPositionTime&&!positionStreamStale?`Updated ${ago(latestPositionTime)}`:'Awaiting telemetry'}</b></span><span><RefreshCw size={13}/><small>Last refresh</small><b>{lastLoaded?ago(lastLoaded):'Not refreshed yet'}</b></span></div>
       </div>
     </HeroScene>
 
@@ -227,6 +227,7 @@ export default function OperationsHubPage(p:Props){
     {shiftOpen&&<div className="hub-modal-backdrop" onMouseDown={e=>{if(e.target===e.currentTarget)setShiftOpen(false);}}><form className="hub-modal" onSubmit={e=>void publishShift(e)}><div className="hub-modal-head"><div><span className="hub-panel-kicker">WORKFORCE PLANNING</span><h2>Create a shift roster</h2><p>Publish a shift roster and assign workforce.</p></div><button type="button" onClick={()=>setShiftOpen(false)} aria-label="Close"><X size={17}/></button></div><label>Shift name<input required maxLength={80} value={shiftName} onChange={e=>setShiftName(e.target.value)}/></label><label>Shift date<input type="date" required value={shiftDate} onChange={e=>setShiftDate(e.target.value)}/></label><div className="hub-form-row"><label>Starts at<input type="time" required value={shiftStart} onChange={e=>setShiftStart(e.target.value)}/></label><label>Ends at<input type="time" required value={shiftEnd} onChange={e=>setShiftEnd(e.target.value)}/></label></div><fieldset className="hub-worker-picker"><legend>Assign people <small>({shiftWorkers.length} selected)</small></legend>{workers.length?workers.map(w=><label key={w.id}><input type="checkbox" checked={shiftWorkers.includes(w.id)} onChange={e=>setShiftWorkers(v=>e.target.checked?[...v,w.id]:v.filter(id=>id!==w.id))}/><span><b>{w.name}</b><small>{catName(w.workforceCategory??'unclassified')} · {w.role}</small></span></label>):<small>Add workforce records before assigning a shift.</small>}</fieldset>{(demoModeActive||dataSource!=='supabase')&&<div className="hub-local-note"><AlertTriangle size={13}/> Local preview only; this roster will not be saved to Supabase.</div>}<div className="hub-modal-actions"><button type="button" className="modal-cancel" onClick={()=>setShiftOpen(false)}>Cancel</button><button className="modal-submit" disabled={saving}><CalendarClock size={14}/>{saving?'Publishing…':'Publish shift'}</button></div></form></div>}
   </div>;
 }
+
 
 
 
