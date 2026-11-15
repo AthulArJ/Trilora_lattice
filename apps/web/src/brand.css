@@ -3496,36 +3496,36 @@
   box-shadow: inset 0 1px rgba(232, 240, 244, .08), 0 18px 42px rgba(12, 20, 37, .34) !important
 }
 
-/* Keep the landing's Workforce subview on the same Root Beer / Maroon dark palette.
+/* Keep the landing's Workforce subview on the same graphite and teal dark palette.
    The chart's category colors are supplied by the data and remain untouched. */
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen) {
-  background: #250001 !important;
-  color: #FCECBB !important;
+  background: #101619 !important;
+  color: #EDF2F0 !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen {
-  --ui-bg: #250001;
-  --ui-surface: #350508;
-  --ui-raised: #41090D;
-  --ui-border: rgba(252, 236, 187, .12);
-  --ui-border-strong: rgba(169, 19, 20, .68);
-  --ui-text: #FCECBB;
-  --ui-muted: #D5C99D;
-  --ui-subtle: #BDAE85;
-  --ui-accent: #A91314;
-  --ui-success: #FFB607;
-  --ui-warning: #FFB607;
-  --ui-danger: #A91314;
-  --ui-info: #236092;
+  --ui-bg: #101619;
+  --ui-surface: #182125;
+  --ui-raised: #202C31;
+  --ui-border: rgba(163, 178, 183, .12);
+  --ui-border-strong: rgba(115, 185, 165, .68);
+  --ui-text: #EDF2F0;
+  --ui-muted: #A3B2B7;
+  --ui-subtle: #A3B2B7;
+  --ui-accent: #73B9A5;
+  --ui-success: #75C69A;
+  --ui-warning: #D6AF68;
+  --ui-danger: #EF8D88;
+  --ui-info: #88B3D4;
   --wi-bg: transparent;
-  --wi-surface: #350508;
-  --wi-raised: #41090D;
+  --wi-surface: #182125;
+  --wi-raised: #202C31;
   --wi-line: var(--ui-border);
   --wi-text: var(--ui-text);
   --wi-muted: var(--ui-muted);
-  --wi-accent: #A91314;
-  --wi-accent-gradient: linear-gradient(112deg, #A91314, #590004);
-  background: linear-gradient(132deg, rgba(37, 0, 1, .99), rgba(53, 5, 8, .99) 58%, rgba(65, 9, 13, .98)) !important;
+  --wi-accent: #73B9A5;
+  --wi-accent-gradient: linear-gradient(112deg, #73B9A5, #29383E);
+  background: linear-gradient(132deg, rgba(16, 22, 25, .99), rgba(24, 33, 37, .99) 58%, rgba(32, 44, 49, .98)) !important;
   color: var(--wi-text) !important;
   color-scheme: dark;
 }
@@ -3539,73 +3539,73 @@
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-topbar {
-  background: rgba(37, 0, 1, .94) !important;
+  background: rgba(16, 22, 25, .94) !important;
   border-color: var(--wi-line) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .24), inset 0 1px rgba(252, 236, 187, .06) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .24), inset 0 1px rgba(163, 178, 183, .06) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen :is(.wi-insight, .wi-panel, .wi-sample-banner, .wi-search, .wi-header-actions select, .wi-secondary, .wi-ghost, .wi-toggle, .wi-column-menu, .wi-person-drawer, .wi-chart-tooltip, .wi-table-empty, .wi-shift-empty) {
-  background: linear-gradient(145deg, rgba(89, 0, 4, .32), rgba(53, 5, 8, .96) 72%) !important;
+  background: linear-gradient(145deg, rgba(41, 56, 62, .32), rgba(24, 33, 37, .96) 72%) !important;
   border-color: var(--wi-line) !important;
   color: var(--wi-text) !important;
-  box-shadow: inset 0 1px rgba(252, 236, 187, .05), 0 10px 28px rgba(0, 0, 0, .24) !important;
+  box-shadow: inset 0 1px rgba(163, 178, 183, .05), 0 10px 28px rgba(0, 0, 0, .24) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-composition-panel {
-  background: linear-gradient(128deg, rgba(89, 0, 4, .48), rgba(53, 5, 8, .97) 54%, rgba(65, 9, 13, .72)) !important;
-  border-color: rgba(252, 236, 187, .14) !important;
-  box-shadow: inset 0 1px rgba(252, 236, 187, .06), 0 14px 36px rgba(0, 0, 0, .30) !important;
+  background: linear-gradient(128deg, rgba(41, 56, 62, .48), rgba(24, 33, 37, .97) 54%, rgba(32, 44, 49, .72)) !important;
+  border-color: rgba(163, 178, 183, .14) !important;
+  box-shadow: inset 0 1px rgba(163, 178, 183, .06), 0 14px 36px rgba(0, 0, 0, .30) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-composition-panel:before {
-  background: linear-gradient(112deg, #A91314, #590004 68%, rgba(255, 182, 7, .72)) !important;
+  background: linear-gradient(112deg, #73B9A5, #29383E 68%, rgba(115, 185, 165, .72)) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen :is(.wi-search, .wi-header-actions select, .wi-roster-table, .wi-roster-table th, .wi-roster-table td, .wi-toggle button, .wi-person-drawer input, .wi-person-drawer select) {
-  background: rgba(37, 0, 1, .72) !important;
+  background: rgba(16, 22, 25, .72) !important;
   border-color: var(--wi-line) !important;
   color: var(--wi-text) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-primary {
-  background: #FFB607 !important;
-  border-color: rgba(252, 236, 187, .42) !important;
-  color: #250001 !important;
+  background: #73B9A5 !important;
+  border-color: rgba(163, 178, 183, .42) !important;
+  color: #101619 !important;
   box-shadow: 0 7px 20px rgba(0, 0, 0, .24), inset 0 1px rgba(255, 255, 255, .16) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen :is(.wi-secondary, .wi-ghost):hover,
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-primary:hover {
-  background: #A91314 !important;
-  border-color: #A91314 !important;
-  color: #FCECBB !important;
+  background: #73B9A5 !important;
+  border-color: #73B9A5 !important;
+  color: #EDF2F0 !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-toggle {
-  background: rgba(37, 0, 1, .76) !important
+  background: rgba(16, 22, 25, .76) !important
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-toggle button.active {
-  background: #590004 !important;
-  color: #FCECBB !important;
-  box-shadow: inset 0 1px rgba(252, 236, 187, .08);
+  background: #29383E !important;
+  color: #EDF2F0 !important;
+  box-shadow: inset 0 1px rgba(163, 178, 183, .08);
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen :is(.wi-legend-row:hover, .wi-legend-row.hovered, .wi-bar-row:hover) {
-  background: rgba(89, 0, 4, .28) !important
+  background: rgba(41, 56, 62, .28) !important
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen :is(.wi-legend-row.selected, .wi-bar-row.selected) {
-  border-color: rgba(255, 182, 7, .42) !important;
-  background: rgba(169, 19, 20, .20) !important;
+  border-color: rgba(115, 185, 165, .42) !important;
+  background: rgba(115, 185, 165, .20) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen :is(.wi-bar-track, .wi-legend-bar, .wi-bars button>div, .wi-shift-readiness>div>div, .wi-progress) {
-  background: rgba(252, 236, 187, .16) !important
+  background: rgba(163, 178, 183, .16) !important
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-donut-track {
-  stroke: rgba(252, 236, 187, .18) !important
+  stroke: rgba(163, 178, 183, .18) !important
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen :is(.wi-chart-foot, .wi-readiness-list>div, .wi-shift-groups>div, .wi-coverage-row) {
@@ -3617,32 +3617,32 @@
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-show-categories {
-  color: #FCECBB !important
+  color: #EDF2F0 !important
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen :where(button, a, input, select, textarea, summary, [tabindex]):focus-visible,
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen) .theme-toggle-button:focus-visible {
-  outline-color: #FFB607 !important
+  outline-color: #73B9A5 !important
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-insight.wi-insight {
-  background: linear-gradient(145deg, rgba(65, 9, 13, .78), rgba(53, 5, 8, .97) 76%) !important;
-  border-color: rgba(252, 236, 187, .12) !important;
+  background: linear-gradient(145deg, rgba(32, 44, 49, .78), rgba(24, 33, 37, .97) 76%) !important;
+  border-color: rgba(163, 178, 183, .12) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-panel.wi-composition-panel {
-  background: linear-gradient(128deg, rgba(89, 0, 4, .52), rgba(53, 5, 8, .97) 58%, rgba(65, 9, 13, .7)) !important;
-  border-color: rgba(252, 236, 187, .14) !important;
-  box-shadow: inset 0 1px rgba(252, 236, 187, .06), 0 16px 40px rgba(0, 0, 0, .32) !important;
+  background: linear-gradient(128deg, rgba(41, 56, 62, .52), rgba(24, 33, 37, .97) 58%, rgba(32, 44, 49, .7)) !important;
+  border-color: rgba(163, 178, 183, .14) !important;
+  box-shadow: inset 0 1px rgba(163, 178, 183, .06), 0 16px 40px rgba(0, 0, 0, .32) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-legend-bar {
-  background: rgba(252, 236, 187, .24) !important;
+  background: rgba(163, 178, 183, .24) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .workforce-intel-screen)>.workforce-intel-screen .wi-sample-banner.wi-sample-banner {
-  background: linear-gradient(100deg, rgba(89, 0, 4, .28), rgba(53, 5, 8, .88)) !important;
-  border-color: rgba(252, 236, 187, .12) !important;
+  background: linear-gradient(100deg, rgba(41, 56, 62, .28), rgba(24, 33, 37, .88)) !important;
+  border-color: rgba(163, 178, 183, .12) !important;
 }
 
 /* Deep Ocean Blue dark theme for the authenticated operations dashboard. */
@@ -5214,35 +5214,35 @@
   }
 }
 
-/* Root beer, maroon and cream palette for the dark landing page only.
+/* Graphite, muted teal and pearl palette for the dark landing page.
    Chart colors remain on their existing --ops-* tokens. */
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) {
-  color: #FCECBB !important;
-  background: #250001 !important;
+  color: #EDF2F0 !important;
+  background: #101619 !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub {
-  --bg: #250001;
-  --surface: #350508;
-  --surface-raised: #41090D;
-  --surface-hover: #590004;
-  --border: rgba(252, 236, 187, .12);
-  --text: #FCECBB;
-  --text-muted: #D5C99D;
-  --primary-btn-bg: #FFB607;
-  --on-primary: #250001;
-  --accent: #A91314;
-  --accent-rgb: 169, 19, 20;
-  --accent-soft: rgba(169, 19, 20, .14);
-  --accent-subtle: rgba(169, 19, 20, .22);
-  --accent-focus: rgba(255, 182, 7, .38);
-  --success: #FFB607;
-  --warning: #FFB607;
-  --danger: #A91314;
-  --info: #236092;
-  --glass: rgba(53, 5, 8, .94);
-  --glass-strong: rgba(37, 0, 1, .97);
-  --ice: #FCECBB;
+  --bg: #101619;
+  --surface: #182125;
+  --surface-raised: #202C31;
+  --surface-hover: #29383E;
+  --border: rgba(163, 178, 183, .12);
+  --text: #EDF2F0;
+  --text-muted: #A3B2B7;
+  --primary-btn-bg: #73B9A5;
+  --on-primary: #101619;
+  --accent: #73B9A5;
+  --accent-rgb: 115, 185, 165;
+  --accent-soft: rgba(115, 185, 165, .14);
+  --accent-subtle: rgba(115, 185, 165, .22);
+  --accent-focus: rgba(115, 185, 165, .38);
+  --success: #73B9A5;
+  --warning: #73B9A5;
+  --danger: #73B9A5;
+  --info: #88B3D4;
+  --glass: rgba(24, 33, 37, .94);
+  --glass-strong: rgba(16, 22, 25, .97);
+  --ice: #EDF2F0;
   --ink: var(--text);
   --muted: var(--text-muted);
   --line: var(--border);
@@ -5251,10 +5251,10 @@
   --ops-surface: var(--surface);
   --ops-raised: var(--surface-raised);
   --ops-border: var(--border);
-  --ops-border-strong: rgba(255, 182, 7, .34);
+  --ops-border-strong: rgba(115, 185, 165, .34);
   --ops-text: var(--text);
   --ops-muted: var(--text-muted);
-  --ops-subtle: #D5C99D;
+  --ops-subtle: #A3B2B7;
   /* These existing chart colors are deliberately preserved. */
   --ops-accent: #65CDB0;
   --ops-success: #55D6A3;
@@ -5267,17 +5267,17 @@
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-header, .briefing-kpi, .briefing-grid > .briefing-card,
   .briefing-setup-card) {
-  color: #FCECBB !important;
-  background: linear-gradient(145deg, rgba(65, 9, 13, .98), rgba(53, 5, 8, .98)) !important;
-  border-color: rgba(252, 236, 187, .12) !important;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, .26), inset 0 1px rgba(252, 236, 187, .035) !important;
+  color: #EDF2F0 !important;
+  background: linear-gradient(145deg, rgba(32, 44, 49, .98), rgba(24, 33, 37, .98)) !important;
+  border-color: rgba(163, 178, 183, .12) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .26), inset 0 1px rgba(163, 178, 183, .035) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero .vv-hero__bg {
-  border-color: rgba(252, 236, 187, .18) !important;
+  border-color: rgba(163, 178, 183, .18) !important;
   background:
-    linear-gradient(135deg, #41090D, #250001 72%) !important;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, .34), inset 0 1px rgba(252, 236, 187, .045) !important;
+    linear-gradient(135deg, #202C31, #101619 72%) !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, .34), inset 0 1px rgba(163, 178, 183, .045) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-header, .briefing-kpi, .briefing-grid > .briefing-card,
@@ -5290,124 +5290,124 @@
   .briefing-hero-content > .briefing-status-sentence, .briefing-date,
   .briefing-card-head h3, .briefing-kpi > strong, .briefing-kpi > b,
   .setup-summary h2) {
-  color: #FCECBB !important;
+  color: #EDF2F0 !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(p, small, .briefing-brand small, .briefing-location small,
   .briefing-card-head p, .briefing-section-heading > p,
   .briefing-kpi > small, .setup-summary p, .briefing-date time) {
-  color: #D5C99D !important;
+  color: #A3B2B7 !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-hero-content svg, .briefing-kpi > span svg,
   .setup-icon, .briefing-location svg, .briefing-section-heading > div > span,
   .briefing-live-meta svg, .briefing-footnote svg, .briefing-inline-note svg,
   .card-kicker) {
-  color: #FFB607 !important;
+  color: #73B9A5 !important;
   filter: none !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link, .button-primary, .action-issue,
   .card-action-primary, .briefing-empty button) {
-  color: #250001 !important;
-  background: #FFB607 !important;
-  border: 1px solid rgba(252, 236, 187, .42) !important;
+  color: #101619 !important;
+  background: #73B9A5 !important;
+  border: 1px solid rgba(163, 178, 183, .42) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, .24), inset 0 1px rgba(255, 255, 255, .16) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link, .button-primary, .action-issue,
   .card-action-primary, .briefing-empty button) svg {
-  color: #250001 !important;
+  color: #101619 !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-actions button:not(.action-issue),
   .briefing-card-head > button:not(.card-action-primary), .setup-steps > button) svg {
-  color: #FCECBB !important;
+  color: #EDF2F0 !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link:hover, .button-primary:hover:not(:disabled),
   .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled),
   .briefing-empty button:hover) {
-  background: #A91314 !important;
-  color: #FCECBB !important;
-  border-color: #A91314 !important;
+  background: #73B9A5 !important;
+  color: #EDF2F0 !important;
+  border-color: #73B9A5 !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-overview-link:hover, .button-primary:hover:not(:disabled),
   .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled),
   .briefing-empty button:hover) svg {
-  color: #FCECBB !important;
+  color: #EDF2F0 !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-actions button:not(.action-issue),
   .briefing-card-head > button:not(.card-action-primary),
   .setup-steps > button, .theme-toggle-button,
   .briefing-source, .briefing-user, .briefing-signout) {
-  color: #D5C99D !important;
-  background: rgba(53, 5, 8, .94) !important;
-  border-color: rgba(252, 236, 187, .12) !important;
+  color: #A3B2B7 !important;
+  background: rgba(24, 33, 37, .94) !important;
+  border-color: rgba(163, 178, 183, .12) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .14) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-empty, .briefing-mini-stats > div,
   .briefing-live-meta > span, .briefing-sample-banner,
   .briefing-connection-notice, .setup-steps > button, .zone-summary-row) {
-  color: #D5C99D !important;
-  background: rgba(53, 5, 8, .88) !important;
-  border-color: rgba(252, 236, 187, .10) !important;
+  color: #A3B2B7 !important;
+  background: rgba(24, 33, 37, .88) !important;
+  border-color: rgba(163, 178, 183, .10) !important;
   box-shadow: none !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-date-label, .setup-progress, .setup-steps > button i) {
-  color: #FCECBB !important;
-  background: rgba(255, 182, 7, .10) !important;
-  border-color: rgba(255, 182, 7, .28) !important;
+  color: #EDF2F0 !important;
+  background: rgba(115, 185, 165, .10) !important;
+  border-color: rgba(115, 185, 165, .28) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .setup-progress>i {
-  background: #FFB607 !important;
+  background: #73B9A5 !important;
   box-shadow: none !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-source.is-demo {
-  color: #FCECBB !important;
-  background: rgba(255, 182, 7, .10) !important;
-  border-color: rgba(255, 182, 7, .28) !important;
+  color: #EDF2F0 !important;
+  background: rgba(115, 185, 165, .10) !important;
+  border-color: rgba(115, 185, 165, .28) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-source.is-demo>i {
-  background: #FFB607 !important;
+  background: #73B9A5 !important;
   box-shadow: none !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-live-meta i.is-live, .briefing-source.is-live > i) {
-  background: #FFB607 !important;
+  background: #73B9A5 !important;
   box-shadow: none !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-connection-notice {
-  color: #236092 !important;
-  border-color: rgba(35, 96, 146, .38) !important;
+  color: #88B3D4 !important;
+  border-color: rgba(136, 179, 212, .38) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.briefing-ticket-row, .briefing-roster > div,
   .briefing-anchor-list > div, .briefing-incident-row) {
-  border-color: rgba(252, 236, 187, .10) !important;
+  border-color: rgba(163, 178, 183, .10) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(.hub-modal, .briefing-ticket-row select, .hub-worker-picker,
   .hub-modal input, .hub-modal select, .hub-modal textarea) {
-  color: #FCECBB !important;
-  background: #350508 !important;
-  border-color: rgba(252, 236, 187, .16) !important;
+  color: #EDF2F0 !important;
+  background: #182125 !important;
+  border-color: rgba(163, 178, 183, .16) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub :is(button, a, input, select, textarea, summary, [tabindex]):focus-visible {
-  outline: 2px solid #FFB607 !important;
+  outline: 2px solid #73B9A5 !important;
   outline-offset: 2px !important;
-  box-shadow: 0 0 0 4px rgba(255, 182, 7, .22) !important;
+  box-shadow: 0 0 0 4px rgba(115, 185, 165, .22) !important;
 }
 
 .operations-hub-standalone[data-theme="dark"]:has(> .operations-hub)>.operations-hub .briefing-hero .vv-hero__scene {
@@ -5913,3 +5913,39 @@
   border-color: rgba(0, 200, 83, .35) !important;
   color: #FFFFFF !important;
 }
+
+/* Shared dark theme semantics: neutral surfaces, teal actions and distinct alerts. */
+:is(.app-shell, .operations-hub-standalone)[data-theme="dark"] {
+  --readable-text: #EDF2F0; --readable-secondary: #A3B2B7;
+  --vv-canvas: #101619; --vv-ink: #EDF2F0;
+  --success: #75C69A; --warning: #D6AF68; --danger: #EF8D88; --info: #88B3D4;
+}
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub {
+  --border: #304047; --ops-border: #304047; --ops-border-strong: #496169;
+  --accent: #73B9A5; --accent-rgb: 115, 185, 165; --teal: #73B9A5;
+  --success: #75C69A; --warning: #D6AF68; --danger: #EF8D88; --info: #88B3D4;
+}
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-location svg, .card-kicker) { color: #C8B58D !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-connection-notice, .briefing-source.is-demo) { color: #D6AF68 !important; background: #D6AF6810 !important; border-color: #D6AF6833 !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-connection-notice, .briefing-source.is-demo) :is(b, strong, small, svg) { color: #D6AF68 !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub .briefing-source.is-demo > i { background: #D6AF68 !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-live-meta i.is-live, .briefing-source.is-live > i) { background: #75C69A !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.is-sos, .is-critical, .is-danger, .incident-open, .status-danger) { color: #EF8D88 !important; border-color: #EF8D8840 !important; background-color: #EF8D8810 !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.is-sos, .is-critical, .is-danger, .incident-open, .status-danger) :is(b, strong, small, svg) { color: #EF8D88 !important; }
+
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-sos-callout, .briefing-incident-row.is-urgent) { background: #EF8D8812 !important; border-color: #EF8D8840 !important; color: #EF8D88 !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-sos-callout, .briefing-incident-row.is-urgent) :is(b, strong, small, svg) { color: #EF8D88 !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-overview-link:hover, .button-primary:hover:not(:disabled), .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled)) { background: #8BCBB8 !important; color: #101619 !important; border-color: #8BCBB8 !important; }
+.operations-hub-standalone[data-theme="dark"]:has(> .operations-hub) > .operations-hub :is(.briefing-overview-link:hover, .button-primary:hover:not(:disabled), .action-issue:hover:not(:disabled), .card-action-primary:hover:not(:disabled)) svg { color: #101619 !important; }
+
+/* Workforce uses the same full-width gutters for its topbar and content. */
+.operations-hub-standalone:has(> .workforce-intel-screen) > .workforce-intel-screen { width: 100%; max-width: none; min-width: 0; padding-inline: clamp(16px, 2vw, 32px); box-sizing: border-box; }
+.operations-hub-standalone:has(> .workforce-intel-screen) > .workforce-intel-screen :is(.wi-topbar, .wi-main) { width: 100%; max-width: none; min-width: 0; margin-inline: 0; box-sizing: border-box; }
+@media (max-width: 600px) {
+  .operations-hub-standalone:has(> .workforce-intel-screen) > .workforce-intel-screen { padding-inline: 12px; }
+}
+
+/* Contain the workforce header's top margin so the page canvas paints the gap. */
+.operations-hub-standalone:has(> .workforce-intel-screen) { display: flow-root; min-height: 100svh; }
+html:has(.operations-hub-standalone[data-theme="dark"]),
+body:has(.operations-hub-standalone[data-theme="dark"]) { background-color: #101619; color-scheme: dark; }

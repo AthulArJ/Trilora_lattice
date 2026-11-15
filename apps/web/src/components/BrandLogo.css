@@ -58,10 +58,19 @@
   min-width: 0;
 }
 
+.briefing-header .briefing-brand .lattice-brand-logo {
+  width: 270px;
+  flex: 0 0 270px;
+}
+
+.operations-hub-standalone[data-theme="light"] .briefing-header .briefing-brand .lattice-brand-logo > .lattice-brand-logo-light {
+  filter: brightness(.84) contrast(1.22) saturate(1.12) !important;
+}
+
 @media (max-width: 700px) {
   .briefing-header .briefing-brand .lattice-brand-logo {
-    width: 180px;
-    flex-basis: 180px;
+    width: 188px;
+    flex-basis: 188px;
   }
 
   .briefing-header {
@@ -73,7 +82,7 @@
 
 @media (max-width: 420px) {
   .briefing-header .briefing-brand .lattice-brand-logo {
-    width: 150px;
-    flex-basis: 150px;
+    width: 166px;
+    flex-basis: 166px;
   }
 }

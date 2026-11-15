@@ -107,3 +107,317 @@
     margin-top: 24px;
   }
 }
+
+/* Dedicated isometric artwork stays fully visible in the shallow hero. */
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--isometric { min-height: 300px; background: #052831 !important; }
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .vv-hero__bg { background: #052831 !important; border-color: #ffffff12 !important; backdrop-filter: none; }
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .vv-hero__scene { object-fit: contain; object-position: right center; filter: none !important; opacity: 1 !important; }
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .vv-hero__bg::after { background: linear-gradient(90deg, #052831 0%, #052831d9 26%, #05283100 55%); }
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .briefing-hero-content { max-width: 720px; }
+@media (max-width: 760px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--isometric { overflow: hidden; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .vv-hero__bg { position: relative; height: clamp(160px, 33vw, 230px); border: 0; border-radius: 0; box-shadow: none; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .vv-hero__scene { object-fit: cover; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .vv-hero__bg::after { background: linear-gradient(0deg, #052831, #05283100 25%); }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .briefing-hero-content { padding-top: 8px; }
+}
+
+/* Continuous, full-bleed campus with a protected reading area. */
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .vv-hero__scene { object-fit: cover; object-position: center 43%; }
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .vv-hero__bg::after { background: linear-gradient(90deg, #08262ff2 0%, #08262fe6 27%, #08262f80 40%, #08262f00 58%); }
+@media (min-width: 761px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--isometric { min-height: clamp(280px, 19vw, 340px) !important; }
+}
+@media (max-width: 760px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .vv-hero__scene { object-position: right 43%; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--isometric .vv-hero__bg::after { background: linear-gradient(0deg, #052831, #05283100 20%); }
+}
+
+/* One full-bleed isometric panorama: no separate floating campus cutout. */
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama {
+  overflow: hidden;
+  margin-top: 0;
+  min-height: clamp(320px, 20vw, 380px) !important;
+  border-radius: 16px;
+}
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .vv-hero__bg {
+  position: absolute;
+  inset: 0;
+  height: auto;
+  background-color: #08262f !important;
+  background-image: radial-gradient(ellipse at 78% 42%, #245056 0%, #12383f 42%, #08262f 85%) !important;
+  background-position: center, center 52%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .vv-hero__bg::after { background: none; }
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama > .vv-hero__content { position: absolute; inset: 0; z-index: 3; }
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { position: static; width: 40%; max-width: 700px; }
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta { position: absolute; left: clamp(30px, 3.2vw, 48px); bottom: 30px; width: min(660px, 46%); margin: 0; padding: 0; border: 0; }
+@media (max-width: 1100px) and (min-width: 761px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { width: 48%; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta { width: min(640px, 52%); }
+}
+@media (max-width: 760px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { margin-top: 0; min-height: 420px !important; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .vv-hero__bg { background-position: center, right 45%; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .vv-hero__bg::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3, 20, 26, .8), rgba(3, 20, 26, .5) 65%, rgba(3, 20, 26, .22)); }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama > .vv-hero__content { position: absolute; inset: 0; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { width: 100%; max-width: none; padding: 22px 20px 142px; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta { left: 20px; right: 20px; bottom: 16px; width: auto; margin: 0; }
+}
+
+/* Ground the architecture into the panorama while its roofline crosses the top edge. */
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama {
+  overflow: visible;
+  margin-top: 64px;
+}
+.operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+  position: absolute;
+  z-index: 1;
+  inset: auto 12px 0 auto;
+  width: 63%;
+  height: calc(100% + 58px);
+  object-fit: contain;
+  object-position: right bottom;
+  opacity: 1;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, #000 0%, #000 68%, #000b 81%, transparent 99%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 68%, #000b 81%, transparent 99%);
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 56%; }
+}
+@media (max-width: 760px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { margin-top: 24px; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 85%; height: 180px; top: -24px; bottom: auto; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { padding-top: 160px !important; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { min-height: 540px !important; }
+}
+@media (min-width: 761px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+    top: -48px;
+    bottom: auto;
+    width: 65%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* Anchor the yard to the lower edge and retain the full industrial silhouette. */
+@media (min-width: 761px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+    top: auto;
+    bottom: 8px;
+    right: 12px;
+    width: 65%;
+    height: calc(100% + 44px);
+    object-fit: fill;
+    transform: none;
+    mask-image: linear-gradient(to bottom, #000 0%, #000 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 90%, transparent 100%);
+  }
+}
+@media (min-width: 761px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+    width: auto;
+    height: calc(100% + 40px);
+    max-width: 65%;
+    object-fit: contain;
+    object-position: right bottom;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+/* Front-view panorama composed for the shallow hero. Preserve its native proportions. */
+@media (min-width: 761px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { min-height: 300px !important; margin-top: 84px; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+    width: 70%; max-width: 70%; height: auto; max-height: 374px;
+    inset: auto 10px 0 auto; object-fit: contain; object-position: right bottom;
+    mask-image: linear-gradient(to right, transparent, #000 8%);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%);
+  }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { width: 34%; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta { bottom: 20px; width: 30%; }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 65%; max-width: 65%; height: 330px; object-fit: cover; object-position: left bottom; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content { width: 39%; }
+}
+@media (min-width: 1101px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { min-height: 280px !important; }
+}
+/* Keep the complete scene silhouette, including both returning perimeter roads. */
+.operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+  mask-image: none;
+  -webkit-mask-image: none;
+  object-fit: contain;
+}
+/* Account for the transparent margin beneath the artwork's road. */
+@media (min-width: 761px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { bottom: -18px; }
+}
+
+/* Architectural atmosphere sits entirely behind the industrial artwork. */
+.operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .vv-hero__bg {
+  background-image: radial-gradient(ellipse at 82% 25%, #3b5553 0%, #17383e 42%, #0c252e 82%) !important;
+}
+.vv-hero__atmosphere {
+  position: absolute;
+  inset: -15% -5% -15% 34%;
+  background: radial-gradient(ellipse at 72% 25%, #d4ae7130 0%, #95b9ad12 34%, transparent 68%);
+  transform-origin: 75% 30%;
+  animation: lattice-atmosphere 26s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.vv-hero__routes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, transparent 24%, #0009 44%, #000 78%);
+}
+.vv-hero__routes path { fill: none; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+.vv-hero__route-lines path { stroke: #a9c3ba; stroke-width: .7; opacity: .14; }
+.vv-hero__route-pulses path { stroke: #e0c18a; stroke-width: 1.3; stroke-dasharray: 4 96; stroke-dashoffset: 4; opacity: 0; animation: lattice-route-flow 36s linear infinite; }
+.vv-hero__route-pulses path:nth-child(2) { animation-delay: 12s; }
+.vv-hero__route-pulses path:nth-child(3) { animation-delay: 24s; }
+@keyframes lattice-route-flow {
+  0% { stroke-dashoffset: 4; opacity: 0; }
+  2% { opacity: .45; }
+  15% { opacity: .45; }
+  18% { stroke-dashoffset: -100; opacity: 0; }
+  100% { stroke-dashoffset: -100; opacity: 0; }
+}
+@keyframes lattice-atmosphere { from { opacity: .45; transform: scale(1); } to { opacity: .85; transform: scale(1.06) translateX(-1%); } }
+@media (prefers-reduced-motion: reduce) {
+  .vv-hero__atmosphere, .vv-hero__route-pulses path { animation: none; }
+  .vv-hero__atmosphere { opacity: .6; }
+  .vv-hero__route-pulses { display: none; }
+}
+@media (max-width: 760px) { .vv-hero__routes { opacity: .5; } }
+
+/* Low planted frontage grounds the scene without covering controls below it. */
+.operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting {
+  position: absolute; z-index: 2; right: 22px; bottom: -5px;
+  width: 62%; height: 54px; overflow: hidden; pointer-events: none;
+}
+.vv-hero__planting > img {
+  position: absolute; bottom: 0; left: 0; width: 100%; height: auto;
+  max-width: none; transform: translateY(28%);
+}
+.vv-hero__routes { mask-image: linear-gradient(90deg, transparent 16%, #000 34%); }
+.vv-hero__route-lines path { opacity: .23; }
+.vv-hero__route-pulses path { stroke: #f1d397; stroke-width: 2; filter: drop-shadow(0 0 3px #e9c18188); animation-duration: 21s; }
+.vv-hero__route-pulses path:nth-child(2) { animation-delay: 7s; }
+.vv-hero__route-pulses path:nth-child(3) { animation-delay: 14s; }
+@keyframes lattice-route-flow {
+  0% { stroke-dashoffset: 4; opacity: 0; }
+  3% { opacity: .85; }
+  22% { opacity: .85; }
+  28% { stroke-dashoffset: -100; opacity: 0; }
+  100% { stroke-dashoffset: -100; opacity: 0; }
+}
+@media (max-width: 760px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting { top: 110px; bottom: auto; width: 75%; height: 30px; right: 14px; }
+}
+/* Render the complete botanical asset; never crop the foliage silhouette. */
+.operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting {
+  overflow: visible;
+  height: auto;
+  aspect-ratio: 3 / 1;
+  bottom: -6px;
+}
+.vv-hero__planting > img {
+  width: 100%; height: auto; bottom: 0;
+  transform: translateY(28%) scale(.75);
+  transform-origin: center 72%;
+}
+@media (max-width: 760px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting { top: 54px; bottom: auto; height: auto; }
+}
+
+/* Complete sculpted limestone beds extend beneath the hero edge. */
+.operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting { bottom: -16px; }
+.vv-hero__planting > img { transform: translateY(23%) scale(.6); transform-origin: center 77%; }
+@media (max-width: 760px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting { top: 62px; bottom: auto; }
+}
+@media (min-width: 761px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { margin-bottom: 16px; }
+}
+/* Front-facing rectangular bases align with the banner's horizontal edge. */
+.vv-hero__planting > img { transform: translateY(17%) scale(.6); transform-origin: center 83%; }
+/* Continuous organic frontage: a level undulating edge with trees at each end. */
+.operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting { width: 65%; right: 18px; bottom: -14px; }
+.vv-hero__planting > img { transform: translateY(6%); transform-origin: center 94%; }
+@media (max-width: 760px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting { width: 77%; top: 42px; bottom: auto; right: 14px; }
+}
+/* Extend the planted frontage and expose the curved stone lip below the panel. */
+@media (min-width: 1101px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting {
+    left: 470px;
+    right: 12px;
+    width: auto;
+    bottom: -36px;
+  }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { margin-bottom: 38px; }
+}
+@media (min-width: 1101px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { margin-top: clamp(84px, calc(12vw - 88px), 160px); }
+}
+/* Clean alpha bonsai garden reaches the corner; its physical base projects below. */
+.vv-hero__planting > img { transform: none; }
+@media (min-width: 1101px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting { right: 0; bottom: -22px; }
+}
+/* Shallow foreground relief keeps the factory elevations visible. */
+@media (min-width: 761px) {
+  .vv-hero__planting > img { height: clamp(170px, 15vw, 270px); width: 100%; object-fit: fill; }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__planting { bottom: -52px; }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama { margin-bottom: 58px; }
+}
+/* Unified campus and garden: preserve the render's native proportions. */
+@media (min-width: 761px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+    width: 70%; max-width: 70%; height: auto; max-height: none;
+    right: 8px; bottom: -28px; top: auto; object-fit: contain;
+    transform: none; mask-image: none;
+  }
+}
+@media (min-width: 761px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { bottom: -50px; }
+}
+@media (min-width: 761px) and (max-width: 1600px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture { width: 65%; max-width: 65%; }
+}
+/* Give the briefing its own comfortable column and keep the garden clear of actions. */
+@media (min-width: 1101px) {
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero.briefing-hero.vv-hero--panorama {
+    min-height: 340px !important;
+    margin-bottom: 60px;
+    margin-top: clamp(80px, 7vw, 134px);
+  }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-hero-content {
+    width: 34%; padding: 32px 30px; box-sizing: border-box;
+  }
+  .operations-hub-standalone[data-theme]:has(> .operations-hub) > .operations-hub .vv-hero--panorama .briefing-live-meta {
+    left: 30px; bottom: 30px; width: calc(32% - 30px); gap: 10px;
+  }
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+    width: 70%; max-width: 70%; bottom: -66px;
+  }
+}
+@media (min-width: 1701px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+    width: 74%; max-width: 74%; bottom: -58px;
+  }
+}
+@media (min-width: 1101px) and (max-width: 1700px) {
+  .operations-hub-standalone .operations-hub .vv-hero--panorama > .vv-hero__architecture {
+    width: 65%; max-width: 65%; bottom: -54px;
+  }
+}
