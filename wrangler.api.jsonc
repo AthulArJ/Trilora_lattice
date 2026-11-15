@@ -10,8 +10,10 @@
     "NODE_ENV": "production",
     "CLOUDFLARE_WORKER": "true",
     "PORT": "4000",
-    "WEB_ORIGIN": "https://lattice.trilora.net"
+    "WEB_ORIGIN": "https://lattice.trilora.net",
+    "SUPABASE_URL": "https://hoqttcnmsxlbvpfritbf.supabase.co"
   },
-  "triggers": { "crons": ["* * * * *"] },
+  // Initial production rollout: no automatic telemetry queue processing.
+  "triggers": { "crons": [] },
   "observability": { "enabled": true }
 }
