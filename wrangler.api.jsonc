@@ -2,7 +2,7 @@
   "name": "trilora-lattice-api",
   "main": "./worker/api.js",
   "compatibility_date": "2026-11-15",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": ["nodejs_compat", "allow_eval_during_startup"],
   "workers_dev": true,
   "keep_vars": true,
   "alias": { "pino": "./node_modules/pino/pino.js" },

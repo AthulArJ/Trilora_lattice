@@ -1,6 +1,6 @@
 import Fastify, { type FastifyReply, type FastifyRequest } from 'fastify';
 import cors from '@fastify/cors';
-import { createClient } from '@supabase/supabase-js';
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { existsSync, readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -18,7 +18,8 @@ if (process.env.CLOUDFLARE_WORKER !== 'true') {
  }
 }
 
-const app = Fastify({ logger: true, bodyLimit: 64 * 1024 });
+const isWorker = process.env.CLOUDFLARE_WORKER === 'true';
+const app = Fastify({ logger: true, bodyLimit: 64 * 1024, ...(isWorker ? { pluginTimeout: 0 } : {}) });
 const allowedWebOrigins = new Set([process.env.WEB_ORIGIN].filter((origin): origin is string => Boolean(origin)));
 if (process.env.NODE_ENV !== 'production') {
   allowedWebOrigins.add('http://localhost:5173');
@@ -31,12 +32,24 @@ await app.register(cors, {
   },
 });
 
-const supabaseUrl = process.env.SUPABASE_URL;
-const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const authEnabled = Boolean(supabaseUrl && serviceRoleKey);
-if (Boolean(supabaseUrl) !== Boolean(serviceRoleKey)) throw new Error('Set both SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY, or leave both empty for local sample mode.');
-if (process.env.NODE_ENV === 'production' && !authEnabled) throw new Error('Production API startup requires Supabase authentication configuration.');
-const db = authEnabled ? createClient(supabaseUrl!, serviceRoleKey!, { auth: { persistSession: false, autoRefreshToken: false } }) : null;
+let authEnabled = false;
+let db: SupabaseClient | null = null;
+let configuredWebOrigin: string | undefined;
+let environmentConfigured = false;
+export function configureApiEnvironment(env: Record<string, string | undefined>) {
+  if (environmentConfigured) return;
+  const supabaseUrl = env.SUPABASE_URL;
+  const serviceRoleKey = env.SUPABASE_SERVICE_ROLE_KEY;
+  if (Boolean(supabaseUrl) !== Boolean(serviceRoleKey)) throw new Error('Set both SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY, or leave both empty for local sample mode.');
+  if (process.env.NODE_ENV === 'production' && !(supabaseUrl && serviceRoleKey)) throw new Error('Production API requires Supabase authentication configuration.');
+  authEnabled = Boolean(supabaseUrl && serviceRoleKey);
+  db = authEnabled ? createClient(supabaseUrl!, serviceRoleKey!, { auth: { persistSession: false, autoRefreshToken: false } }) : null;
+  configuredWebOrigin = env.WEB_ORIGIN;
+  if (configuredWebOrigin) allowedWebOrigins.add(configuredWebOrigin);
+  environmentConfigured = true;
+}
+if (!isWorker) configureApiEnvironment(process.env);
+
 type AuthContext = { userId?: string; userRole?: string };
 
 app.addHook('preHandler', async (request, reply) => {
@@ -76,7 +89,7 @@ async function writeAudit(actorId: string | undefined, action: string, entityTyp
 }
 
 function webRedirectUrl() {
-  return process.env.WEB_ORIGIN?.trim().replace(/\/+$/, '') || (process.env.NODE_ENV === 'production' ? null : 'http://localhost:5173');
+  return configuredWebOrigin?.trim().replace(/\/+$/, '') || (process.env.NODE_ENV === 'production' ? null : 'http://localhost:5173');
 }
 
 async function detachUserReferences(userId: string, email: string, displayName: string) {

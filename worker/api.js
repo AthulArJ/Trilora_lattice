@@ -1,22 +1,19 @@
 import { httpServerHandler } from 'cloudflare:node';
+import { app, configureApiEnvironment, drainTelemetryQueue } from '../apps/api/src/index.ts';
 
-let serverReady;
-function getServer() {
-  // Initialize inside a request so Supabase and platform bindings are available.
-  return serverReady ??= (async () => {
-    const api = await import('../apps/api/src/index.ts');
-    await api.app.ready();
-    const port = Number(process.env.PORT ?? 4000);
-    api.app.server.listen(port);
-    return { handler: httpServerHandler({ port }), drain: api.drainTelemetryQueue };
-  })();
-}
+// Compile every route once, during startup where code generation is supported.
+await app.ready();
+const port = Number(process.env.PORT ?? 4000);
+app.server.listen(port);
+const handler = httpServerHandler({ port });
 
 export default {
-  async fetch(request, env, ctx) {
-    return (await getServer()).handler.fetch(request, env, ctx);
+  fetch(request, env, ctx) {
+    configureApiEnvironment(env);
+    return handler.fetch(request, env, ctx);
   },
-  async scheduled() {
-    await (await getServer()).drain();
+  async scheduled(controller, env) {
+    configureApiEnvironment(env);
+    await drainTelemetryQueue();
   },
 };
