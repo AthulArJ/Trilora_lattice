@@ -6,14 +6,16 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { timingSafeEqual } from 'node:crypto';
 
-const envFile = resolve(dirname(fileURLToPath(import.meta.url)), '../.env');
-if (existsSync(envFile)) {
+if (process.env.CLOUDFLARE_WORKER !== 'true') {
+ const envFile = resolve(dirname(fileURLToPath(import.meta.url)), '../.env');
+ if (existsSync(envFile)) {
   for (const line of readFileSync(envFile, 'utf8').split(/\r?\n/)) {
     const match = line.match(/^\s*(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*?)\s*$/);
     if (!match || process.env[match[1]] !== undefined) continue;
     const value = match[2].replace(/^(['"])(.*)\1$/, '$2');
     process.env[match[1]] = value;
   }
+ }
 }
 
 const app = Fastify({ logger: true, bodyLimit: 64 * 1024 });
@@ -737,11 +739,10 @@ app.post<{ Params: { id: string }; Body: { action: 'acknowledge' | 'resolve'; no
 });
 
 const port = Number(process.env.PORT ?? 4000);
-await app.listen({ host: '0.0.0.0', port });
-if (db) {
-  let queueDrainActive = false;
-  const drainTelemetryQueue = async () => {
-    if (queueDrainActive) return;
+export { app };
+let queueDrainActive = false;
+export const drainTelemetryQueue = async () => {
+    if (!db || queueDrainActive) return;
     queueDrainActive = true;
     try {
       const { data, error } = await db!.rpc('process_pending_rtls_events', { p_limit: 50 });
@@ -752,8 +753,15 @@ if (db) {
       }
     } catch (error) { app.log.error({ err: error }, 'Telemetry queue drain failed'); }
     finally { queueDrainActive = false; }
-  };
-  void drainTelemetryQueue();
-  const queueTimer = setInterval(() => { void drainTelemetryQueue(); }, 15_000);
-  queueTimer.unref();
+};
+
+// Workers attaches this same server through its Node HTTP adapter. Its scheduled
+// handler drains the queue because background intervals cannot outlive requests.
+if (process.env.CLOUDFLARE_WORKER !== 'true') {
+  await app.listen({ host: '0.0.0.0', port });
+  if (db) {
+    void drainTelemetryQueue();
+    const queueTimer = setInterval(() => { void drainTelemetryQueue(); }, 15_000);
+    queueTimer.unref();
+  }
 }

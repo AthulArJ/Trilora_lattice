@@ -1,0 +1,1 @@
+This folder contains the built output assets for the worker "trilora-lattice-api" generated at 2026-11-15T19:31:27.986Z.

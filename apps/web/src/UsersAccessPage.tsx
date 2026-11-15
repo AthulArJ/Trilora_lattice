@@ -1,8 +1,8 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { Check, KeyRound, MailPlus, RefreshCw, ShieldCheck, Trash2, UserRound, Users } from 'lucide-react';
 import type { Session } from '@supabase/supabase-js';
+import { adminApiUrl } from './lib/adminApi';
 
-const API = import.meta.env.VITE_API_URL ?? 'http://localhost:4000';
 type WorkspaceUser = { id: string; email: string; display_name: string; role: 'admin' | 'viewer'; status: 'active' | 'invited' | 'suspended'; created_at: string; last_sign_in_at: string | null };
 
 function date(value?: string | null) {
@@ -24,7 +24,7 @@ export default function UsersAccessPage({ session }: { session: Session | null }
     setLoading(true);
     setError('');
     try {
-      const response = await fetch(`${API}/api/v1/admin/users`, { headers: session ? { Authorization: `Bearer ${session.access_token}` } : undefined });
+      const response = await fetch(adminApiUrl('/api/v1/admin/users'), { headers: session ? { Authorization: `Bearer ${session.access_token}` } : undefined });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error ?? 'Could not load workspace users');
       setUsers(result.data ?? []);
@@ -42,7 +42,7 @@ export default function UsersAccessPage({ session }: { session: Session | null }
     event.preventDefault();
     setBusy('invite'); setError(''); setNotice('');
     try {
-      const response = await fetch(`${API}/api/v1/admin/users/invite`, {
+      const response = await fetch(adminApiUrl('/api/v1/admin/users/invite'), {
         method: 'POST',
         headers: { 'content-type': 'application/json', ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}) },
         body: JSON.stringify({ email: email.trim(), display_name: displayName.trim(), role: inviteRole }),
@@ -64,7 +64,7 @@ export default function UsersAccessPage({ session }: { session: Session | null }
     if (!role || role === user.role) return;
     setBusy(user.id); setError(''); setNotice('');
     try {
-      const response = await fetch(`${API}/api/v1/admin/users/${encodeURIComponent(user.id)}/role`, {
+      const response = await fetch(adminApiUrl(`/api/v1/admin/users/${encodeURIComponent(user.id)}/role`), {
         method: 'PATCH',
         headers: { 'content-type': 'application/json', ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}) },
         body: JSON.stringify({ role }),
@@ -86,7 +86,7 @@ export default function UsersAccessPage({ session }: { session: Session | null }
     if (isDelete && !window.confirm(`Permanently remove ${user.email} from this workspace? Their login will be deleted. Historical audit entries will remain with their email recorded.`)) return;
     setBusy(user.id); setError(''); setNotice('');
     try {
-      const response = await fetch(`${API}/api/v1/admin/users/${encodeURIComponent(user.id)}${action === 'resend' ? '/resend' : action === 'password-reset' ? '/password-reset' : ''}`, {
+      const response = await fetch(adminApiUrl(`/api/v1/admin/users/${encodeURIComponent(user.id)}${action === 'resend' ? '/resend' : action === 'password-reset' ? '/password-reset' : ''}`), {
         method: isDelete ? 'DELETE' : 'POST',
         headers: session ? { Authorization: `Bearer ${session.access_token}` } : undefined,
       });

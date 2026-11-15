@@ -82,11 +82,13 @@ The upload folder is `apps/web/dist` (it contains `index.html`, `assets`, and th
 
 For a local CLI deployment to Workers after authenticating with Cloudflare, run `npm run deploy:web`. This rebuilds the frontend before uploading it. `npm run build` remains available to build both the API and web app.
 
-Set `VITE_API_URL` to the deployed API's HTTPS origin in the hosting build environment. The Cloudflare Worker also reads `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` as runtime variables and serves them through `/runtime-config.js`; Wrangler preserves dashboard-managed variables on deploy. For local development or a manual static build, set the Supabase values in `apps/web/.env` instead. Only the Supabase project URL and a publishable/anon key are exposed to the browser. Never put service-role keys or ingestion tokens in `VITE_*` variables.
+Set `VITE_API_URL` to the existing deployed Fastify API's HTTPS origin. For Users & Access, the Cloudflare Worker exposes this value at runtime through `/runtime-config.js`; it takes precedence over the Vite build value. A static deployment can supply it at build time instead. Production account requests reject localhost and non-HTTPS API origins. Local development retains `http://localhost:4000` in `apps/web/.env`. See `apps/web/.env.production.example` for the production setting. The Worker also reads `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` as runtime variables; Wrangler preserves dashboard-managed variables on deploy. Only public API origins, the Supabase project URL, and a publishable/anon key are exposed to the browser. Never put service-role keys or ingestion tokens in `VITE_*` variables.
 
 ### API deployment
 
 Deploy `apps/api` separately to a Node.js host such as Railway. The static Cloudflare deployment only hosts the frontend; it does not run the Fastify API. Set the API's `WEB_ORIGIN` to the deployed frontend origin and configure the Supabase Auth URLs as described above. Use Supabase Auth + Postgres for hosted identity and data. A private positioning engine will need a secure outbound gateway or network link to the cloud API. Keep vendor-specific positioning and future vehicle telemetry behind separate backend adapters.
+
+For the existing Lattice production API, set `WEB_ORIGIN=https://lattice.trilora.net`. Fastify uses this exact origin for CORS and as the invitation email redirect URL. The backend retains its existing `SUPABASE_URL` and backend-only `SUPABASE_SERVICE_ROLE_KEY`. Users & Access loads `GET /api/v1/admin/users` and sends invitations to `POST /api/v1/admin/users/invite` on `VITE_API_URL`, with the current session bearer token. These routes validate the session and administrator profile server-side, then use Supabase Auth's admin API and `public.profiles`; no new client RLS policy or Supabase Edge Function is needed.
 
 ## Integration notes
 

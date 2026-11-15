@@ -21,8 +21,9 @@ export default {
       const candidateKey = (env.VITE_SUPABASE_PUBLISHABLE_KEY || env.VITE_SUPABASE_ANON_KEY || '').trim();
       const supabasePublishableKey = isPublicSupabaseKey(candidateKey) ? candidateKey : '';
       const config = JSON.stringify({ supabaseUrl, supabasePublishableKey });
+      const apiConfig = JSON.stringify({ apiUrl: (env.VITE_API_URL || '').trim().replace(/\/+$/, '') });
 
-      return new Response(`window.__LATTICE_RUNTIME_CONFIG__=${config};`, {
+      return new Response(`window.__LATTICE_RUNTIME_CONFIG__=${config};window.__LATTICE_API_CONFIG__=${apiConfig};`, {
         headers: {
           'Content-Type': 'application/javascript; charset=utf-8',
           'Cache-Control': 'no-store, max-age=0',

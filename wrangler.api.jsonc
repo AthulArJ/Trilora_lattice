@@ -1,0 +1,17 @@
+{
+  "name": "trilora-lattice-api",
+  "main": "./worker/api.js",
+  "compatibility_date": "2026-11-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "keep_vars": true,
+  "alias": { "pino": "./node_modules/pino/pino.js" },
+  "vars": {
+    "NODE_ENV": "production",
+    "CLOUDFLARE_WORKER": "true",
+    "PORT": "4000",
+    "WEB_ORIGIN": "https://lattice.trilora.net"
+  },
+  "triggers": { "crons": ["* * * * *"] },
+  "observability": { "enabled": true }
+}
