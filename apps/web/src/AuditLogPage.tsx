@@ -1,8 +1,9 @@
+import { adminApiUrl as apiUrl } from './lib/adminApi';
 import { useEffect, useMemo, useState } from 'react';
 import { Activity, AlertTriangle, Check, RefreshCw, Search, ShieldCheck, Users } from 'lucide-react';
 import type { Session } from '@supabase/supabase-js';
 
-const API = import.meta.env.VITE_API_URL ?? 'http://localhost:4000';
+
 type AuditEntry = {
   id: number;
   actor_id: string | null;
@@ -34,7 +35,7 @@ export default function AuditLogPage({ session }: { session: Session | null }) {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch(`${API}/api/v1/audit-log`, { headers: session ? { Authorization: `Bearer ${session.access_token}` } : undefined });
+      const response = await fetch(apiUrl(`/api/v1/audit-log`), { headers: session ? { Authorization: `Bearer ${session.access_token}` } : undefined });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error ?? 'Could not load audit history');
       setEntries(result.data ?? []);

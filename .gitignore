@@ -5,3 +5,6 @@ dist/
 .env.*
 !.env.example
 .DS_Store
+
+# Public API origin only; no credentials belong in this file.
+!apps/web/.env.production

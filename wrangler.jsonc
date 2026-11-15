@@ -2,6 +2,7 @@
   "name": "trilora-lattice",
   "main": "./worker/index.js",
   "keep_vars": true,
+  "vars": { "VITE_API_URL": "https://trilora-lattice-api.athulraj02.workers.dev" },
   "compatibility_date": "2026-11-13",
   "assets": {
     "directory": "./apps/web/dist",

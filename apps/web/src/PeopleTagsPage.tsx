@@ -1,8 +1,9 @@
+import { adminApiUrl as apiUrl } from './lib/adminApi';
 import { useEffect, useState, type FormEvent } from 'react';
 import { Battery, Link2, Plus, Radio, RefreshCw, Users } from 'lucide-react';
 import type { Session } from '@supabase/supabase-js';
 
-const API = import.meta.env.VITE_API_URL ?? 'http://localhost:4000';
+
 const demoControlsEnabled = import.meta.env.DEV || import.meta.env.VITE_ENABLE_DEMO_CONTROLS === 'true';
 
 type Worker = { id: string; name: string; role: string; workforceCategory?: string; employerName?: string | null; tagId?: string; status?: string; battery?: number | null; lastSeen?: string };
@@ -37,8 +38,8 @@ export default function PeopleTagsPage({ isAdmin, session, notify, onUpdated, de
     const headers = session ? { Authorization: `Bearer ${session.access_token}` } : undefined;
     try {
       const [workerResponse, tagResponse] = await Promise.all([
-        fetch(`${API}/api/v1/workers`, { headers }),
-        fetch(`${API}/api/v1/tags`, { headers }),
+        fetch(apiUrl(`/api/v1/workers`), { headers }),
+        fetch(apiUrl(`/api/v1/tags`), { headers }),
       ]);
       const [workerBody, tagBody] = await Promise.all([workerResponse.json(), tagResponse.json()]);
       if (!workerResponse.ok) throw new Error(workerBody.error ?? 'Could not load workers');
@@ -51,7 +52,7 @@ export default function PeopleTagsPage({ isAdmin, session, notify, onUpdated, de
   useEffect(() => { void load(); }, [session?.access_token, demoModeActive]);
 
   async function send(path: string, body: Record<string, string>, method = 'POST') {
-    const response = await fetch(`${API}/api/v1/${path}`, {
+    const response = await fetch(apiUrl(`/api/v1/${path}`), {
       method, headers: { 'content-type': 'application/json', ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}) }, body: JSON.stringify(body),
     });
     const result = await response.json();

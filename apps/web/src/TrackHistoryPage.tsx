@@ -1,8 +1,9 @@
+import { adminApiUrl as apiUrl } from './lib/adminApi';
 import { useEffect, useMemo, useState, type FormEvent } from 'react';
 import { Clock3, MapPin, Navigation, RefreshCw, Route, Users } from 'lucide-react';
 import type { Session } from '@supabase/supabase-js';
 
-const API = import.meta.env.VITE_API_URL ?? 'http://localhost:4000';
+
 type Worker = { id: string; name: string; role: string; tagId: string };
 type Point = { map_id: string | null; x: number; y: number; xPercent: number | null; yPercent: number | null; observed_at: string; source?: string; confidence?: number | null };
 type MapVersion = { id: string; name: string; version: number; previewUrl: string };
@@ -30,7 +31,7 @@ export default function TrackHistoryPage({ session, maps }: Props) {
   useEffect(() => {
     let active = true;
     setLoadingWorkers(true);
-    fetch(`${API}/api/v1/workers`, { headers })
+    fetch(apiUrl(`/api/v1/workers`), { headers })
       .then(async response => { const result = await response.json(); if (!response.ok) throw new Error(result.error ?? 'Could not load workers'); return result; })
       .then(result => { if (active) { const rows = result.data ?? []; setWorkers(rows); setWorkerId(current => current || rows[0]?.id || ''); } })
       .catch(cause => { if (active) setError(cause instanceof Error ? cause.message : 'Could not load workers'); })
@@ -46,7 +47,7 @@ export default function TrackHistoryPage({ session, maps }: Props) {
     setLoadingPoints(true); setError('');
     try {
       const query = new URLSearchParams({ from: start.toISOString(), to: end.toISOString() });
-      const response = await fetch(`${API}/api/v1/workers/${encodeURIComponent(workerId)}/positions?${query}`, { headers });
+      const response = await fetch(apiUrl(`/api/v1/workers/${encodeURIComponent(workerId)}/positions?${query}`), { headers });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error ?? 'Could not load position history');
       setPoints(result.data ?? []);

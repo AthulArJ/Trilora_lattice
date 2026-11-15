@@ -1,8 +1,9 @@
+import { adminApiUrl as apiUrl } from './lib/adminApi';
 import { useEffect, useState, type FormEvent } from 'react';
 import { Battery, CheckCircle2, CircleHelp, Plus, Radio, RefreshCw, Search, Signal, TriangleAlert, Users } from 'lucide-react';
 import type { Session } from '@supabase/supabase-js';
 
-const API = import.meta.env.VITE_API_URL ?? 'http://localhost:4000';
+
 type Badge = { id: string; label: string; provider?: string; provider_device_id?: string | null; sewio_feed_id?: string | null; model?: string | null; sos_capable?: boolean; hardware_address?: string | null; battery_percent?: number | null; device_state?: string | null; last_seen_at?: string | null };
 type Anchor = { id: string; label: string; provider_device_id?: string | null; model: string; hardware_address?: string | null; device_state: string; last_seen_at?: string | null; map_id?: string | null; x?: number | null; y?: number | null; installation_height_m?: number | null };
 type PublishedMap = { id: string; name: string; version: number; coordinate_system?: { xMin?: number; xMax?: number; yMin?: number; yMax?: number } };
@@ -36,7 +37,7 @@ export default function DevicesPage({ session, isAdmin }: { session: Session | n
     const headers = session ? { Authorization: `Bearer ${session.access_token}` } : undefined;
     try {
       const [badgeResponse, anchorResponse, workerResponse, mapResponse] = await Promise.all([
-        fetch(`${API}/api/v1/tags`, { headers }), fetch(`${API}/api/v1/anchors`, { headers }), fetch(`${API}/api/v1/workers`, { headers }), fetch(`${API}/api/v1/maps`, { headers }),
+        fetch(apiUrl(`/api/v1/tags`), { headers }), fetch(apiUrl(`/api/v1/anchors`), { headers }), fetch(apiUrl(`/api/v1/workers`), { headers }), fetch(apiUrl(`/api/v1/maps`), { headers }),
       ]);
       const [badgeBody, anchorBody, workerBody, mapBody] = await Promise.all([badgeResponse.json(), anchorResponse.json(), workerResponse.json(), mapResponse.json()]);
       if (!badgeResponse.ok) throw new Error(badgeBody.error ?? 'Could not load badge inventory');
@@ -53,7 +54,7 @@ export default function DevicesPage({ session, isAdmin }: { session: Session | n
   async function registerAnchor(event: FormEvent) {
     event.preventDefault(); setBusy(true); setError('');
     try {
-      const response = await fetch(`${API}/api/v1/anchors`, { method: 'POST', headers: { 'content-type': 'application/json', ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}) }, body: JSON.stringify({ label: anchorLabel, provider_device_id: anchorId, model: anchorModel, hardware_address: anchorMac }) });
+      const response = await fetch(apiUrl(`/api/v1/anchors`), { method: 'POST', headers: { 'content-type': 'application/json', ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}) }, body: JSON.stringify({ label: anchorLabel, provider_device_id: anchorId, model: anchorModel, hardware_address: anchorMac }) });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error ?? 'Could not register anchor');
       setAnchorLabel(''); setAnchorId(''); setAnchorMac(''); await load();
@@ -65,7 +66,7 @@ export default function DevicesPage({ session, isAdmin }: { session: Session | n
     event.preventDefault(); setBusy(true); setError('');
     const draft = placementDrafts[anchorId];
     try {
-      const response = await fetch(`${API}/api/v1/anchors/${encodeURIComponent(anchorId)}/placement`, { method: 'PUT', headers: { 'content-type': 'application/json', ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}) }, body: JSON.stringify(draft) });
+      const response = await fetch(apiUrl(`/api/v1/anchors/${encodeURIComponent(anchorId)}/placement`), { method: 'PUT', headers: { 'content-type': 'application/json', ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}) }, body: JSON.stringify(draft) });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error ?? 'Could not save anchor placement');
       await load();

@@ -1,9 +1,10 @@
+import { adminApiUrl as apiUrl } from './lib/adminApi';
 import { useEffect, useRef, useState } from 'react';
 import { AlertTriangle, Check, Clock3, MapPin, RefreshCw, Search, ShieldCheck, Siren } from 'lucide-react';
 import type { Session } from '@supabase/supabase-js';
 import './incident-sla.css';
 
-const API = import.meta.env.VITE_API_URL ?? 'http://localhost:4000';
+
 type Incident = { id: string; incidentCode?: string; workerId: string; worker: string; tagId: string; status: string; createdAt: string; acknowledgedAt?: string | null; acknowledgedBy?: string | null; assignedAt?: string | null; assignedBy?: string | null; resolvedAt?: string | null; resolvedBy?: string | null; resolutionNote?: string | null; assignedTo?: string | null; area: string; simulated?: boolean };
 type DemoResponder = { id: string; name: string; role: string; status: string };
 type Props = { isAdmin: boolean; session: Session | null; onUpdated: () => void; notify: (message: string) => void; demoModeActive: boolean; demoIncidents: Incident[]; demoResponders: DemoResponder[]; onDemoAction: (item: Incident, action: 'acknowledge' | 'resolve' | 'assign', note?: string) => void };
@@ -35,7 +36,7 @@ export default function IncidentCenterPage({ isAdmin, session, onUpdated, notify
     if (!quiet) setLoading(true);
     setError('');
     try {
-      const response = await fetch(`${API}/api/v1/incidents`, { headers: session ? { Authorization: `Bearer ${session.access_token}` } : undefined });
+      const response = await fetch(apiUrl(`/api/v1/incidents`), { headers: session ? { Authorization: `Bearer ${session.access_token}` } : undefined });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error ?? 'Could not load incidents');
       setIncidents(result.data ?? []);
@@ -64,7 +65,7 @@ export default function IncidentCenterPage({ isAdmin, session, onUpdated, notify
     }
     setBusyId(item.id); setError('');
     try {
-      const response = await fetch(`${API}/api/v1/incidents/${encodeURIComponent(item.id)}/action`, {
+      const response = await fetch(apiUrl(`/api/v1/incidents/${encodeURIComponent(item.id)}/action`), {
         method: 'POST', headers: { 'content-type': 'application/json', ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}) },
         body: JSON.stringify({ action: next, ...(next === 'resolve' ? { note } : {}) }),
       });

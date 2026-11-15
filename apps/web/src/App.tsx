@@ -1,3 +1,4 @@
+import { adminApiUrl as apiUrl } from './lib/adminApi';
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import './zone-demo.css';
 import './map-response.css';
@@ -38,7 +39,7 @@ type PublishedMap = { id: string; name: string; version: number; asset_path: str
 type AnchorSummary = { id: string; label: string; model: string; mapId: string | null; state: string; lastSeen: string | null; xPercent: number | null; yPercent: number | null };
 type BadgeSummary = { id: string; label: string; battery: number | null; status: string; lastSeen: string | null; worker: string | null };
 const DEMO_SOS_TARGET_MS = 2 * 60 * 1000;
-const API = import.meta.env.VITE_API_URL ?? 'http://localhost:4000';
+
 const THEME_STORAGE_KEY = 'lattice-theme';
 type AppTheme = 'dark' | 'light';
 function makeDemoWorkers(now = new Date().toISOString()): Worker[] {
@@ -128,7 +129,7 @@ function App() {
     if (demoModeRef.current) return;
     const requestId = ++overviewRequestRef.current;
     const headers = session ? { Authorization: `Bearer ${session.access_token}` } : undefined;
-    const response = await fetch(`${API}/api/v1/overview`, { headers });
+    const response = await fetch(apiUrl(`/api/v1/overview`), { headers });
     if (!response.ok) throw new Error('Dashboard API unavailable');
     const data = await response.json();
     if (demoModeRef.current || requestId !== overviewRequestRef.current) return;
@@ -218,7 +219,7 @@ function App() {
     if (!selected || !session || demoModeActive || selected.id.startsWith('demo-worker-')) { setTrackPositions([]); return; }
     const controller = new AbortController();
     const from = new Date(Date.now() - 8 * 60 * 60 * 1000).toISOString();
-    fetch(`${API}/api/v1/workers/${encodeURIComponent(selected.id)}/positions?from=${encodeURIComponent(from)}`, { headers: { Authorization: `Bearer ${session.access_token}` }, signal: controller.signal })
+    fetch(apiUrl(`/api/v1/workers/${encodeURIComponent(selected.id)}/positions?from=${encodeURIComponent(from)}`), { headers: { Authorization: `Bearer ${session.access_token}` }, signal: controller.signal })
       .then(async response => { if (!response.ok) throw new Error('Track history unavailable'); return response.json(); })
       .then(result => setTrackPositions(result.data ?? []))
       .catch(error => { if (error.name !== 'AbortError') setTrackPositions([]); });
@@ -330,7 +331,7 @@ function App() {
       return;
     }
     try {
-      const response = await fetch(`${API}/api/v1/incidents/${item.id}/action`, { method: 'POST', headers: { 'content-type': 'application/json', ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}) }, body: JSON.stringify({ action }) });
+      const response = await fetch(apiUrl(`/api/v1/incidents/${item.id}/action`), { method: 'POST', headers: { 'content-type': 'application/json', ...(session ? { Authorization: `Bearer ${session.access_token}` } : {}) }, body: JSON.stringify({ action }) });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error ?? 'Could not update incident');
       setIncidents(prev => prev.map(i => i.id === item.id ? { ...i, status: result.data?.status ?? (action === 'acknowledge' ? 'acknowledged' : 'resolved') } : i));

@@ -1,9 +1,10 @@
+import { adminApiUrl as apiUrl } from './lib/adminApi';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Activity, AlertTriangle, ArrowDownRight, ArrowUpRight, Check, Clock3, RefreshCw, Siren, Users } from 'lucide-react';
 import type { Session } from '@supabase/supabase-js';
 import './insights.css';
 
-const API = import.meta.env.VITE_API_URL ?? 'http://localhost:4000';
+
 type Incident = { id: string; incidentCode?: string; worker: string; tagId: string; status: string; createdAt: string; acknowledgedAt?: string | null; acknowledgedBy?: string | null; resolvedAt?: string | null; area: string; simulated?: boolean };
 type Worker = { id: string; status: string; tagId: string };
 type Props = { session: Session | null; demoModeActive: boolean; demoIncidents: Incident[]; workers: Worker[]; dataSource: string };
@@ -32,7 +33,7 @@ export default function InsightsPage({ session, demoModeActive, demoIncidents, w
     if (demoModeActive) { setLoading(false); setError(''); setUpdatedAt(new Date().toISOString()); return; }
     setLoading(true); setError('');
     try {
-      const response = await fetch(`${API}/api/v1/incidents`, { headers: session ? { Authorization: `Bearer ${session.access_token}` } : undefined });
+      const response = await fetch(apiUrl(`/api/v1/incidents`), { headers: session ? { Authorization: `Bearer ${session.access_token}` } : undefined });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error ?? 'Could not load incident history');
       setApiIncidents(result.data ?? []); setUpdatedAt(new Date().toISOString());
