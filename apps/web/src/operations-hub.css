@@ -7307,13 +7307,27 @@
 }
 
 .briefing-header-controls { display: flex; align-items: center; gap: 10px; }
+.operations-hub .briefing-header .briefing-location {
+  gap: 10px;
+  margin-left: 8px;
+  padding-left: 10px;
+  border-left: 1px solid color-mix(in srgb, currentColor 24%, transparent);
+  line-height: 1.3;
+}
+.operations-hub .briefing-header .briefing-location svg { flex: none; }
+.operations-hub .briefing-header .briefing-location b,
+.operations-hub .briefing-header .briefing-location small { line-height: 1.3; }
+.operations-hub .briefing-header .briefing-location small { margin-top: 3px; }
 @media (min-width: 1701px) {
  .operations-hub .briefing-header { position: relative; }
- .operations-hub .briefing-header-controls { position: absolute; left: 65%; top: 50%; transform: translate(-50%, -50%); }
+ .operations-hub .briefing-header-controls { position: absolute; left: 75%; top: 50%; transform: translate(-50%, -50%); }
 }
 @media (min-width: 1101px) and (max-width: 1700px) {
  .operations-hub .briefing-header { position: relative; }
- .operations-hub .briefing-header-controls { position: absolute; left: 68%; top: 50%; transform: translate(-50%, -50%); }
+ .operations-hub .briefing-header-controls { position: absolute; left: 78%; top: 50%; transform: translate(-50%, -50%); }
+}
+@media (min-width: 1101px) {
+ .operations-hub .briefing-header-controls > .briefing-source { transform: translateX(42px); }
 }
 @media (max-width: 600px) {
  .briefing-header-controls { flex-wrap: wrap; gap: 6px; }
@@ -7326,4 +7340,37 @@
 @media (min-width: 1101px) {
  .operations-hub-standalone[data-theme="light"] .operations-hub .briefing-header { background: rgba(246, 248, 245, .76); backdrop-filter: blur(10px); }
  .operations-hub-standalone[data-theme="dark"] .operations-hub .briefing-header { background: rgba(11, 17, 19, .76); backdrop-filter: blur(10px); }
+}
+
+/* Compact, icon-only theme switch in the workspace header. */
+.operations-hub .briefing-header-controls .theme-toggle-button {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  padding: 0;
+  gap: 0;
+  border-radius: 12px;
+}
+.operations-hub .briefing-header-controls .theme-toggle-button > span:first-child svg {
+  width: 20px;
+  height: 20px;
+}
+.operations-hub .briefing-header-controls .briefing-source.is-sample {
+  animation: sample-workspace-edge 2.6s ease-in-out infinite;
+}
+.operations-hub .briefing-header-controls .briefing-source.is-sample > i {
+  animation: sample-workspace-light 2.6s ease-in-out infinite;
+}
+@keyframes sample-workspace-edge {
+  0%, 100% { border-color: #55a878; box-shadow: 0 0 0 0 #55a87800; }
+  50% { border-color: #d5a83e; box-shadow: 0 0 8px 1px #d5a83e44; }
+}
+@keyframes sample-workspace-light {
+  0%, 100% { background: #55b879; box-shadow: 0 0 0 3px #55b87926; }
+  50% { background: #e0b63d; box-shadow: 0 0 0 3px #e0b63d35; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .operations-hub .briefing-header-controls .briefing-source.is-sample,
+  .operations-hub .briefing-header-controls .briefing-source.is-sample > i { animation: none; }
 }

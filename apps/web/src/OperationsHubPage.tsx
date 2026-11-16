@@ -102,6 +102,8 @@ function WorkforceIntelligence(p:WorkforceViewProps){
 }
 
 export default function OperationsHubPage(p:Props){
+  const [clockNow,setClockNow]=useState(()=>new Date());
+  useEffect(()=>{const timer=window.setInterval(()=>setClockNow(new Date()),30_000);return()=>window.clearInterval(timer);},[]);
   const {workers,badges,anchors,incidents,apiState,dataSource,demoModeActive,latestPositionTime,email='',accessToken,onSignOut,isConfigured,isAdmin,peopleReporting,positionStreamStale,onExportReport,onNotify,onNavigate}=p;
   const [summary,setSummary]=useState<Summary|null>(null),[summaryError,setSummaryError]=useState(''),[lastLoaded,setLastLoaded]=useState(''),[samplePreview,setSamplePreview]=useState(false);
   const [workforceOpen,setWorkforceOpen]=useState(false),[showAllRoles,setShowAllRoles]=useState(false),[workforcePinned,setWorkforcePinned]=useState('');
@@ -130,7 +132,7 @@ export default function OperationsHubPage(p:Props){
   const shownPresence=visualDemo?displayWorkers.filter(w=>w.status==='online').length:presence;
   const shownReporting=visualDemo?displayWorkers.filter(w=>w.status==='online').length:visibleBadges.filter(b=>b.status==='online').length;
   const categoryTotal=categories.reduce((sum,row)=>sum+row.count,0);
-  const now=new Date(),localHour=Number(now.toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',hour12:false})),greeting=localHour<12?'Good morning':localHour<17?'Good afternoon':'Good evening',today=now.toLocaleDateString('en-IN',{timeZone:'Asia/Kolkata',weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  const now=clockNow,localHour=Number(now.toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',hour12:false})),greeting=localHour<12?'Good morning':localHour<17?'Good afternoon':'Good evening',today=now.toLocaleDateString('en-IN',{timeZone:'Asia/Kolkata',weekday:'long',day:'numeric',month:'long',year:'numeric'}),currentTime=now.toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'numeric',minute:'2-digit',hour12:true});
   const operatorName=email?email.split('@')[0].split(/[._-]/).filter(Boolean).map(part=>part[0].toUpperCase()+part.slice(1)).join(' '):'operator';
   const initialLoading=!visualDemo&&!summary&&!summaryError&&!lastLoaded;
   const positioningStatus=latestPositionTime?(positionStreamStale?'events delayed':'reporting live'):'awaiting commissioning';
@@ -150,12 +152,12 @@ export default function OperationsHubPage(p:Props){
     <header className="briefing-header">
       <div className="briefing-brand"><BrandLogo/></div>
       <div className="briefing-location"><MapPin size={15}/><span><b>Operations Workspace</b><small>WORKSPACE OPERATIONS</small></span></div>
-      <div className="briefing-header-actions"><div className="briefing-header-controls">{p.themeToggle}<span className={`briefing-source ${source==='LIVE WORKSPACE DATA'?'is-live':visualDemo?'is-demo':''}`}><i/>{sourceDisplay}</span></div><span className="briefing-user">{email?email.split('@')[0].split(/[._-]/).map(s=>s[0]).join('').slice(0,2).toUpperCase():'VV'}</span>{isConfigured&&<button className="briefing-signout" onClick={onSignOut} aria-label="Sign out"><LogOut size={15}/></button>}</div>
+      <div className="briefing-header-actions"><div className="briefing-header-controls">{p.themeToggle}<span className={`briefing-source ${source==='LIVE WORKSPACE DATA'?'is-live':source==='SAMPLE WORKSPACE'?'is-sample':visualDemo?'is-demo':''}`}><i/>{sourceDisplay}</span></div><span className="briefing-user">{email?email.split('@')[0].split(/[._-]/).map(s=>s[0]).join('').slice(0,2).toUpperCase():'VV'}</span>{isConfigured&&<button className="briefing-signout" onClick={onSignOut} aria-label="Sign out"><LogOut size={15}/></button>}</div>
     </header>
 
     <HeroScene>
       <div className="industrial-hero__copy">
-        <div className="industrial-hero__date"><span>Workspace operations</span><time>{today}</time></div>
+        <div className="industrial-hero__date"><span>Workspace operations</span><time dateTime={now.toISOString()}>{today}</time><time className="industrial-hero__clock" dateTime={now.toISOString()} aria-label={`Current time ${currentTime} India Standard Time`}>{currentTime} IST</time></div>
         <h1>{greeting}, <span>{operatorName}</span></h1>
         <p className="industrial-hero__status">{operationalStatus}</p>
         <button className="industrial-hero__console" onClick={()=>onNavigate('Operations overview')}><span>Enter operations console</span><ArrowRight size={18}/></button>

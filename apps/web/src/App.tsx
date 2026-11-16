@@ -123,7 +123,7 @@ function App() {
   useEffect(() => {
     try { window.localStorage.setItem(THEME_STORAGE_KEY, theme); } catch { /* Theme still works for this session if storage is unavailable. */ }
   }, [theme]);
-  const themeToggle = <button className="theme-toggle-button" type="button" onClick={() => setTheme(value => value === 'dark' ? 'light' : 'dark')} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`} title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}><span aria-hidden="true">{theme === 'dark' ? <Sun size={16}/> : <Moon size={16}/>}</span><span>{theme === 'dark' ? 'Light' : 'Dark'} mode</span></button>;
+  const themeToggle = <button className="theme-toggle-button" type="button" onClick={() => setTheme(value => value === 'dark' ? 'light' : 'dark')} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`} title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}><span aria-hidden="true">{theme === 'dark' ? <Sun size={20} strokeWidth={2.2}/> : <Moon size={20} strokeWidth={2.2}/>}</span></button>;
 
   const refreshOverview = useCallback(async () => {
     if (demoModeRef.current) return;

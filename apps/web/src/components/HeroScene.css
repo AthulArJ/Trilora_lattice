@@ -129,29 +129,50 @@
 
 .industrial-hero__meta {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 8px;
-  margin-top: clamp(20px, 1.7vw, 34px);
-  width: 100%;
+  margin-top: clamp(28px, 2.2vw, 42px);
+  width: max-content;
+  max-width: calc(100vw - 48px);
 }
 .industrial-hero__meta > span {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  min-height: 32px;
-  padding: 7px 10px;
+  min-height: 28px;
+  padding: 5px 8px;
   border: 1px solid #6b929c40;
   border-radius: 13px;
   background: #031c2599;
   color: #e8f1f4;
-  font-size: clamp(10px, .7vw, 14px);
+  font-size: clamp(9px, .64vw, 12px);
   line-height: 1.2;
   white-space: nowrap;
 }
 .industrial-hero__meta small { color: #bfd0d7; font-size: inherit; }
 .industrial-hero__meta b { font-weight: 600; }
 .industrial-hero__meta svg { flex: none; color: #8cdacb; }
+.industrial-hero__meta > span:nth-child(1) i { animation: hero-status-pulse 2.2s ease-in-out infinite; }
+.industrial-hero__meta > span:nth-child(2) svg { animation: hero-signal-pulse 2.8s ease-in-out infinite; }
+.industrial-hero__meta > span:nth-child(3) svg { animation: hero-refresh-turn 8s ease-in-out infinite; }
+@keyframes hero-status-pulse {
+  0%, 100% { opacity: .72; transform: scale(.88); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+@keyframes hero-signal-pulse {
+  0%, 100% { opacity: .72; transform: scale(.94); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+@keyframes hero-refresh-turn {
+  0%, 78%, 100% { transform: rotate(0deg); }
+  88% { transform: rotate(180deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .industrial-hero__meta > span:nth-child(1) i,
+  .industrial-hero__meta > span:nth-child(2) svg,
+  .industrial-hero__meta > span:nth-child(3) svg { animation: none; }
+}
 .industrial-hero__meta i {
   flex: none;
   width: 7px;
@@ -166,8 +187,8 @@
   .industrial-hero__copy { top: 22%; width: 34%; }
   .industrial-hero__copy h1 { font-size: 25px; margin-top: 12px; }
   .industrial-hero__console { margin-top: 14px; min-height: 38px; padding: 8px 12px; }
-  .industrial-hero__meta { margin-top: 20px; gap: 6px; }
-  .industrial-hero__meta > span { min-height: 28px; padding: 6px 8px; gap: 5px; }
+  .industrial-hero__meta { margin-top: 30px; gap: 6px; }
+  .industrial-hero__meta > span { min-height: 25px; padding: 4px 7px; gap: 5px; }
 }
 
 /* Tablet and phone retain the complete art, then put the live briefing below it.
@@ -187,7 +208,7 @@
   .industrial-hero__status { max-width: 600px; font-size: 14px; }
   .industrial-hero__date { font-size: 12px; flex-wrap: wrap; white-space: normal; }
   .industrial-hero__console { font-size: 14px; }
-  .industrial-hero__meta { margin-top: 22px; }
+  .industrial-hero__meta { margin-top: 22px; flex-wrap: wrap; width: 100%; max-width: none; }
   .industrial-hero__meta > span { font-size: 12px; }
 }
 @media (max-width: 600px) {

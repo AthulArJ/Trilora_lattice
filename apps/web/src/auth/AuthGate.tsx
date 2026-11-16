@@ -70,7 +70,7 @@ export function AuthGate({ children }: { children: ReactNode }) {
     </section>
     <section className="login-access login-access-plum" data-theme="dark" aria-labelledby="login-title">
       <div className="login-access-brand"><BrandLogo/></div>
-      <div className="login-access-art"><div className="login-art-visual" aria-hidden="true"><div className="login-art-aura"/><div className="login-sculpture"><div className="login-slab login-slab-back"/><div className="login-slab login-slab-middle"/><div className="login-slab login-slab-front"/><div className="login-sculpture-cap"/></div></div></div>
+      <div className="login-access-art"><img className="login-digital-twin" src="/brand/login-operations-puzzle.png" alt="Four interlocking isometric modules representing people, assets, zones, and live events"/></div>
       <div className="login-card">
         <div className="login-card-heading"><span className="login-card-kicker">WORKSPACE ACCESS</span></div>
         <h2 id="login-title">{inviteFlow ? 'Set up your workspace access' : 'Welcome to Lattice'}</h2>

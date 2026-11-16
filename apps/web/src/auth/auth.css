@@ -182,61 +182,27 @@
 .login-access-brand .lattice-brand-logo { width: 100%; }
 .login-access-art {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: none;
   width: min(360px, 100%);
   height: 175px;
   margin: 0 0 12px;
-  perspective: 800px;
+  overflow: visible;
 }
-.login-art-visual { position: relative; height: 100%; pointer-events: none; }
-.login-art-aura {
-  position: absolute;
-  inset: 0 -20px;
-  background: radial-gradient(ellipse at center, #7d53952b, transparent 66%);
-}
-.login-sculpture {
-  position: relative;
-  width: 150px;
-  height: 160px;
-  margin: auto;
-  transform-style: preserve-3d;
-  animation: login-sculpture-float 7s ease-in-out infinite;
+.login-digital-twin {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 20px #0005);
+  animation: login-digital-twin-float 8s ease-in-out infinite;
   will-change: transform;
 }
-.login-slab {
-  position: absolute;
-  left: 20px;
-  width: 110px;
-  height: 110px;
-  border-radius: 20px;
-  transform: rotateX(56deg) rotateZ(-35deg);
-  background: linear-gradient(135deg, #70617d, #2d203f 58%, #1e1729);
-  border: 1px solid #b99ace66;
-  box-shadow: 7px 10px 0 #251a32, 9px 13px 0 #46334f, 15px 27px 27px #0005;
-}
-.login-slab-back { top: 55px; background: linear-gradient(135deg, #584a67, #241b33); opacity: .9; }
-.login-slab-middle { top: 25px; background: linear-gradient(140deg, #ae8fc4, #574269 60%, #30243d); }
-.login-slab-front {
-  top: -5px;
-  background: linear-gradient(140deg, #d5bd91, #7d6746 65%, #5b4830);
-  border-color: #eed6a488;
-  box-shadow: 6px 8px 0 #635035, 8px 11px 0 #a68c5f, 15px 30px 28px #0005;
-}
-.login-sculpture-cap {
-  position: absolute;
-  top: 25px;
-  left: 59px;
-  width: 35px;
-  height: 35px;
-  border-radius: 8px;
-  background: linear-gradient(120deg, #281632, #60416b);
-  transform: rotateX(56deg) rotateZ(-35deg);
-  border: 1px solid #c09aca55;
-  box-shadow: 3px 6px 0 #26182f;
-}
-@keyframes login-sculpture-float {
+@keyframes login-digital-twin-float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-4px); }
 }
 .login-card { position: relative; width: 100%; max-width: 360px; }
 .login-card-heading { margin-bottom: 10px; }
@@ -372,7 +338,7 @@
 @media (prefers-reduced-motion: reduce) {
   .auth-spinner { animation: none; }
   .login-shell.login-isometric * { transition: none !important; }
-  .login-sculpture { animation: none; will-change: auto; }
+  .login-digital-twin { animation: none; will-change: auto; }
   .login-access-footer { right: 20px; bottom: 20px; }
   .login-access-footer img { width: 108px; }
 }
@@ -433,7 +399,6 @@
   .login-shell.login-isometric .login-campus { margin-block: 8px; }
   .login-shell.login-isometric .login-access-brand { width: 165px; margin-bottom: 18px; }
   .login-shell.login-isometric .login-access-art { height: 104px; margin-bottom: 8px; }
-  .login-shell.login-isometric .login-art-visual { transform: scale(.72); transform-origin: center top; }
   .login-shell.login-isometric .login-card h2 { font-size: 28px; }
   .login-shell.login-isometric .login-introduction { margin-bottom: 18px; }
   .login-shell.login-isometric .login-form { gap: 15px; }
@@ -450,7 +415,6 @@
   .login-shell.login-isometric .login-access { order: -1; min-height: 100svh; padding: 24px clamp(24px, 8vw, 80px); }
   .login-shell.login-isometric .login-access::after { content: none; }
   .login-shell.login-isometric .login-access-art { height: 135px; margin-top: 24px; }
-  .login-shell.login-isometric .login-art-visual { transform: scale(.85); transform-origin: center top; }
   .login-shell.login-isometric .login-card { margin-bottom: 28px; }
   .login-shell.login-isometric .login-access-footer { margin-top: auto; }
   .login-shell.login-isometric .login-overview { padding: 32px clamp(24px, 8vw, 80px); }
