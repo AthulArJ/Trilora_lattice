@@ -238,7 +238,7 @@ export default function AreaMapsPage({ isAdmin, session, notify }: Props) {
 
   const allMaps = maps.length ? maps : [];
   return <section className="area-maps-page">
-    <div className="area-maps-intro"><div><span className="eyebrow"><span className="eyebrow-line"/> MAP VERSION CONTROL</span><h2>Area maps</h2><p>Manage private floor-plan files and coordinate references for each tracking area.</p></div>{isAdmin && <button className="button button-primary" onClick={() => { setError(''); setShowForm(v => !v); }}><Plus size={15}/>{showForm ? 'Close draft form' : 'Create map draft'}</button>}</div>
+    <div className="area-maps-intro"><div><span className="eyebrow">MAP VERSION CONTROL</span><h2>Area maps</h2><p>Manage private floor-plan files and coordinate references for each tracking area.</p></div>{isAdmin && <button className="button button-primary" onClick={() => { setError(''); setShowForm(v => !v); }}><Plus size={15}/>{showForm ? 'Close draft form' : 'Create map draft'}</button>}</div>
     <div className="map-safety-note"><ShieldCheck size={17}/><span><b>Map labels are not geofences.</b> Zone definitions can be prepared against metric map bounds; alert monitoring remains off until those bounds are calibrated and the positioning pipeline is commissioned.</span></div>
     {error && <div className="map-error" role="alert">{error}</div>}
     {showForm && <form className="map-draft-form" noValidate onSubmit={createDraft}>
@@ -250,7 +250,7 @@ export default function AreaMapsPage({ isAdmin, session, notify }: Props) {
       <div className="draft-form-actions"><button type="button" className="button button-secondary" onClick={resetForm} disabled={busy}>Cancel</button><button className="button button-primary" disabled={busy}>{busy ? saveStage || 'Saving draft…' : 'Save draft'}</button></div>
     </form>}
     {zoneMap && <section className="zone-editor-card">
-      <div className="zone-editor-heading"><div><span className="eyebrow"><span className="eyebrow-line"/> ZONE CONFIGURATION</span><h3>{zoneMap.name} · v{zoneMap.version}</h3><p>Drag over the floor plan to draw a rectangular zone. Coordinates are stored in map metres.</p></div><button type="button" className="icon-button" onClick={() => { setZoneMapId(''); resetZoneEditor(); }} aria-label="Close zone editor"><X size={16}/></button></div>
+      <div className="zone-editor-heading"><div><span className="eyebrow">ZONE CONFIGURATION</span><h3>{zoneMap.name} · v{zoneMap.version}</h3><p>Drag over the floor plan to draw a rectangular zone. Coordinates are stored in map metres.</p></div><button type="button" className="icon-button" onClick={() => { setZoneMapId(''); resetZoneEditor(); }} aria-label="Close zone editor"><X size={16}/></button></div>
       <div className="zone-config-notice"><AlertTriangle size={16}/><span><b>Configuration only · live monitoring is not active.</b><small>Zone rules will not generate operational alerts until map calibration, position-event ingestion, and the zone evaluator are commissioned.</small></span></div>
       {!validMapBounds && <div className="map-error">This map needs valid metric coordinate bounds before zones can be defined.</div>}
       <div className="zone-editor-layout">

@@ -55,7 +55,7 @@ export default function AuditLogPage({ session }: { session: Session | null }) {
   }), [entries, query]);
 
   return <section className="audit-page">
-    <div className="directory-intro"><div><span className="eyebrow"><span className="eyebrow-line"/> ADMINISTRATION</span><h2>Audit log</h2><p>Review operator and administrator actions recorded in this workspace.</p></div><button className="button button-secondary" onClick={() => void load()} disabled={loading}><RefreshCw size={14}/> Refresh</button></div>
+    <div className="directory-intro"><div><span className="eyebrow">ADMINISTRATION</span><h2>Audit log</h2><p>Review operator and administrator actions recorded in this workspace.</p></div><button className="button button-secondary" onClick={() => void load()} disabled={loading}><RefreshCw size={14}/> Refresh</button></div>
     <div className="audit-note"><ShieldCheck size={16}/><span><b>Admin-only activity history.</b> Entries are written by the backend and are not editable from this page.</span></div>
     {error && <div className="map-error" role="alert">{error}</div>}
     <div className="audit-toolbar"><div className="audit-count"><Activity size={16}/><span><b>{entries.length}</b> recent actions</span></div><label className="search-box"><Search size={14}/><input value={query} onChange={event => setQuery(event.target.value)} placeholder="Search action, actor, or record…"/></label></div>

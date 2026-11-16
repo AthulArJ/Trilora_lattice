@@ -107,7 +107,7 @@ export default function UsersAccessPage({ session }: { session: Session | null }
   }
 
   return <section className="user-access-page">
-    <div className="directory-intro"><div><span className="eyebrow"><span className="eyebrow-line"/> ADMINISTRATION</span><h2>Users & access</h2><p>Invite trusted operators and manage workspace permissions.</p></div><button className="button button-secondary" onClick={() => void load()} disabled={loading}><RefreshCw size={14}/> Refresh</button></div>
+    <div className="directory-intro"><div><span className="eyebrow">ADMINISTRATION</span><h2>Users & access</h2><p>Invite trusted operators and manage workspace permissions.</p></div><button className="button button-secondary" onClick={() => void load()} disabled={loading}><RefreshCw size={14}/> Refresh</button></div>
     <div className="audit-note"><ShieldCheck size={16}/><span><b>Invitation-only access.</b> New accounts receive an email invitation; public self-registration stays disabled.</span></div>
     {error && <div className="map-error" role="alert">{error}</div>}
     {notice && <div className="user-access-notice" role="status"><Check size={15}/>{notice}</div>}

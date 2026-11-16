@@ -81,7 +81,7 @@ export default function DevicesPage({ session, isAdmin }: { session: Session | n
   const awaiting = badges.filter(item => !item.last_seen_at && item.battery_percent == null).length + anchors.filter(item => !item.last_seen_at).length;
 
   return <section className="devices-page">
-    <div className="directory-intro"><div><span className="eyebrow"><span className="eyebrow-line"/> BLUEIOT DEVICE OPERATIONS</span><h2>Anchors & badges</h2><p>Register the BLE AoA infrastructure and assign SOS smart badges.</p></div><button className="button button-secondary" onClick={() => void load()} disabled={loading}><RefreshCw size={14}/> Refresh</button></div>
+    <div className="directory-intro"><div><span className="eyebrow">BLUEIOT DEVICE OPERATIONS</span><h2>Anchors & badges</h2><p>Register the BLE AoA infrastructure and assign SOS smart badges.</p></div><button className="button button-secondary" onClick={() => void load()} disabled={loading}><RefreshCw size={14}/> Refresh</button></div>
     <div className="map-safety-note"><Radio size={17}/><span><b>Inventory setup · RTLS telemetry unavailable.</b> Registered hardware remains “awaiting telemetry” until BLE AoA position updates and SOS events are ingested.</span></div>
     {error && <div className="map-error" role="alert">{error}</div>}
     {isAdmin && <form className="device-anchor-form" onSubmit={event => void registerAnchor(event)}>

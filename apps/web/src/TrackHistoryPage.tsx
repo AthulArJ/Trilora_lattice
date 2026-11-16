@@ -64,7 +64,7 @@ export default function TrackHistoryPage({ session, maps }: Props) {
   const selectedWorker = workers.find(worker => worker.id === workerId);
 
   return <section className="track-history-page">
-    <div className="directory-intro"><div><span className="eyebrow"><span className="eyebrow-line"/> POSITION REPLAY</span><h2>Track history</h2><p>Review recorded worker paths against the map version attached to each position.</p></div><button className="button button-secondary" onClick={() => void loadPoints()} disabled={loadingPoints || !workerId}><RefreshCw size={14}/> Refresh</button></div>
+    <div className="directory-intro"><div><span className="eyebrow">POSITION REPLAY</span><h2>Track history</h2><p>Review recorded worker paths against the map version attached to each position.</p></div><button className="button button-secondary" onClick={() => void loadPoints()} disabled={loadingPoints || !workerId}><RefreshCw size={14}/> Refresh</button></div>
     <div className="map-safety-note"><Navigation size={17}/><span><b>Position replay only.</b> Simulated points are labelled in the results. Accurate physical paths require a surveyed map and calibrated BLE AoA coordinate frame.</span></div>
     {error && <div className="map-error" role="alert">{error}</div>}
     <form className="history-filter" onSubmit={loadPoints}>
