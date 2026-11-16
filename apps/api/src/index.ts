@@ -5,6 +5,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { timingSafeEqual } from 'node:crypto';
+import { hasWorkspaceAuthentication } from './workspaceAuth.js';
 
 if (process.env.CLOUDFLARE_WORKER !== 'true') {
  const envFile = resolve(dirname(fileURLToPath(import.meta.url)), '../.env');
@@ -59,6 +60,7 @@ app.addHook('preHandler', async (request, reply) => {
   if (!token) return reply.code(401).send({ error: 'Sign in required' });
   const { data: authData, error: authError } = await db.auth.getUser(token);
   if (authError || !authData.user) return reply.code(401).send({ error: 'Session is invalid or expired' });
+  if (!hasWorkspaceAuthentication(token)) return reply.code(403).send({ error: 'Complete password setup and sign in before accessing the workspace' });
   const { data: profile, error: profileError } = await db.from('profiles').select('role').eq('id', authData.user.id).maybeSingle();
   if (profileError || !profile) return reply.code(403).send({ error: 'Account profile is not provisioned' });
   const context = request as typeof request & AuthContext;

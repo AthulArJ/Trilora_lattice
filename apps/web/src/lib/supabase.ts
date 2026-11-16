@@ -1,4 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
+// Evaluate callback intent before Supabase consumes the URL fragment.
+import '../auth/passwordSetup';
 
 declare global {
   interface Window {
