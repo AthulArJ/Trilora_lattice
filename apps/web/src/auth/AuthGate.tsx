@@ -3,6 +3,7 @@ import { Activity, ArrowRight, Box, Eye, EyeOff, Layers3, LockKeyhole, Mail, Map
 import { useAuth } from './AuthProvider';
 import BrandLogo from '../components/BrandLogo';
 import TechnologyFooter from './TechnologyFooter';
+import LoginGlassCard from '../components/LoginGlassCard';
 
 const capabilities = [
   { icon: MapPin, label: 'People' },
@@ -70,7 +71,9 @@ export function AuthGate({ children }: { children: ReactNode }) {
     </section>
     <section className="login-access login-access-plum" data-theme="dark" aria-labelledby="login-title">
       <div className="login-access-brand"><BrandLogo/></div>
-      <div className="login-access-art"><img className="login-digital-twin" src="/brand/login-operations-puzzle.png" alt="Four interlocking isometric modules representing people, assets, zones, and live events"/></div>
+      <LoginGlassCard>
+      <span className="login-secure-badge"><ShieldCheck size={12} strokeWidth={2} aria-hidden="true"/>Secure access</span>
+      <div className="login-access-art" aria-hidden="true"><img className="login-operations-art" src="/brand/login-location-glass-v10.webp" alt="" width={640} height={400}/></div>
       <div className="login-card">
         <div className="login-card-heading"><span className="login-card-kicker">WORKSPACE ACCESS</span></div>
         <h2 id="login-title">{inviteFlow ? 'Set up your workspace access' : 'Welcome to Lattice'}</h2>
@@ -86,6 +89,7 @@ export function AuthGate({ children }: { children: ReactNode }) {
         <div className="login-security"><ShieldCheck size={17} aria-hidden="true"/><span>Secure, invitation only workspace access</span></div>
         {!inviteFlow && <div className="login-signup-area"><p>Need access to Lattice?</p><button className="login-signup-trigger" type="button" aria-haspopup="dialog" aria-label="Request access to Lattice" onClick={() => setShowSignupInfo(true)}><span>Request access</span><ArrowRight size={14} aria-hidden="true"/></button></div>}
       </div>
+      </LoginGlassCard>
       <footer className="login-access-footer"><span>Powered by</span><img src="/brand/trilora-login-lockup.png" alt="TRILORA — Integrated Intelligence"/></footer>
       {showSignupInfo && <div className="signup-dialog-backdrop" onMouseDown={event => { if (event.target === event.currentTarget) setShowSignupInfo(false); }}>
         <section className="signup-dialog" role="dialog" aria-modal="true" aria-labelledby="signup-dialog-title" aria-describedby="signup-dialog-description">

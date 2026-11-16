@@ -7,6 +7,7 @@ type AuthState = {
   configured: boolean;
   loading: boolean;
   session: Session | null;
+  displayName: string;
   role: Role;
   signIn: (email: string, password: string) => Promise<string | null>;
   setPassword: (password: string) => Promise<string | null>;
@@ -17,6 +18,7 @@ const AuthContext = createContext<AuthState | null>(null);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [role, setRole] = useState<Role>('viewer');
+  const [profileName, setProfileName] = useState<{ userId: string; name: string } | null>(null);
   const [loading, setLoading] = useState(supabaseConfigured);
 
   useEffect(() => {
@@ -38,9 +40,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let alive = true;
     async function loadRole() {
-      if (!supabase || !session?.user) { setRole(supabaseConfigured ? 'viewer' : 'admin'); return; }
-      const { data } = await supabase.from('profiles').select('role').eq('id', session.user.id).maybeSingle();
-      if (alive) setRole(data?.role === 'admin' ? 'admin' : 'viewer');
+      if (!supabase || !session?.user) { setRole(supabaseConfigured ? 'viewer' : 'admin'); setProfileName(null); return; }
+      const { data } = await supabase.from('profiles').select('role,display_name').eq('id', session.user.id).maybeSingle();
+      if (alive) {
+        setRole(data?.role === 'admin' ? 'admin' : 'viewer');
+        setProfileName(data?.display_name?.trim() ? { userId: session.user.id, name: data.display_name.trim() } : null);
+      }
     }
     void loadRole();
     return () => { alive = false; };
@@ -50,6 +55,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     configured: supabaseConfigured,
     loading,
     session,
+    displayName: (profileName && profileName.userId === session?.user.id ? profileName.name : null)
+      || (typeof session?.user.user_metadata?.display_name === 'string' && session.user.user_metadata.display_name.trim())
+      || (typeof session?.user.user_metadata?.full_name === 'string' && session.user.user_metadata.full_name.trim())
+      || (typeof session?.user.user_metadata?.name === 'string' && session.user.user_metadata.name.trim())
+      || session?.user.email?.split('@')[0]
+      || 'Workspace Admin',
     role,
     signIn: async (email, password) => {
       if (!supabase) return 'Supabase is not configured yet.';
@@ -62,7 +73,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return error?.message ?? null;
     },
     signOut: async () => { if (supabase) await supabase.auth.signOut(); },
-  }), [loading, session, role]);
+  }), [loading, session, role, profileName]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

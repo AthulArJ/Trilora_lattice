@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Fastify">
+  <path fill="#111" d="M128 14c-21 34-58 72-58 124a58 58 0 0 0 116 0c0-52-37-90-58-124z"/>
+  <path fill="#fff" d="M128 70c-13 23-34 47-34 76a34 34 0 0 0 68 0c0-29-21-53-34-76zm0 29c8 14 17 28 17 45a17 17 0 0 1-34 0c0-17 9-31 17-45z"/>
+  <path fill="#fff" d="M53 211h150v12H53z"/>
+</svg>

@@ -10,6 +10,12 @@ const technologies = [
   { name: 'QGIS', file: 'qgis.svg', url: 'https://qgis.org/' },
   { name: 'MapLibre GL JS', file: 'maplibre.svg', url: 'https://maplibre.org/' },
   { name: 'PostGIS', file: 'postgis.svg', url: 'https://postgis.net/' },
+  { name: 'Node.js', file: 'nodejs.svg', url: 'https://nodejs.org/' },
+  { name: 'JavaScript', file: 'javascript.svg', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+  { name: 'TypeScript', file: 'typescript.svg', url: 'https://www.typescriptlang.org/' },
+  { name: 'Python', file: 'python.svg', url: 'https://www.python.org/' },
+  { name: 'Fastify', file: 'fastify.svg', url: 'https://fastify.dev/' },
+  { name: 'Vite', file: 'vite.svg', url: 'https://vite.dev/' },
 ];
 
 export default function TechnologyFooter() {

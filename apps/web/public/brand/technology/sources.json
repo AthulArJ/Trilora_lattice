@@ -6,5 +6,7 @@
   "threejs": "https://raw.githubusercontent.com/mrdoob/three.js/dev/files/icon.svg",
   "qgis": "https://qgis.org/styleguide/visual/qgis-icon128.svg",
   "maplibre": "https://maplibre.org/img/maplibre-logos/maplibre-logo-square-for-light-bg.svg",
-  "postgis": "https://postgis.net/brand.svg"
+  "postgis": "https://postgis.net/brand.svg",
+  "javascript": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  "python": "https://www.python.org/"
 }
