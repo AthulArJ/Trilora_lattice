@@ -44,3 +44,22 @@ User metadata and browser flags never grant backend/RLS authorization.
 
 These isolated tests do not replace a staging check with delivered email links
 against the project's deployed Supabase version, token settings, and policies.
+
+Session restoration regression
+------------------------------
+The browser suite also dispatches the browser hidden/visible lifecycle events
+handled by the real Supabase SDK. It checks 1.1, 2, and 10.5 second background
+periods, a retained workspace DOM marker and selected Devices page, unchanged
+persisted session and document time origin, and subsequent rejected validation.
+It closes/relaunches Chromium and restores its persisted fixture storage to
+check browser reopening, verifies startup cannot render login prematurely,
+and repeats background return after successful invitation completion.
+
+Diagnostics stay in this isolated test harness and log only event names and
+presence/equality booleans, never credentials or user/session objects.
+These tests reproduced the prior regression with a valid session and unchanged
+document: the provider set loading on focus SIGNED_IN, AuthGate unmounted App,
+and App reset its selected page to the authenticated Operations Hub.
+The fix keeps already-validated same-user sessions mounted during revalidation.
+Initial validation, account switches, setup sessions, logout and validation
+failure remain blocking. API authorization and database policies are unchanged.

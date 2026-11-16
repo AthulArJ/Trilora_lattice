@@ -18,8 +18,17 @@ const server = http.createServer((req, res) => {
   catch { res.statusCode=404; res.end(); }
 });
 let browser, base;
-async function fixture() {
-  const context = await browser.newContext();
+async function fixture(options = {}) {
+  const context = await browser.newContext(options);
+  await context.addInitScript(()=>{
+    window.__authLifecycleTrace=[];
+    document.addEventListener('visibilitychange',()=>window.__authLifecycleTrace.push({visibility:document.visibilityState}));
+    const post=BroadcastChannel.prototype.postMessage;
+    BroadcastChannel.prototype.postMessage=function(message){
+      if(this.name.startsWith('sb-') && message?.event) window.__authLifecycleTrace.push({event:message.event,sessionPresent:!!message.session,userPresent:!!message.session?.user});
+      return post.call(this,message);
+    };
+  });
   const state = { updates: 0, workspaceReads: 0, failUpdate: false, failSignIn: false, rejectToken: false, order: [] };
   await context.route('**/runtime-config.js', route => route.fulfill({ contentType: 'application/javascript', body: `window.__LATTICE_RUNTIME_CONFIG__={supabaseUrl:'https://auth.lattice.test',supabasePublishableKey:'fixture-key'};window.__LATTICE_API_CONFIG__={apiUrl:'https://api.lattice.test'};` }));
   await context.route('https://auth.lattice.test/**', async route => {
@@ -31,6 +40,7 @@ async function fixture() {
       if (state.failUpdate) { status=422; body={ msg:'Password rejected by policy', code:'weak_password' }; }
       else body=user;
     } else if (url.pathname === '/auth/v1/user') {
+      if(state.holdValidation) await new Promise(resolve=>{state.validationWaiters.push(resolve);state.validationStarted();});
       if (state.rejectToken) { status=401; body={msg:'Expired fixture token'}; } else body=user;
     } else if (url.pathname === '/auth/v1/token') {
       state.order.push('password-sign-in');
@@ -55,14 +65,16 @@ async function fill(f,a='FixtureNewPass123!',b=a) {
   await f.page.locator('#login-confirm-password').fill(b);
 }
 async function dashboard(f) { await f.page.locator('.operations-hub').waitFor({timeout:10000}); }
-async function run(name, fn) { await fn(); console.log('PASS',name); }
+async function run(name, fn) { if(process.env.AUTH_RETURN_ONLY && !name.startsWith('background')) return; await fn(); console.log('PASS',name); }
 (async()=>{
   await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));base=`http://127.0.0.1:${server.address().port}`;
-  browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
+  const browserOptions={headless:process.env.AUTH_HEADED!=='1',...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})};
+  browser=await chromium.launch(browserOptions);
   await run('1-4: invite, no password, viewport changes, clean-URL reload and new tab stay pending',async()=>{
     const f=await fixture();await f.page.goto(f.link('invite'));await pending(f);
     await f.page.setViewportSize({width:390,height:844});await pending(f);
     await f.page.setViewportSize({width:1920,height:1080});await pending(f);
+    await f.page.evaluate(()=>{Object.defineProperty(document,'visibilityState',{configurable:true,value:'hidden'});document.dispatchEvent(new Event('visibilitychange',{bubbles:true}));Object.defineProperty(document,'visibilityState',{configurable:true,value:'visible'});document.dispatchEvent(new Event('visibilitychange',{bubbles:true}));});await pending(f);
     await f.page.goto(base);await pending(f);await f.page.reload();await pending(f);
     const second=await f.context.newPage();await second.goto(base);await pending({...f,page:second});
     assert.equal(f.state.updates,0);await f.context.close();
@@ -73,10 +85,48 @@ async function run(name, fn) { await fn(); console.log('PASS',name); }
     await fill(f,'short');await f.page.getByRole('button',{name:'Set password & continue',exact:true}).click();assert.equal(f.state.updates,0);await pending(f);
     f.state.failUpdate=true;await fill(f);await f.page.getByRole('button',{name:'Set password & continue',exact:true}).click();await f.page.getByRole('alert').filter({hasText:'Password rejected'}).waitFor();await pending(f);
     f.state.failUpdate=false;await f.page.getByRole('button',{name:'Set password & continue',exact:true}).click();await dashboard(f);assert.deepEqual(f.state.order,['update','update','password-sign-in']);
-    assert.equal(new URL(f.page.url()).searchParams.has('setup'),false);await f.page.reload();await dashboard(f);await f.context.close();
+    assert.equal(new URL(f.page.url()).searchParams.has('setup'),false);await f.page.reload();await dashboard(f);
+    await f.page.locator('.operations-hub').evaluate(e=>{e.dataset.mountProof='completed-invite';});
+    await f.page.evaluate(()=>{Object.defineProperty(document,'visibilityState',{configurable:true,value:'hidden'});document.dispatchEvent(new Event('visibilitychange',{bubbles:true}));Object.defineProperty(document,'visibilityState',{configurable:true,value:'visible'});document.dispatchEvent(new Event('visibilitychange',{bubbles:true}));});await f.page.waitForTimeout(300);
+    assert.equal(await f.page.locator('.operations-hub').getAttribute('data-mount-proof'),'completed-invite');await f.context.close();
   });
   await run('8: existing password login and logout work normally',async()=>{
     const f=await fixture();await f.page.goto(base);await f.page.locator('#login-email').fill(user.email);await f.page.locator('#login-password').fill('ExistingPass123!');await f.page.getByRole('button',{name:'Sign in',exact:true}).click();await dashboard(f);assert.equal(f.state.updates,0);await f.page.getByRole('button',{name:'Sign out',exact:true}).click();await f.page.getByRole('heading',{name:'Welcome to Lattice'}).waitFor();await f.context.close();
+  });
+  await run('background SIGNED_IN must retain the mounted workspace and selected page',async()=>{
+    const f=await fixture();await f.page.goto(base);await f.page.locator('#login-email').fill(user.email);await f.page.locator('#login-password').fill('ExistingPass123!');await f.page.getByRole('button',{name:'Sign in',exact:true}).click();await dashboard(f);
+    await f.page.getByRole('button',{name:'Enter operations console'}).click();
+    await f.page.getByRole('button',{name:'Devices',exact:true}).click();
+    await f.page.getByRole('heading',{name:'Devices',exact:true}).first().waitFor();
+    const before=await f.page.evaluate(()=>({token:JSON.parse(localStorage.getItem('sb-auth-auth-token')).access_token,origin:performance.timeOrigin}));
+    await f.page.locator('.app-shell').evaluate(e=>{e.dataset.mountProof='original';});
+    await f.page.evaluate(()=>{Object.defineProperty(document,'visibilityState',{configurable:true,value:'hidden'});document.dispatchEvent(new Event('visibilitychange',{bubbles:true}));});
+    await f.page.waitForTimeout(1100);
+    await f.page.evaluate(()=>{Object.defineProperty(document,'visibilityState',{configurable:true,value:'visible'});document.dispatchEvent(new Event('visibilitychange',{bubbles:true}));});
+    await f.page.waitForTimeout(500);
+    const after=await f.page.evaluate(()=>({token:JSON.parse(localStorage.getItem('sb-auth-auth-token')).access_token,origin:performance.timeOrigin}));
+    assert.deepEqual(after,before,'Session and document should remain unchanged');
+    const trace=await f.page.evaluate(()=>({authEvents:window.__authLifecycleTrace,workspaceMounted:!!document.querySelector('.app-shell'),hubMounted:!!document.querySelector('.operations-hub'),mountProof:document.querySelector('.app-shell')?.dataset.mountProof}));
+    console.log('AUTH RETURN TRACE',JSON.stringify({sameSession:after.token===before.token,sameDocument:after.origin===before.origin,...trace}));
+    assert.equal(trace.mountProof,'original','Auth revalidation must not unmount the workspace');
+    for(const duration of [2000,10500]) {
+      await f.page.evaluate(()=>{Object.defineProperty(document,'visibilityState',{configurable:true,value:'hidden'});document.dispatchEvent(new Event('visibilitychange',{bubbles:true}));});await f.page.waitForTimeout(duration);
+      await f.page.evaluate(()=>{Object.defineProperty(document,'visibilityState',{configurable:true,value:'visible'});document.dispatchEvent(new Event('visibilitychange',{bubbles:true}));});await f.page.waitForTimeout(300);
+      assert.equal(await f.page.locator('.app-shell').getAttribute('data-mount-proof'),'original');
+    }
+    f.state.rejectToken=true;
+    await f.page.evaluate(()=>{Object.defineProperty(document,'visibilityState',{configurable:true,value:'hidden'});document.dispatchEvent(new Event('visibilitychange',{bubbles:true}));Object.defineProperty(document,'visibilityState',{configurable:true,value:'visible'});document.dispatchEvent(new Event('visibilitychange',{bubbles:true}));});
+    await f.page.getByRole('heading',{name:'Welcome to Lattice'}).waitFor();assert.equal(await f.page.locator('.app-shell').count(),0);await f.context.close();
+  });
+  await run('background: browser refresh, browser restart and logged-out restart restore the correct auth gate',async()=>{
+    const f=await fixture();await f.page.goto(base);await f.page.locator('#login-email').fill(user.email);await f.page.locator('#login-password').fill('ExistingPass123!');await f.page.getByRole('button',{name:'Sign in',exact:true}).click();await dashboard(f);
+    await f.page.reload();await dashboard(f);const persisted=await f.context.storageState();await browser.close();browser=await chromium.launch(browserOptions);
+    const g=await fixture({storageState:persisted});await g.page.goto(base);await dashboard(g);await g.page.getByRole('button',{name:'Sign out',exact:true}).click();await g.page.getByRole('heading',{name:'Welcome to Lattice'}).waitFor();await g.page.reload();await g.page.getByRole('heading',{name:'Welcome to Lattice'}).waitFor();await g.context.close();
+  });
+  await run('background: startup blocks public/workspace rendering until restored session validation finishes',async()=>{
+    const f=await fixture();f.state.holdValidation=true;f.state.validationWaiters=[];const started=new Promise(resolve=>{f.state.validationStarted=resolve;});
+    await f.context.addInitScript(s=>localStorage.setItem('sb-auth-auth-token',JSON.stringify(s)),session(passwordToken));await f.page.goto(base,{waitUntil:'domcontentloaded'});await started;
+    await f.page.locator('.auth-loading').waitFor();assert.equal(await f.page.locator('.login-shell,.operations-hub').count(),0);f.state.holdValidation=false;f.state.validationWaiters.forEach(resolve=>resolve());await dashboard(f);await f.context.close();
   });
   await run('9: expired callback cannot fall back to an existing password session',async()=>{
     const f=await fixture();await f.page.goto(base);await f.page.evaluate(s=>localStorage.setItem('sb-auth-auth-token',JSON.stringify(s)),session(passwordToken));await f.page.goto(`${base}/#error=access_denied&error_code=otp_expired&type=invite`);await pending(f);assert.equal(await f.page.getByRole('button',{name:'Set password & continue',exact:true}).isDisabled(),true);await f.context.close();

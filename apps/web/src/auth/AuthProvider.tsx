@@ -28,6 +28,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const passwordSavedFor = useRef<string | null>(null);
   const callbackAccepted = useRef(false);
   const setupAttempt = useRef(0);
+  const validatedSession = useRef<Session | null>(null);
   const session = !setupPending && passwordAuthenticated(authSession) ? authSession : null;
   const [role, setRole] = useState<Role>('viewer');
   const [profileName, setProfileName] = useState<{ userId: string; name: string } | null>(null);
@@ -37,13 +38,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!supabase) return;
     let alive = true;
     function requireSetup() {
+      validatedSession.current = null;
       pendingRef.current = true;
       persistSetupPending(true);
       setSetupPending(true);
     }
     async function accept(candidate: Session | null, recovery = false) {
       const request = ++revision.current;
-      setLoading(true);
+      // Supabase also emits SIGNED_IN when a tab becomes visible. Keep the
+      // already-validated workspace mounted while revalidating the same user.
+      // Startup, identity changes and link/setup sessions still block rendering.
+      const revalidatingWorkspace = !recovery && !pendingRef.current && passwordAuthenticated(candidate)
+        && candidate?.user.id === validatedSession.current?.user.id;
+      if (!revalidatingWorkspace) setLoading(true);
       if (recovery || (candidate && !passwordAuthenticated(candidate))) requireSetup();
       if (pendingRef.current) persistSetupPending(true);
       try {
@@ -56,10 +63,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           callbackAccepted.current = true;
         }
         if (!alive || request !== revision.current) return;
+        validatedSession.current = candidate;
         setAuthSession(candidate);
         setAuthError(candidate || !pendingRef.current ? null : 'This invitation or recovery link is invalid or expired. Request a fresh link.');
       } catch (error) {
         if (!alive || request !== revision.current) return;
+        validatedSession.current = null;
         setAuthSession(null);
         setAuthError(error instanceof Error ? error.message : 'Could not validate your session.');
       } finally {
@@ -68,7 +77,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     const { data: listener } = supabase.auth.onAuthStateChange((event, nextSession) => {
       if (!alive) return;
-      if (event === 'SIGNED_OUT') { ++setupAttempt.current; passwordSavedFor.current = null; }
+      if (event === 'SIGNED_OUT') { ++setupAttempt.current; passwordSavedFor.current = null; validatedSession.current = null; }
       // No Supabase calls inside its auth callback: validation runs after its lock is released.
       if (event === 'PASSWORD_RECOVERY') requireSetup();
       queueMicrotask(() => { if (alive) void accept(nextSession, event === 'PASSWORD_RECOVERY'); });
@@ -151,6 +160,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       pendingRef.current = false;
       persistSetupPending(false);
       setSetupPending(false);
+      validatedSession.current = data.session;
       setAuthSession(data.session);
       setAuthError(null);
       setLoading(false);
